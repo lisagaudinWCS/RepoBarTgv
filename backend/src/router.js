@@ -10,4 +10,13 @@ router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);
 router.delete("/items/:id", itemControllers.destroy);
 
+/** ***************************route products******* */
+const productControllers = require("./controllers/productControllers");
+
+router.get("/products", productControllers.browse);
+router.get("/products/:id", productControllers.read);
+router.put("/products/:id", productControllers.edit);
+router.post("/products", productControllers.add);
+router.delete("/products/:id", productControllers.destroy);
+
 module.exports = router;
