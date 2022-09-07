@@ -2,7 +2,7 @@
 
 ## Description
 
-This repository is a simple Express MVC structure from scratch.
+This repository is a simple Express MVC structure from scratch...
 
 ## Steps
 
