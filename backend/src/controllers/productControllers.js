@@ -35,7 +35,7 @@ const edit = (req, res) => {
 
   product.id = parseInt(req.params.id, 10);
 
-  models.item
+  models.product
     .update(product)
     .then(([result]) => {
       if (result.affectedRows === 0) {
