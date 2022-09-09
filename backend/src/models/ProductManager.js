@@ -38,6 +38,15 @@ class ProductManager extends AbstractManager {
       ]
     );
   }
+
+  getProductsDetails() {
+    return this.connection.query(
+      `select product.id, product.description, product.name, product.image, product.price, particularity_food.image as particularity, category_product.name as category from  ${this.table}
+      join particularity_food on product.particularity_food_id=particularity_food.id
+      join category_product on product.category_id=category_product.id
+      `
+    );
+  }
 }
 
 module.exports = ProductManager;
