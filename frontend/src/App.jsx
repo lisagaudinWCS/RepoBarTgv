@@ -1,11 +1,12 @@
-import Home from "@pages/Home";
+// import Home from "@pages/Home";
+import Subscribe from "@pages/Subscribe";
 
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Subscribe />
       <p>coucou</p>
     </div>
   );
