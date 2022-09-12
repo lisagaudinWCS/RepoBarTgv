@@ -69,39 +69,36 @@ h3 {
   text-align: center;
 }
 @media screen and (max-width: 373px) {
-  img{
+  img {
     width: 80px;
     height: 85px;
   }
 
-  .listContainer{
+  .listContainer {
     display: flex;
     flex-direction: column;
     border: 2px solid rgb(208, 27, 57);
     width: 99px;
     height: 238px;
     margin: 5px 5px 5px 5px;
-    
   }
   .listCat {
     display: flex;
     justify-content: center;
   }
-  
+
   .listPrice {
-   
     width: 80px;
     height: 85px;
     margin: auto;
     border: 2px solid rgb(200, 6, 6);
   }
-  
+
   .listUn {
-   
     margin-top: auto;
     margin-bottom: 5px;
   }
-  
+
   .listUn img {
     display: flex;
     align-items: center;
@@ -109,10 +106,10 @@ h3 {
     height: 10px;
     margin-left: 5px;
   }
-  .listProducts{
+  .listProducts {
     height: 30px;
   }
-  .listDescription{
+  .listDescription {
     height: 100px;
   }
   .price {
@@ -120,11 +117,11 @@ h3 {
     font-weight: bolder;
     color: #0075a1;
   }
-  
+
   h2 {
     font-size: small;
   }
-  
+
   .name {
     font-size: x-small;
   }
@@ -135,8 +132,8 @@ h3 {
     width: 99px;
     font-size: 60%;
   }
-  .listCat{
+  .listCat {
     height: 250px;
     width: 99px;
-}
+  }
 }
