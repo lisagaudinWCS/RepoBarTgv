@@ -11,6 +11,9 @@
 .subscribe-inputs {
   text-align: center;
 }
+.input-box {
+  border-radius: 5px;
+}
 .subscribe-btn {
   color: #0075a1;
   padding: 5px;

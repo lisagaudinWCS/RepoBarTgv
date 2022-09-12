@@ -32,7 +32,7 @@ export default function SubscribeForm() {
       <div className="subscribe-inputs">
         <label htmlFor="lastname">Votre nom: </label>
         <input
-          onChange={(e) => setClients({ ...clients, lastname: e.target.value })}
+          className="input-box"
           value={clients.lastname}
           type="text"
           id="lastname"
@@ -41,6 +41,7 @@ export default function SubscribeForm() {
         <br />
         <label htmlFor="firstname">Votre prénom: </label>
         <input
+          className="input-box"
           onChange={(e) =>
             setClients({ ...clients, firstname: e.target.value })
           }
@@ -52,6 +53,7 @@ export default function SubscribeForm() {
         <br />
         <label htmlFor="birth_date">Date de naissance: </label>
         <input
+          className="input-box"
           placeholder="----/--/--"
           onChange={(e) =>
             setClients({ ...clients, birth_date: e.target.value })
@@ -64,6 +66,7 @@ export default function SubscribeForm() {
         <br />
         <label htmlFor="email">email: </label>
         <input
+          className="input-box"
           onChange={(e) => setClients({ ...clients, email: e.target.value })}
           value={clients.email}
           type="email"
@@ -73,6 +76,7 @@ export default function SubscribeForm() {
         <br />
         <label htmlFor="password">MDP: </label>
         <input
+          className="input-box"
           onChange={(e) => setClients({ ...clients, password: e.target.value })}
           value={clients.password}
           type="password"
