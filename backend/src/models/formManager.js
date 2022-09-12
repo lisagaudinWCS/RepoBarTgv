@@ -7,22 +7,16 @@ class FormManager extends AbstractManager {
 
   insert(item) {
     return this.connection.query(
-      `insert into ${this.table} (form_number, date, description, email, name, category_form_id) values (?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (form_number, date, description, email, lastname, firstname, rating_id) values (?, ?, ?, ?, ?, ?, ?)`,
       [
         item.form_number,
         item.date,
         item.description,
         item.email,
-        item.name,
-        item.category_form_id,
+        item.lastname,
+        item.firstname,
+        item.rating_id,
       ]
-    );
-  }
-
-  update(item) {
-    return this.connection.query(
-      `update ${this.table} set title = ? where id = ?`,
-      [item.title, item.id]
     );
   }
 }

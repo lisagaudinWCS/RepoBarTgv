@@ -12,11 +12,12 @@ function FormCpmt() {
   // préparer objet post DB
   const [userForm, setUserForm] = useState({
     form_number: idClient,
-    date: "",
+    date: Date(),
     description: "",
     email: "",
-    name: "",
-    category_form_id: "",
+    firstname: "",
+    lastname: "",
+    rating_id: "",
   });
 
   // système de notation
@@ -24,7 +25,7 @@ function FormCpmt() {
 
   const handleRating = (rate) => {
     setRating(rate);
-    setUserForm({ ...userForm, category_form_id: rate });
+    setUserForm({ ...userForm, rating_id: rate });
   };
 
   // animation boutton envoyé
@@ -56,8 +57,22 @@ function FormCpmt() {
         <input
           className="input-box"
           // placeholder="name"
-          onChange={(e) => setUserForm({ ...userForm, name: e.target.value })}
-          value={userForm.name}
+          onChange={(e) =>
+            setUserForm({ ...userForm, lastname: e.target.value })
+          }
+          value={userForm.lastname}
+          type="text"
+          id="name"
+          required
+        />
+        <label htmlFor="name">Votre prénom: </label>
+        <input
+          className="input-box"
+          // placeholder="name"
+          onChange={(e) =>
+            setUserForm({ ...userForm, firstname: e.target.value })
+          }
+          value={userForm.firstname}
           type="text"
           id="name"
           required
@@ -72,7 +87,7 @@ function FormCpmt() {
           id="email"
           required
         />
-        <label htmlFor="date">Date: </label>
+        {/* <label htmlFor="date">Date: </label>
         <input
           className="input-box"
           onChange={(e) => setUserForm({ ...userForm, date: e.target.value })}
@@ -80,15 +95,12 @@ function FormCpmt() {
           type="date"
           id="date"
           required
-        />
+        /> */}
         <div className="App">
           <Rating
             fillColor="#0075A1"
             allowHalfIcon
             transition
-            onChange={(e) =>
-              setUserForm({ ...userForm, category_form_id: e.target.value })
-            }
             onClick={handleRating}
             ratingValue={rating} /* Available Props */
           />

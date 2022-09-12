@@ -12,7 +12,7 @@ const getAll = (req, res) => {
     });
 };
 
-const read = (req, res) => {
+const getById = (req, res) => {
   models.form
     .find(req.params.id)
     .then(([rows]) => {
@@ -84,7 +84,7 @@ const destroy = (req, res) => {
 
 module.exports = {
   getAll,
-  read,
+  getById,
   edit,
   add,
   destroy,
