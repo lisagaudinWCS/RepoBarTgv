@@ -2,8 +2,9 @@ import axios from "axios";
 import { useState } from "react";
 
 export default function SubscribeForm() {
-  const [simpson, setSimpson] = useState("");
-  console.warn(simpson);
+  const [clients, setClients] = useState("");
+  // console.log(clients);
+
   const createClient = () => {
     // Send the request
     axios
@@ -12,13 +13,16 @@ export default function SubscribeForm() {
       .then((response) => response.data)
       // Use this data to update the state
       .then((data) => {
-        setSimpson(data);
+        setClients(data);
       });
   };
 
   return (
-    <button type="button" onClick={createClient}>
-      Get simpson
-    </button>
+    <>
+      <p>{clients.lastname}</p>
+      <button type="button" onClick={createClient}>
+        Get simpson
+      </button>
+    </>
   );
 }
