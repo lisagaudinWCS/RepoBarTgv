@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const itemControllers = require("./controllers/itemControllers");
+const formControllers = require("./controllers/formcontrollers");
 const ticketControllers = require("./controllers/ticketControllers");
 const trainControllers = require("./controllers/trainControllers");
 const trainsTicketsClientsControllers = require("./controllers/trainTicketControllers");
@@ -19,6 +20,9 @@ router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);
 router.delete("/items/:id", itemControllers.destroy);
 
+router.get("/forms", formControllers.getAll);
+router.get("/forms/:id", formControllers.getById);
+router.post("/forms", formControllers.add);
 /** ***************************route products******* */
 const productControllers = require("./controllers/productControllers");
 
