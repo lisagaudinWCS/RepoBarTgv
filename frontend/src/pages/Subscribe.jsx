@@ -3,6 +3,7 @@ import SubscribeForm from "@components/SubscribeForm";
 function Subscribe() {
   return (
     <div>
+      <p>Toto</p>
       <SubscribeForm />
     </div>
   );
