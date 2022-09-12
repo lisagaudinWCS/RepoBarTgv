@@ -3,7 +3,7 @@ import SubscribeForm from "@components/SubscribeForm";
 function Subscribe() {
   return (
     <div>
-      <p>Toto</p>
+      <h3 className="subscribe-title">INSCRIPTION</h3>
       <SubscribeForm />
     </div>
   );

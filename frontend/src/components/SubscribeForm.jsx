@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import "./subscribe.css";
 
 export default function SubscribeForm() {
   const [clients, setClients] = useState({
@@ -27,9 +28,8 @@ export default function SubscribeForm() {
 
   return (
     // lastname, firstname, email, date, mdp
-    <form onSubmit={createClient}>
-      <h1>Inscription</h1>
-      <div>
+    <form className="subscribe-form" onSubmit={createClient}>
+      <div className="subscribe-inputs">
         <label htmlFor="lastname">Votre nom: </label>
         <input
           onChange={(e) => setClients({ ...clients, lastname: e.target.value })}
@@ -38,6 +38,7 @@ export default function SubscribeForm() {
           id="lastname"
           required
         />
+        <br />
         <label htmlFor="firstname">Votre prénom: </label>
         <input
           onChange={(e) =>
@@ -48,6 +49,7 @@ export default function SubscribeForm() {
           id="firstname"
           required
         />
+        <br />
         <label htmlFor="birth_date">Date de naissance: </label>
         <input
           placeholder="----/--/--"
@@ -59,6 +61,7 @@ export default function SubscribeForm() {
           id="birth_date"
           required
         />
+        <br />
         <label htmlFor="email">email: </label>
         <input
           onChange={(e) => setClients({ ...clients, email: e.target.value })}
@@ -67,6 +70,7 @@ export default function SubscribeForm() {
           id="email"
           required
         />
+        <br />
         <label htmlFor="password">MDP: </label>
         <input
           onChange={(e) => setClients({ ...clients, password: e.target.value })}
@@ -77,7 +81,7 @@ export default function SubscribeForm() {
         />
       </div>
       <div>
-        <button type="submit" id="submit-button">
+        <button className="subscribe-btn" type="submit" id="submit-button">
           S'inscrire
         </button>
       </div>
