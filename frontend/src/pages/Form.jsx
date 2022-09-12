@@ -1,4 +1,4 @@
-import FormCpmt from "../components/FormCpmt";
+import FormCpmt from "../components/Form";
 
 function Form() {
   return (

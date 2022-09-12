@@ -5,7 +5,7 @@ import axios from "axios";
 
 import "./formCpmt.css";
 
-function FormCpmt() {
+function Form() {
   // Générer un id de formulaire aléatoire et unique
   const idClient = Math.random().toString(16).slice(8);
 
@@ -87,15 +87,6 @@ function FormCpmt() {
           id="email"
           required
         />
-        {/* <label htmlFor="date">Date: </label>
-        <input
-          className="input-box"
-          onChange={(e) => setUserForm({ ...userForm, date: e.target.value })}
-          value={userForm.date}
-          type="date"
-          id="date"
-          required
-        /> */}
         <div className="App">
           <Rating
             fillColor="#0075A1"
@@ -126,4 +117,4 @@ function FormCpmt() {
   );
 }
 
-export default FormCpmt;
+export default Form;
