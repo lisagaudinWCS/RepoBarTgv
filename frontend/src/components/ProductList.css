@@ -3,11 +3,10 @@
   justify-content: center;
   flex-wrap: wrap;
   border: 2px solid rgb(88, 25, 198);
-  
 }
 
-@media screen and  (max-width: 373px) {
-    .leon{
-        height: 2800px;
-    }
+@media screen and (max-width: 373px) {
+  .leon {
+    height: 2800px;
+  }
 }
