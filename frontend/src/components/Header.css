@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.panier img {
+  height: 40px;
+  width: 50px;
+}
+
+.inoui img {
+  height: 54px;
+  width: 103px;
+}
+
+.inoui {
+  margin-left: 45%;
+}
+
+.panier {
+  margin-top: 1%;
+}
