@@ -80,7 +80,7 @@ h3 {
     border: 2px solid rgb(208, 27, 57);
     width: 99px;
     height: 238px;
-    margin: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 10px;
   }
   .listCat {
     display: flex;
