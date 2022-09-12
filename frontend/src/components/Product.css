@@ -1,0 +1,139 @@
+img {
+  width: 180px;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  width: 200px;
+  height: 410px;
+  margin: 50px;
+}
+
+.listCat {
+  display: flex;
+  justify-content: center;
+}
+
+.listPrice {
+  display: flex;
+  width: 180px;
+  height: 184.75px;
+  margin: auto;
+  border: 2px solid rgb(200, 6, 6);
+}
+
+.listUn {
+  display: flex;
+  justify-content: space-around;
+  margin-top: auto;
+  margin-bottom: 5px;
+}
+
+.listUn img {
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+.price {
+  display: flex;
+  justify-content: space-around;
+  font-size: 140%;
+  font-weight: bolder;
+  color: #0075a1;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  color: #0075a1;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  font-size: small;
+}
+h3 {
+  text-align: center;
+}
+.decrip {
+  display: flex;
+  justify-content: center;
+  width: 180px;
+  margin: auto;
+  text-align: center;
+}
+@media screen and (max-width: 373px) {
+  img {
+    width: 80px;
+    height: 85px;
+  }
+
+  .listContainer {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(208, 27, 57);
+    width: 99px;
+    height: 238px;
+    margin: 5px 5px 5px 10px;
+  }
+  .listCat {
+    display: flex;
+    justify-content: center;
+  }
+
+  .listPrice {
+    width: 80px;
+    height: 85px;
+    margin: auto;
+    border: 2px solid rgb(200, 6, 6);
+  }
+
+  .listUn {
+    margin-top: auto;
+    margin-bottom: 5px;
+  }
+
+  .listUn img {
+    display: flex;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+  }
+  .listProducts {
+    height: 30px;
+  }
+  .listDescription {
+    height: 100px;
+  }
+  .price {
+    font-size: 40%;
+    font-weight: bolder;
+    color: #0075a1;
+  }
+
+  h2 {
+    font-size: small;
+  }
+
+  .name {
+    font-size: x-small;
+  }
+  h3 {
+    text-align: center;
+  }
+  .decrip {
+    width: 99px;
+    font-size: 60%;
+  }
+  .listCat {
+    height: 250px;
+    width: 99px;
+  }
+}
