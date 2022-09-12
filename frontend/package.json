@@ -10,6 +10,7 @@
     "fix": "prettier --write . && eslint --fix --ext .jsx ."
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "install": "^0.13.0",
     "npm": "^8.19.1",
     "prop-types": "^15.8.1",

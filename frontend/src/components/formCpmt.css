@@ -1,46 +1,46 @@
 .comment-title {
-    color: #980C35;
+  color: #980c35;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    margin: 5% 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin: 5% 40%;
 }
 
 .input-form {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 }
 
 .input-form label {
-    text-align: left;
-    margin-bottom: 5px;
+  text-align: left;
+  margin-bottom: 5px;
 }
 
 .input-box {
-    border-radius: 5px;
-    border: 1px lightgray solid;
-    margin-bottom: 30px;
-    height: 20px;
+  border-radius: 5px;
+  border: 1px lightgray solid;
+  margin-bottom: 30px;
+  height: 20px;
 }
 
 #description {
-    height: 20vh;
+  height: 20vh;
 }
 
 #send-button {
-    cursor: pointer;
-    background-color: #0075A1;
-    color: white;
-    font-size: 12px;
-    width: 50%;
-    height: 30px;
+  cursor: pointer;
+  background-color: #0075a1;
+  color: white;
+  font-size: 12px;
+  width: 50%;
+  height: 30px;
 }
 
 #send-button:hover {
-    transition: 2s;
-    opacity: 70%;
+  transition: 2s;
+  opacity: 70%;
 }

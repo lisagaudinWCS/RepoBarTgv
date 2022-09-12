@@ -1,11 +1,12 @@
-import Form from "@pages/Form";
-
+import ProductsList from "@components/ProductsList";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Form />
+      {/* <Home />
+      <p>coucou</p> */}
+      <ProductsList />
     </div>
   );
 }
