@@ -1,12 +1,12 @@
-import Home from "@pages/Home";
-
+import ProductsList from "@components/ProductsList";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      {/* <Home />
+      <p>coucou</p> */}
+      <ProductsList />
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import Counter from "@components/Counter";
 import logo from "@assets/logo.svg";
+import ProductsList from "@components/ProductsList";
 
 export default function Home() {
   return (
@@ -7,8 +7,7 @@ export default function Home() {
       <img src={logo} className="App-logo" alt="logo" />
       <p>Hello Vite + React !</p>
 
-      <Counter />
-
+      <ProductsList />
       <p>
         Edit <code>App.jsx</code> and save to test HMR updates.
       </p>
