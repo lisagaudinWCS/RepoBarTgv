@@ -10,6 +10,12 @@ export default function Header() {
           alt="TGV Inoui"
         />
       </div>
+      <div className="connect">
+        <img
+          src="https://res.cloudinary.com/dbkscupri/image/upload/v1663000036/picto/client_nrxrmb.png"
+          alt="connection"
+        />
+      </div>
       <div className="panier">
         <img
           src="https://res.cloudinary.com/dbkscupri/image/upload/v1662994788/headerP3/panier2_q3fq57.png"

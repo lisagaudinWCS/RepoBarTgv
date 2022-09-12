@@ -2,21 +2,25 @@
   display: flex;
   justify-content: space-between;
 }
-
+.connect {
+  margin-left: 20rem;
+}
 .panier img {
   height: 40px;
   width: 50px;
 }
 
 .inoui img {
-  height: 54px;
-  width: 103px;
+  height: 64px;
+  width: 113px;
 }
 
 .inoui {
+  margin-top: 1.1rem;
   margin-left: 45%;
 }
 
 .panier {
-  margin-top: 1%;
+  margin-top: 2rem;
+  margin-right: 2rem;
 }
