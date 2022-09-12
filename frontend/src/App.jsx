@@ -1,13 +1,12 @@
-// import Home from "@pages/Home";
-import Subscribe from "@pages/Subscribe";
-
+import ProductsList from "@components/ProductsList";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Subscribe />
-      <p>coucou</p>
+      {/* <Home />
+      <p>coucou</p> */}
+      <ProductsList />
     </div>
   );
 }
