@@ -7,6 +7,7 @@ const formControllers = require("./controllers/formcontrollers");
 const ticketControllers = require("./controllers/ticketControllers");
 const trainControllers = require("./controllers/trainControllers");
 const trainsTicketsClientsControllers = require("./controllers/trainTicketControllers");
+const shoplistControllers = require("./controllers/shoplistControllers");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -15,6 +16,8 @@ router.get("/ticket/:id", ticketControllers.read);
 router.get("/train", trainControllers.browse);
 router.get("/train/:id", trainControllers.read);
 router.get("/trainsTicketsClients", trainsTicketsClientsControllers.getAll);
+router.get("/shoplists", shoplistControllers.getAll);
+router.get("/shoplists/:id", shoplistControllers.getById);
 
 router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);
