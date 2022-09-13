@@ -1,9 +1,26 @@
 .footer {
+  display: flex;
+  justify-content: space space-evenly;
   background-color: black;
   width: 1255px;
-  height: 380px;
+  height: 280px;
 }
 
+.sncfConnect {
+  top: 200rem;
+  left: 40rem;
+  position: absolute;
+}
 .sncfConnect a {
   color: azure;
+}
+
+.logoSncf {
+  margin-left: 25rem;
+  margin-top: 7rem;
+  position: absolute;
+}
+
+.logoSncf img {
+  width: 5rem;
 }
