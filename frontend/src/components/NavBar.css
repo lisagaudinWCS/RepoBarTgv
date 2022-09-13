@@ -1,8 +1,12 @@
 ul.navbar-ul {
   display: flex;
   justify-content: space-evenly;
-  /* background-color: #F4E9DC; */
+  background-color: #5579e5;
   list-style-type: none;
+  position: fixed;
+  z-index: 7;
+  width: 1215px;
+  top: 16rem;
 }
 
 li a {

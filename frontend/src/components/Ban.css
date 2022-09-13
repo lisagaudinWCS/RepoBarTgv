@@ -1,4 +1,8 @@
 .Cloud img {
+  display: flex;
   width: 1255px;
-  height: 300px;
+  height: 210px;
+  position: fixed;
+  z-index: 3;
+  top: 4.3rem;
 }

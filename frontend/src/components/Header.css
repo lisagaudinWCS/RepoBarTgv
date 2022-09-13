@@ -1,6 +1,12 @@
 .header {
   display: flex;
   justify-content: space-between;
+  background-color: white;
+  width: 1255px;
+  height: 75px;
+  position: fixed;
+  z-index: 5;
+  top: 0rem;
 }
 
 .inoui {
@@ -27,6 +33,7 @@
 }
 
 .connect img {
-  position: absolute;
-  bottom: 29.6rem;
+  position: fixed;
+  z-index: 2;
+  top: -1.01rem;
 }

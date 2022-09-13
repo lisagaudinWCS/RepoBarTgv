@@ -3,6 +3,9 @@
   justify-content: center;
   flex-wrap: wrap;
   border: 2px solid rgb(88, 25, 198);
+  position: relative;
+  top: 14.4rem;
+  width: 1251px;
 }
 
 @media screen and (max-width: 373px) {
