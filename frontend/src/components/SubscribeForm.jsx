@@ -10,7 +10,7 @@ export default function SubscribeForm() {
     email: "",
     password: "",
     avatar: "",
-    birth_date: "2022-09-12",
+    birth_date: "",
     isAdmin: 0,
   });
 
@@ -33,6 +33,7 @@ export default function SubscribeForm() {
         <label htmlFor="lastname">Votre nom: </label>
         <input
           className="input-box"
+          onChange={(e) => setClients({ ...clients, lastname: e.target.value })}
           value={clients.lastname}
           type="text"
           id="lastname"
