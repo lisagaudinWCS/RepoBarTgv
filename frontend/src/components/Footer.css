@@ -4,15 +4,17 @@
   background-color: black;
   width: 1255px;
   height: 280px;
+  top: 14.4rem;
+  position: relative;
 }
 
 .sncfConnect {
-  top: 200rem;
+  top: 13rem;
   left: 40rem;
   position: absolute;
 }
 .sncfConnect a {
-  color: azure;
+  color: white;
 }
 
 .logoSncf {

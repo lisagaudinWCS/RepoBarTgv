@@ -19,7 +19,7 @@ export default function Home() {
       <div className="productList">
         <ProductsList />
       </div>
-      <div className="footer">
+      <div className="footerHome">
         <Footer />
       </div>
     </div>
