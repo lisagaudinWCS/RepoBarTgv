@@ -1,15 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 export default function Header() {
   return (
     <div className="header">
       <div className="inoui">
-        <img
-          src="https://res.cloudinary.com/dbkscupri/image/upload/v1662994211/headerP3/inoui_irksbk.png"
-          alt="TGV Inoui"
-        />
+        <Link to="/forms">
+          <img
+            src="https://res.cloudinary.com/dbkscupri/image/upload/v1662994211/headerP3/inoui_irksbk.png"
+            alt="TGV Inoui"
+          />
+        </Link>
       </div>
+
       <div className="connect">
         <img
           src="https://res.cloudinary.com/dbkscupri/image/upload/v1663000036/picto/client_nrxrmb.png"

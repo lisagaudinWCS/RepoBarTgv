@@ -2,12 +2,10 @@
   display: flex;
   justify-content: space-between;
 }
-.connect {
-  margin-left: 20rem;
-}
-.panier img {
-  height: 40px;
-  width: 50px;
+
+.inoui {
+  margin-left: 45%;
+  margin-bottom: 1rem;
 }
 
 .inoui img {
@@ -15,12 +13,20 @@
   width: 113px;
 }
 
-.inoui {
-  margin-top: 1.1rem;
-  margin-left: 45%;
+.panier {
+  margin-top: 1rem;
+  margin-right: 2rem;
+}
+.panier img {
+  height: 40px;
+  width: 50px;
 }
 
-.panier {
-  margin-top: 2rem;
-  margin-right: 2rem;
+.connect {
+  margin-left: 15rem;
+}
+
+.connect img {
+  position: absolute;
+  bottom: 29.6rem;
 }

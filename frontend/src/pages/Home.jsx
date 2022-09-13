@@ -7,9 +7,9 @@ import Ban from "@components/Ban";
 export default function Home() {
   return (
     <div className="containerHome">
-      <header>
+      <div className="headerHome">
         <Header />
-      </header>
+      </div>
       <div className="ban">
         <Ban />
       </div>

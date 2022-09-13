@@ -8,10 +8,10 @@ export default function NavBar() {
       <nav className="navbar">
         <ul className="navbar-ul">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Formules</Link>
           </li>
           <li>
-            <Link to="/forms">Form</Link>
+            <Link to="/">Plats Froids</Link>
           </li>
           <li>
             <Link to="/advanced">Plats Chaud</Link>
