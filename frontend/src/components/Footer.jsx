@@ -9,7 +9,10 @@ export default function Footer() {
         <p>test</p>
       </div>
       <div>
-        <p>test</p>
+        <img
+          src="https://res.cloudinary.com/dbkscupri/image/upload/v1663078685/logo%20sncfp3/logoSncf_o3onud.png"
+          alt="logo sncf"
+        />
       </div>
     </div>
   );
