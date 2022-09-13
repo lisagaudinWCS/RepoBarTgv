@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Subscribe from "./pages/Subscribe";
 
 import "./App.css";
+import Connexion from "./pages/Connexion";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/forms" element={<Form />} />
           <Route path="/subscribe" element={<Subscribe />} />
+          <Route path="/login" element={<Connexion />} />
         </Routes>
       </div>
     </Router>
