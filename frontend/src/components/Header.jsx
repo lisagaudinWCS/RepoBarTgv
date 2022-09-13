@@ -15,16 +15,20 @@ export default function Header() {
       </div>
 
       <div className="connect">
-        <img
-          src="https://res.cloudinary.com/dbkscupri/image/upload/v1663000036/picto/client_nrxrmb.png"
-          alt="connection"
-        />
+        <Link to="/forms">
+          <img
+            src="https://res.cloudinary.com/dbkscupri/image/upload/v1663000036/picto/client_nrxrmb.png"
+            alt="connection"
+          />
+        </Link>
       </div>
       <div className="panier">
-        <img
-          src="https://res.cloudinary.com/dbkscupri/image/upload/v1662994788/headerP3/panier2_q3fq57.png"
-          alt="panier"
-        />
+        <Link to="/forms">
+          <img
+            src="https://res.cloudinary.com/dbkscupri/image/upload/v1662994788/headerP3/panier2_q3fq57.png"
+            alt="panier"
+          />
+        </Link>
       </div>
     </div>
   );
