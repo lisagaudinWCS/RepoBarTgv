@@ -1,11 +1,11 @@
-import FormCpmt from "../components/Form";
+import Form from "../components/Form";
 
-function Form() {
+function FormPage() {
   return (
     <div>
-      <FormCpmt />
+      <Form />
     </div>
   );
 }
 
-export default Form;
+export default FormPage;

@@ -21,14 +21,14 @@ class ShoplistElemManager extends AbstractManager {
 
   getAllShoplist() {
     return this.connection.query(
-      `SELECT shoplist.id AS shoplist_id, shoplist.order_number, shoplist.date, shoplist.status, shoplist.total_price, product.name, product.image, product.price, shoplist_elem.quantity FROM ${this.table} INNER JOIN shoplist ON shoplist.id=shoplist_elem.shoplist_id INNER JOIN product ON product.id=shoplist_elem.product_id`
+      `SELECT * FROM ${this.table} INNER JOIN shoplist ON shoplist.id=shoplist_elem.shoplist_id INNER JOIN product ON product.id=shoplist_elem.product_id`
     );
   }
 
-  getShoplistByShoplistId(item) {
+  getShoplistByShoplistId(id) {
     return this.connection.query(
-      `SELECT shoplist.id AS shoplist_id, shoplist.order_number, shoplist.date, shoplist.status, shoplist.total_price, product.name, product.image, product.price, shoplist_elem.quantity FROM ${this.table} INNER JOIN shoplist ON shoplist.id=shoplist_elem.shoplist_id INNER JOIN product ON product.id=shoplist_elem.product_id where shoplist.id= ?`,
-      [item.shoplist.id]
+      `SELECT * FROM ${this.table} INNER JOIN shoplist ON shoplist.id=shoplist_elem.shoplist_id INNER JOIN product ON product.id=shoplist_elem.product_id WHERE shoplist_id= ?`,
+      [id]
     );
   }
 }
