@@ -15,7 +15,7 @@ export default function Header() {
       </div>
 
       <div className="connect">
-        <Link to="/forms">
+        <Link to="/login">
           <img
             src="https://res.cloudinary.com/dbkscupri/image/upload/v1663142363/picto/client_hyvsl4.png"
             alt="connection"
