@@ -1,7 +1,7 @@
 ul.navbar-ul {
   display: flex;
   justify-content: space-evenly;
-  background-color: #5579e5;
+  background-color: #0075a1;
   list-style-type: none;
   position: fixed;
   z-index: 7;
