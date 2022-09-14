@@ -1,28 +1,27 @@
-.footer {
+.blocFooter {
   display: flex;
-  justify-content: space space-evenly;
+  width: 100%;
+}
+
+.footer {
+  /* display: flex; */
   background-color: black;
-  width: 1255px;
-  height: 280px;
-  top: 14.4rem;
-  position: relative;
+  /* width: 209.8vh; */
+  width: 100%;
+  height: 50vh;
+  top: 493.5vh;
+  left: 0vh;
+  position: absolute;
 }
 
 .sncfConnect {
-  top: 13rem;
-  left: 40rem;
-  position: absolute;
 }
 .sncfConnect a {
   color: white;
 }
 
 .logoSncf {
-  margin-left: 25rem;
-  margin-top: 7rem;
-  position: absolute;
 }
 
 .logoSncf img {
-  width: 5rem;
 }

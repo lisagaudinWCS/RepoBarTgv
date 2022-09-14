@@ -2,40 +2,37 @@
   display: flex;
   justify-content: space-between;
   background-color: white;
-  width: 1255px;
-  height: 75px;
+  width: 100%;
+  height: 15%;
   position: fixed;
   z-index: 5;
-  top: 0rem;
+  top: 0vh;
+  left: 0vh;
 }
 
 .inoui {
+  height: 100%;
   margin-left: 45%;
-  margin-top: 0.32rem;
 }
 
 .inoui img {
-  height: 60px;
-  width: 120px;
+  height: 100%;
 }
 
 .connect {
-  margin-left: 23rem;
+  height: 50%;
+  margin-top: 2%;
+  margin-left: 25%;
 }
 
 .connect img {
-  height: 33px;
-  width: 30px;
-  position: fixed;
-  z-index: 2;
-  top: 1.22rem;
+  height: 100%;
 }
 .panier {
-  margin-top: 1.20rem;
-  margin-right: 2.7rem;
- 
+  height: 52%;
+  margin-top: 2%;
+  margin-right: 4%;
 }
 .panier img {
-  height: 35px;
-  width: 30px;
+  height: 100%;
 }
