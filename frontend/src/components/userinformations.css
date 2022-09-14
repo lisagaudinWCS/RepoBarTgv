@@ -5,12 +5,13 @@
 }
 .profile-container {
   display: flex;
+  justify-content: space-between;
 }
 .avatar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 25px 5px;
+  border: 1px solid blue;
 }
 .avatar {
   border-radius: 50%;
@@ -28,14 +29,14 @@
   width: 30vh;
   margin-top: 15px;
 }
-.info-container {
-  display: flex;
+.user-input-box {
+    border: 1px solid red;
+    width: 70%;
 }
 .change-info-btn {
   padding: 5px;
-  width: 40%;
+  width: 100%;
   text-align: center;
-  background-color: white;
 }
 .change-info-btn:hover {
   background-color: #0075a1;
@@ -43,4 +44,5 @@
 .user-input,
 .user-label {
   display: flex;
+  justify-content: left;
 }
