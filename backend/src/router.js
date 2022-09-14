@@ -20,6 +20,13 @@ router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);
 router.delete("/items/:id", itemControllers.destroy);
 
+const clientControllers = require("./controllers/clientControllers");
+
+router.get("/clients", clientControllers.browse);
+router.get("/clients/:id", clientControllers.read);
+router.put("/clients/:id", clientControllers.edit);
+router.post("/clients", clientControllers.add);
+router.delete("/clients/:id", clientControllers.destroy);
 router.get("/forms", formControllers.getAll);
 router.get("/forms/:id", formControllers.getById);
 router.post("/forms", formControllers.add);
