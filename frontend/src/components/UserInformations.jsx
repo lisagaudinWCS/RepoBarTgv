@@ -27,7 +27,7 @@ export default function UserInformations() {
     <div>
       <div className="avatar-container">
         <img
-          src="#"
+          src="https://res.cloudinary.com/dbkscupri/image/upload/v1663156807/picto/default-avatar_jw3oxv.png"
           alt="avatar"
           className="avatar"
           //   alt={`avatar of ${client.name}`}
@@ -37,7 +37,7 @@ export default function UserInformations() {
         </button>
       </div>
       <div className="info-container" />
-      <p className="chang-info-btn">MODIFIER MES INFOS ✏️</p>
+      <p className="change-info-btn">MODIFIER MES INFOS ✏️</p>
       <label htmlFor="lastname">Nom :</label>
       <input type="text" id="lastname" value={clientInfos.lastname} disabled />
       <br />
