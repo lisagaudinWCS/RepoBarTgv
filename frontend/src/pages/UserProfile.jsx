@@ -1,4 +1,4 @@
-import UserInformations from "@components/UserInformations";
+import UserInformations from "../components/UserInformations";
 
 export default function UserProfile() {
   return (
