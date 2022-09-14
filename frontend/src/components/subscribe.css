@@ -1,0 +1,43 @@
+.container {
+  background-color: white;
+}
+.subscribe-title-red {
+  background-color: #980c35;
+  padding: 15px;
+  color: white;
+}
+.required-field {
+  color: red;
+}
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.subscribe-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  /* margin: auto; */
+}
+.subscribe-box {
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.subscribe-btn {
+  background-color: #0075a1;
+  color: white;
+  padding: 0px 25px;
+  border-radius: 25px;
+  height: 25px;
+  border: none;
+}
+.parttwo {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.blabla {
+  margin-right: 15px;
+}
