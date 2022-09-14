@@ -1,6 +1,11 @@
-/* .profile-container {
-    display: flex;
-} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.profile-container {
+  display: flex;
+}
 .avatar-container {
   display: flex;
   flex-direction: column;
@@ -23,7 +28,9 @@
   width: 30vh;
   margin-top: 15px;
 }
-
+.info-container {
+  display: flex;
+}
 .change-info-btn {
   padding: 5px;
   width: 40%;
@@ -32,4 +39,8 @@
 }
 .change-info-btn:hover {
   background-color: #0075a1;
+}
+.user-input,
+.user-label {
+  display: flex;
 }

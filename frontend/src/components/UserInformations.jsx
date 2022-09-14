@@ -36,38 +36,65 @@ export default function UserInformations() {
           Modifier image
         </button>
       </div>
-      <div className="info-container" />
-      <p className="change-info-btn">MODIFIER MES INFOS ✏️</p>
-      <label htmlFor="lastname">Nom :</label>
-      <input type="text" id="lastname" value={clientInfos.lastname} disabled />
-      <br />
-      <label htmlFor="firstname">Prénom :</label>
-      <input
-        type="text"
-        id="firstname"
-        value={clientInfos.firstname}
-        disabled
-      />
-      <br />
-      <label htmlFor="birth_date">Date de naissance :</label>
-      <input
-        type="date"
-        id="birth_date"
-        value={clientInfos.birth_date}
-        disabled
-      />
-      <br />
-      <label htmlFor="email">E-mail :</label>
-      <input type="email" id="email" value={clientInfos.email} disabled />
-      <br />
-      <label htmlFor="pass">Mot de passe :</label>
-      <input
-        type="password"
-        id="password"
-        value={clientInfos.password}
-        disabled
-      />
-      <br />
+      {/* <div className="info-container" /> */}
+      <div className="user-input-box">
+        <p className="change-info-btn">MODIFIER MES INFOS ✏️</p>
+
+        <label className="user-label" htmlFor="lastname">
+          Nom :
+        </label>
+        <input
+          className="user-input"
+          type="text"
+          id="lastname"
+          value={clientInfos.lastname}
+          disabled
+        />
+        <br />
+        <label className="user-label" htmlFor="firstname">
+          Prénom :
+        </label>
+        <input
+          className="user-input"
+          type="text"
+          id="firstname"
+          value={clientInfos.firstname}
+          disabled
+        />
+        <br />
+        <label className="user-label" htmlFor="birth_date">
+          Date de naissance :
+        </label>
+        <input
+          className="user-input"
+          type="date"
+          id="birth_date"
+          value={clientInfos.birth_date}
+          disabled
+        />
+        <br />
+        <label className="user-label" htmlFor="email">
+          E-mail :
+        </label>
+        <input
+          className="user-input"
+          type="email"
+          id="email"
+          value={clientInfos.email}
+          disabled
+        />
+        <br />
+        <label className="user-label" htmlFor="pass">
+          Mot de passe :
+        </label>
+        <input
+          type="password"
+          id="password"
+          value={clientInfos.password}
+          disabled
+        />
+        <br />
+      </div>
     </div>
   );
 }
