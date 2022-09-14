@@ -8,6 +8,7 @@ const ticketControllers = require("./controllers/ticketControllers");
 const trainControllers = require("./controllers/trainControllers");
 const trainsTicketsClientsControllers = require("./controllers/trainTicketControllers");
 const shoplistControllers = require("./controllers/shoplistControllers");
+const shoplistElemControllers = require("./controllers/shopListElemControllers");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -26,6 +27,13 @@ router.delete("/items/:id", itemControllers.destroy);
 router.get("/forms", formControllers.getAll);
 router.get("/forms/:id", formControllers.getById);
 router.post("/forms", formControllers.add);
+
+router.get("/shoplistelem", shoplistElemControllers.getAllShoplist);
+router.get(
+  "/shoplistelem/:id",
+  shoplistElemControllers.getShoplistByShoplistId
+);
+
 /** ***************************route products******* */
 const productControllers = require("./controllers/productControllers");
 
