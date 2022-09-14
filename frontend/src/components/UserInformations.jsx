@@ -60,8 +60,13 @@ export default function UserInformations() {
       <label htmlFor="email">E-mail :</label>
       <input type="email" id="email" value={clientInfos.email} disabled />
       <br />
-      <label htmlFor="password">Mot de passe :</label>
-      <input type="pass" id="password" value={clientInfos.password} disabled />
+      <label htmlFor="pass">Mot de passe :</label>
+      <input
+        type="password"
+        id="password"
+        value={clientInfos.password}
+        disabled
+      />
       <br />
     </div>
   );
