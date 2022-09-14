@@ -11,7 +11,7 @@
 
 .inoui {
   margin-left: 45%;
-  margin-bottom: 1rem;
+  margin-top: 0.32rem;
 }
 
 .inoui img {
@@ -19,21 +19,23 @@
   width: 113px;
 }
 
-.panier {
-  margin-top: 1rem;
-  margin-right: 2rem;
-}
-.panier img {
-  height: 40px;
-  width: 50px;
-}
-
 .connect {
-  margin-left: 15rem;
+  margin-left: 23rem;
 }
 
 .connect img {
+  height: 33px;
+  width: 30px;
   position: fixed;
   z-index: 2;
-  top: -1.01rem;
+  top: 1.22rem;
+}
+.panier {
+  margin-top: 1.20rem;
+  margin-right: 2.7rem;
+ 
+}
+.panier img {
+  height: 35px;
+  width: 30px;
 }

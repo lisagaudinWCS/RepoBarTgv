@@ -8,7 +8,7 @@ export default function Header() {
       <div className="inoui">
         <Link to="/forms">
           <img
-            src="https://res.cloudinary.com/dbkscupri/image/upload/v1662994211/headerP3/inoui_irksbk.png"
+            src="https://res.cloudinary.com/dbkscupri/image/upload/v1663142605/headerP3/Logo-TGV-inOUI-Fd_Blanc_pb6yxt.jpg"
             alt="TGV Inoui"
           />
         </Link>
@@ -17,7 +17,7 @@ export default function Header() {
       <div className="connect">
         <Link to="/forms">
           <img
-            src="https://res.cloudinary.com/dbkscupri/image/upload/v1663000036/picto/client_nrxrmb.png"
+            src="https://res.cloudinary.com/dbkscupri/image/upload/v1663142363/picto/client_hyvsl4.png"
             alt="connection"
           />
         </Link>
@@ -25,7 +25,7 @@ export default function Header() {
       <div className="panier">
         <Link to="/forms">
           <img
-            src="https://res.cloudinary.com/dbkscupri/image/upload/v1662994788/headerP3/panier2_q3fq57.png"
+            src="https://res.cloudinary.com/dbkscupri/image/upload/v1663142627/headerP3/panier_k34kmj.png"
             alt="panier"
           />
         </Link>
