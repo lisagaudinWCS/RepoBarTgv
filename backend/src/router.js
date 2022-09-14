@@ -14,6 +14,7 @@ router.get("/ticket/:id", ticketControllers.read);
 router.get("/train", trainControllers.browse);
 router.get("/train/:id", trainControllers.read);
 router.get("/trainsTicketsClients", trainsTicketsClientsControllers.getAll);
+// router.get("/trainsTicketsClients/:id", trainsTicketsClientsControllers.getById);
 
 router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);
