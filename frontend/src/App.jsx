@@ -1,9 +1,6 @@
-import React from "react";
-
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import HomePage from "@pages/HomePage";
-import TicketPage from "./pages/TicketPage";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Form from "./components/Form";
+import Home from "./pages/HomePage";
 import "./App.css";
 
 function App() {
@@ -11,8 +8,8 @@ function App() {
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/tickets" element={<TicketPage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/forms" element={<Form />} />
         </Routes>
       </div>
     </Router>
