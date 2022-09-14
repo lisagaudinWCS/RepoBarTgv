@@ -27,7 +27,7 @@ export default function UserInformations() {
     <div className="profile-container">
       <div className="avatar-container">
         <img
-          src="https://res.cloudinary.com/dbkscupri/image/upload/v1663156807/picto/default-avatar_jw3oxv.png"
+          src={clientInfos.avatar}
           alt="avatar"
           className="avatar"
           //   alt={`avatar of ${client.name}`}
