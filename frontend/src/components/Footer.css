@@ -4,24 +4,29 @@
 }
 
 .footer {
-  /* display: flex; */
+  display: flex;
+  flex-direction: column-reverse;
   background-color: black;
   /* width: 209.8vh; */
   width: 100%;
-  height: 50vh;
-  top: 493.5vh;
+  height: 100vh;
+  top: 425.5vh;
   left: 0vh;
-  position: absolute;
+  /* position: absolute; */
 }
 
-/* .sncfConnect {
+.sncfConnect {
+  margin-top: 20vh;
+  margin-left: 130vh;
+  margin-bottom: 10vh;
 }
 .sncfConnect a {
   color: white;
 }
 
 .logoSncf {
+  margin-left: 50vh;
 }
 
 .logoSncf img {
-} */
+}

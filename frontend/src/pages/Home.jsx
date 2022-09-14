@@ -11,13 +11,13 @@ export default function Home() {
       <div className="headerHome">
         <Header />
       </div>
-      <div className="ban">
+      <div className="banHome">
         <Ban />
       </div>
-      <div className="navBar">
+      <div className="navBarHome">
         <NavBar />
       </div>
-      <div className="productList">
+      <div className="productListHome">
         <ProductsList />
       </div>
       <div className="footerHome">
