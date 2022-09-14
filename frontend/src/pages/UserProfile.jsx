@@ -1,4 +1,5 @@
 import UserInformations from "../components/UserInformations";
+import "../components/userinformations.css";
 
 export default function UserProfile() {
   return (
@@ -8,7 +9,6 @@ export default function UserProfile() {
         <NavBar à personnaliser avec Trajet/Commande/Déconnexion */}
       {/* <UserImg /> */}
       <UserInformations />
-      <p>toto</p>
     </div>
   );
 }
