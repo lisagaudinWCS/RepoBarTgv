@@ -4,7 +4,7 @@ import ConnexionForm from "../components/ConnexionForm";
 function Connexion() {
   return (
     <div>
-      <h3 className="connexion-title-blue">CONNEXION</h3>
+      <h3 className="connexion-title-blue">Identification Client</h3>
       <ConnexionForm />
     </div>
   );

@@ -15,18 +15,29 @@
     display: flex;
     flex-direction: column;
     width: 30%;
-    /* margin: auto; */
+    margin: auto;
 }
   .connexion-box {
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 10px;
 }
-  .connexion-btn {
+.login-btn {
     background-color: #0075a1;
     color: white;
     padding: 0px 25px;
     border-radius: 25px;
     height: 25px;
     border: none;
-}
+  }
+  .login-submit {
+    display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  }
+  .forget-pass-link {
+    color: #0075a1;
+    font-style: italic;
+    font-size: 12px;
+    text-decoration: none;
+  }

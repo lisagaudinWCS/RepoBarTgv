@@ -1,3 +1,7 @@
+
+.container {
+  background-color: white;
+}
 .subscribe-title-red {
   background-color: #980c35;
   padding: 15px;
@@ -34,4 +38,7 @@
   display: flex;
 flex-direction: row-reverse;
 align-items: center;
+}
+.blabla {
+  margin-right: 15px;
 }

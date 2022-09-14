@@ -109,7 +109,7 @@ export default function SubscribeForm() {
         <button className="subscribe-btn" type="submit" id="submit-button">
           S'inscrire
         </button>
-        <p>
+        <p className="blabla">
           Les champs <span className="required-field">*</span> sont
           obligatoires.
         </p>
