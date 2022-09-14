@@ -9,7 +9,7 @@ export default function Footer() {
       </div>
       <div className="logoSncf">
         <img
-          src="https://res.cloudinary.com/dbkscupri/image/upload/v1663078685/logo%20sncfp3/logoSncf_o3onud.png"
+          src="https://res.cloudinary.com/dbkscupri/image/upload/v1663145083/logo%20sncfp3/logoSncf_uhcg4l.png"
           alt="logo sncf"
         />
       </div>
