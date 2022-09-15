@@ -23,6 +23,24 @@ export default function ChangeInfosCmpnt() {
   };
   useEffect(() => getClientInfos(), []);
 
+  // function UpdateClients() {
+  //   const [updatedAt, setUpdatedAt] = useState({
+  //         // client_number: 101,
+  //   lastname: "",
+  //   firstname: "",
+  //   email: "",
+  //   password: "",
+  //   avatar: "",
+  //   birth_date: "",
+  //   isAdmin: 0,
+  //   });
+
+  //   useEffect(() => {
+  //       axios
+  //       .put('https://reqres.in/api/articles/1', ...updatedAt)
+  //       .then(response => setUpdatedAt(response.data.updatedAt));
+  //   }, []);
+
   return (
     <>
       <h1 className="profile-title">Mon profil</h1>
