@@ -1,0 +1,39 @@
+* {
+  background-color: rgb(246, 229, 206);
+}
+.ticket-container {
+  border-color: aliceblue;
+}
+.DetalsTravel {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  padding: auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 400px;
+  height: 110px;
+  margin: 50px;
+}
+
+.travelDate {
+  color: rgb(255, 0, 0);
+}
+
+.TrainNumber {
+  color: rgb(0, 200, 255);
+}
+.DetalsTrain {
+  background-color: #fff;
+  margin: 30px;
+  width: 550px;
+  height: 110px;
+}
+.DepartureTime {
+  background-color: #fff;
+  color: rgb(0, 200, 255);
+  margin: auto;
+}
+.p {
+  color: black;
+}

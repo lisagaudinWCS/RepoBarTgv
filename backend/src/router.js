@@ -10,8 +10,8 @@ const trainsTicketsClientsControllers = require("./controllers/trainTicketContro
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
-router.get("/ticket", ticketControllers.browse);
-router.get("/ticket/:id", ticketControllers.read);
+router.get("/tickets", ticketControllers.browse);
+router.get("/tickets/:id", ticketControllers.read);
 router.get("/train", trainControllers.browse);
 router.get("/train/:id", trainControllers.read);
 router.get("/trainsTicketsClients", trainsTicketsClientsControllers.getAll);

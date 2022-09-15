@@ -8,7 +8,7 @@ export default function TicketsList() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/tickets`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/trainsTicketsClients`)
       .then((response) => response.data)
       .then((data) => setTickets(data));
   }, []);

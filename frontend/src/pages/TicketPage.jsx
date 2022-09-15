@@ -1,5 +1,5 @@
 // import Ticket from "@components/Tickets";
-// import TicketsList from "@components/TicketsList";
+import TicketsList from "@components/TicketsList";
 // import axios from "axios";
 // import { useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";
@@ -18,8 +18,8 @@ export default function TicketPage() {
 
   return (
     <>
-      <h2>Page tickets voyageurs</h2>
-      {/* <TicketsList /> */}
+      <h2>Mes Trajets & Commandes</h2>
+      <TicketsList />
     </>
   );
 }
