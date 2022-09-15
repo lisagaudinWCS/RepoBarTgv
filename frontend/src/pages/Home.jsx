@@ -1,4 +1,6 @@
-import ProductsList from "@components/ProductsList";
+import CategoryListForm from "@components/CategoryListForm";
+import CategoryListCold from "@components/CategoryListCold";
+
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import NavBar from "@components/NavBar";
@@ -18,7 +20,20 @@ export default function Home() {
         <NavBar />
       </div>
       <div className="productListHome">
-        <ProductsList />
+        <div className="formules">
+          <h2>coucou</h2>
+        </div>
+        <div>
+          {" "}
+          <CategoryListForm />{" "}
+        </div>
+        <div className="platsFroids">
+          <h2>Plats Froids</h2>
+        </div>
+        <div>
+          <CategoryListCold />{" "}
+        </div>
+        <div />
       </div>
       <div className="footerHome">
         <Footer />
