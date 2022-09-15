@@ -15,12 +15,19 @@ li a {
   font-size: 4.44vh;
   list-style-type: none;
   text-decoration: none;
-  color: #0075a1;
+  /* color: #0075a1; */
+  color: white;
   background-color: #f4e9dc;
+  background-color: #0075a1;
 }
-a:active {
+li a:active {
   color: white;
   background-color: #0075a1;
+  background-color: #f4e9dc;
+}
+li a:hover {
+  color: #0075a1;
+  background-color: white;
 }
 /* li {
   background-color: none;
