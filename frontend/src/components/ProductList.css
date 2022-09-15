@@ -1,12 +1,17 @@
 .leon {
+  background-color: #f4e9dc;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  border: 2px solid rgb(88, 25, 198);
+  /* border: 2px solid rgb(88, 25, 198); */
+  position: relative;
+  top: 47.1vh;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (max-width: 373px) {
   .leon {
-    height: 2800px;
+    height: 100%;
   }
 }
