@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.profile-container {
+  display: flex;
+}
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px 5px;
+}
+.avatar {
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 20vh;
+  margin: auto;
+}
+.avatar-btn {
+  background-color: #0075a1;
+  color: white;
+  padding: 0px 25px;
+  border-radius: 25px;
+  height: 25px;
+  border: none;
+  width: 30vh;
+  margin-top: 15px;
+}
+.info-container {
+  display: flex;
+}
+.change-info-btn {
+  padding: 5px;
+  width: 40%;
+  text-align: center;
+  background-color: white;
+}
+.change-info-btn:hover {
+  background-color: #0075a1;
+}
+.user-input,
+.user-label {
+  display: flex;
+}

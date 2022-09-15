@@ -1,9 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import TicketPage from "@pages/TicketPage";
+// import TicketPage from "@pages/TicketPage";
 
 import Form from "./components/Form";
-import Home from "./pages/HomePage";
+import Home from "./pages/Home";
+import Subscribe from "./pages/Subscribe";
+
 import "./App.css";
+import UserProfile from "./pages/UserProfile";
+import Connexion from "./pages/Connexion";
 
 function App() {
   return (
@@ -12,7 +16,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/forms" element={<Form />} />
-          <Route path="/tickets" element={<TicketPage />} />
+          <Route path="/profil/:id" element={<UserProfile />} />
+          <Route path="/subscribe" element={<Subscribe />} />
+          <Route path="/login" element={<Connexion />} />
         </Routes>
       </div>
     </Router>
