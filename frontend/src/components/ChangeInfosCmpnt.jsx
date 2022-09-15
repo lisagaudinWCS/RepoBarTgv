@@ -30,9 +30,9 @@ export default function ChangeInfosCmpnt() {
         <div className="avatar-container">
           <img
             src={clientInfos.avatar}
-            alt="avatar"
+            // alt="avatar"
             className="avatar"
-            //   alt={`avatar of ${client.name}`}
+            alt={`avatar of ${clientInfos.name}`}
           />
           <button type="button" className="avatar-btn" id="avatar-btn">
             Modifier image

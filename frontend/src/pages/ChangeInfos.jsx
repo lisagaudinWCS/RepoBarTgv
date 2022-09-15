@@ -1,4 +1,5 @@
 import ChangeInfosCmpnt from "../components/ChangeInfosCmpnt";
+import "../components/userinformations.css";
 
 export default function ChangeInfos() {
   return (
