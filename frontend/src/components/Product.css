@@ -58,7 +58,7 @@
 .listCat h2 {
   display: flex;
   font-size: 220%;
-  margin: .5vh;
+  margin: 0.5vh;
   justify-content: center;
   color: #0075a1;
 }
@@ -71,7 +71,7 @@
 .name {
   display: flex;
   justify-content: center;
-  margin-top: .5vh;
+  margin-top: 0.5vh;
   font-size: 180%;
 }
 .name h3 {
@@ -85,71 +85,93 @@
   text-align: center;
   font-size: 150%;
 }
+/*******************************************************/
 @media screen and (max-width: 373px) {
-  .listPrice img {
-    width: 80px;
-    height: 85px;
-  }
-
   .listContainer {
     display: flex;
     flex-direction: column;
-    border: 2px solid rgb(208, 27, 57);
-    width: 99px;
-    height: 238px;
-    margin: 5px 5px 5px 10px;
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 90%;
+    margin-right: 40%;
+
+    background-color: white;
+  }
+  .listPrice {
+    display: flex;
+    width: 20vh;
+    height: 20.5vh;
+    /* border: 2px solid rgb(200, 6, 6); */
+  }
+
+  .listPrice img {
+    width: 20vh;
+    height: 20vh;
+  }
+
+  .listProducts {
+    display: flex;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    width: 24%;
   }
   .listCat {
     display: flex;
     justify-content: center;
   }
 
-  .listPrice {
-    width: 80px;
-    height: 85px;
-    margin: auto;
-    border: 2px solid rgb(200, 6, 6);
-  }
-
   .listUn {
+    display: flex;
+    justify-content: space-around;
     margin-top: auto;
+    margin-bottom: 5px;
   }
 
   .listUn img {
     display: flex;
     align-items: center;
-    width: 10px;
-    height: 10px;
-    margin-left: 5px;
+    width: 3vh;
+    margin-left: 10px;
   }
-  .listProducts {
-    height: 30px;
-  }
-  .listDescription {
-    height: 100px;
-  }
+
   .price {
-    font-size: 90%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 50%;
     font-weight: bolder;
     color: #0075a1;
   }
 
   .listCat h2 {
-    font-size: small;
+    display: flex;
+    font-size: 20%;
+    margin: 0.5vh;
+    justify-content: center;
+    color: #0075a1;
+  }
+  .listName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .name {
-    font-size: x-small;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5vh;
+    font-size: 80%;
   }
   .name h3 {
     text-align: center;
+    font-size: 80%;
   }
   .decrip {
-    width: 99px;
-    font-size: 60%;
-  }
-  .listCat {
-    height: 250px;
-    width: 99px;
+    display: none;
+    justify-content: center;
+    width: 80%;
+    margin: 2vh;
+    text-align: center;
+    font-size: 50%;
   }
 }

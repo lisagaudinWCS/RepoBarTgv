@@ -36,3 +36,12 @@
 .panier img {
   height: 100%;
 }
+
+@media screen and (max-width: 373px) {
+  .header {
+    display: none;
+    background-color: white;
+
+    position: fixed;
+  }
+}

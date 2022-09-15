@@ -9,3 +9,7 @@
   top: 7vh;
   left: 0vh;
 }
+@media screen and (max-width: 373px) {
+  .Cloud img {
+    display: none;
+  }

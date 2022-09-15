@@ -8,7 +8,8 @@ function ProductsList() {
 
   const getProducts = () => {
     axios
-      .get("http://localhost:5000/products-details")
+      .get("http://localhost:5000/categories/1")
+      // .get("http://localhost:5000/products-details")
       .then((response) => response.data)
       .then((data) => setProducts(data));
   };

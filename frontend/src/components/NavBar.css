@@ -26,3 +26,12 @@ a:active {
   background-color: none;
   
 } */
+
+@media screen and (max-width: 373px) {
+  ul.navbar-ul {
+    display: none;
+    justify-content: space-evenly;
+    background-color: #0075a1;
+    list-style-type: none;
+  }
+}
