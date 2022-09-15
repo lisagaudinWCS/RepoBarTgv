@@ -25,6 +25,24 @@ body {
   height: 100px;
 }
 
+.formules {
+  display: flex;
+  flex-direction: column;
+}
+
+.formules .art {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 50vh;
+
+  color: #0075a1;
+}
+
+.productListHome h2 {
+  margin-left: 6.5vh;
+  font-size: 190%;
+  color: #0075a1;
+}
 @media screen and (max-width: 373px) {
   .containerHome {
     display: flex;

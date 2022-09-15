@@ -20,7 +20,7 @@ export default function NavBar() {
             <Link to="/toto">Desserts</Link>
           </li>
           <li>
-            <Link to="/tata">Boissons</Link>
+            <Link to="/drinks">Boissons</Link>
           </li>
         </ul>
       </nav>
