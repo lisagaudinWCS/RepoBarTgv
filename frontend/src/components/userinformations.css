@@ -24,6 +24,7 @@
   border-radius: 50%;
   border: 1px solid black;
   margin: auto;
+  width: 30vh;
 }
 .avatar-btn {
   background-color: #0075a1;
