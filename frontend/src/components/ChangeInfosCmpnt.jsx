@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-export default function UserInformations() {
+export default function ChangeInfosCmpnt() {
   const { id } = useParams();
   const [clientInfos, setClientInfos] = useState({
     // client_number: 101,
@@ -40,9 +40,9 @@ export default function UserInformations() {
         </div>
         {/* <div className="info-container" /> */}
         <div className="user-input-box">
-          <button type="button" className="change-info-btn">
+          {/* <button type="button" className="change-info-btn">
             MODIFIER MES INFOS ✏️
-          </button>
+          </button> */}
 
           <label className="user-label" htmlFor="lastname">
             Nom :
@@ -52,7 +52,7 @@ export default function UserInformations() {
             type="text"
             id="lastname"
             value={clientInfos.lastname}
-            disabled
+            required
           />
           <br />
           <label className="user-label" htmlFor="firstname">
@@ -63,7 +63,7 @@ export default function UserInformations() {
             type="text"
             id="firstname"
             value={clientInfos.firstname}
-            disabled
+            required
           />
           <br />
           <label className="user-label" htmlFor="birth_date">
@@ -74,7 +74,7 @@ export default function UserInformations() {
             type="date"
             id="birth_date"
             value={clientInfos.birth_date}
-            disabled
+            required
           />
           <br />
           <label className="user-label" htmlFor="email">
@@ -85,7 +85,7 @@ export default function UserInformations() {
             type="email"
             id="email"
             value={clientInfos.email}
-            disabled
+            required
           />
           <br />
           <label className="user-label" htmlFor="pass">
@@ -95,9 +95,18 @@ export default function UserInformations() {
             type="password"
             id="password"
             value={clientInfos.password}
-            disabled
+            required
           />
           <br />
+          <label className="user-label" htmlFor="pass">
+            Confirmer mot de passe :
+          </label>
+          <input
+            type="password"
+            id="c-password"
+            value={clientInfos.password}
+            required
+          />
         </div>
       </div>
     </>
