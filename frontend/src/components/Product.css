@@ -90,7 +90,7 @@
   font-size: 150%;
 }
 /*******************************************************/
-@media screen and (max-width: 373px) {
+@media screen and (max-width: 390px) {
   .listContainer {
     display: flex;
     flex-direction: column;

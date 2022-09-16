@@ -37,7 +37,7 @@
   height: 100%;
 }
 
-@media screen and (max-width: 373px) {
+@media screen and (max-width: 390px) {
   .header {
     display: flex;
     background-color: white;
