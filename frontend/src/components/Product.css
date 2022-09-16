@@ -88,6 +88,7 @@
 }
 /*******************************************************/
 @media screen and (max-width: 373px) {
+  
   .listContainer {
     display: flex;
     flex-direction: column;
@@ -100,14 +101,15 @@
   }
   .listPrice {
     display: flex;
+    justify-content: center;
     width: 20vh;
-    height: 20.5vh;
+    height: 10.5vh;
     /* border: 2px solid rgb(200, 6, 6); */
   }
 
   .listPrice img {
-    width: 20vh;
-    height: 20vh;
+    width: 7.5vh;
+    height: 7.5vh;
   }
 
   .listProducts {
@@ -132,8 +134,9 @@
   .listUn img {
     display: flex;
     align-items: center;
-    width: 3vh;
-    margin-left: 10px;
+    width: 1vh;
+    margin-right: 1vh;
+    margin-bottom: 2vh;
   }
 
   .price {
@@ -145,8 +148,8 @@
   }
 
   .listCat h2 {
-    display: flex;
-    font-size: 20%;
+    display: none;
+    font-size: 10%;
     margin: 0.5vh;
     justify-content: center;
     color: #0075a1;
@@ -160,12 +163,13 @@
   .name {
     display: flex;
     justify-content: center;
-    margin-top: 0.5vh;
-    font-size: 80%;
+    margin-top: 0.0vh;
+    margin-bottom: 1vh;
+    font-size: 70%;
   }
   .name h3 {
     text-align: center;
-    font-size: 80%;
+    font-size: 70%;
   }
   .decrip {
     display: none;

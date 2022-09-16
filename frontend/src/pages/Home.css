@@ -45,6 +45,7 @@ body {
 }
 @media screen and (max-width: 373px) {
   .containerHome {
+    height: 150vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -53,13 +54,20 @@ body {
   }
 
   .productListHome {
+    top: 0vh;
     width: 100%;
-    left: ;
+    font-size: 70%;
   }
-
+  .productListHome h2{
+    margin-bottom: 1vh;
+  }
   .footerHome {
     display: none;
     width: 100%;
     height: 100px;
   }
+.formules{
+  display: none;
+ 
+}
 }
