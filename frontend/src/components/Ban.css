@@ -11,6 +11,7 @@
 }
 @media screen and (max-width: 373px) {
   .Cloud img {
-    display: none;
+    display: flex;
+    height: 10%;
   }
 }

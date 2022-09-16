@@ -28,10 +28,12 @@
   margin-left: 0%;
   margin-bottom: 5%;
   width: 24%;
+  /* background-color: blueviolet; */
 }
 .listCat {
   display: flex;
   justify-content: center;
+  /* background-color: blue; */
 }
 
 .listUn {
@@ -44,7 +46,7 @@
 .listUn img {
   display: flex;
   align-items: center;
-  width: 3vh;
+  width: 7vh;
   margin-left: 10px;
 }
 
@@ -78,49 +80,50 @@
 .name h3 {
   text-align: center;
 }
+
 .decrip {
   display: flex;
-  justify-content: center;
-  width: 80%;
-  margin: 2vh;
+  justify-content: center; /*********************************************************/
+  width: 70%;
+  margin: 2vh 2vh 2vh 6vh;
   text-align: center;
   font-size: 150%;
 }
 /*******************************************************/
 @media screen and (max-width: 373px) {
-  
   .listContainer {
     display: flex;
     flex-direction: column;
     /* border: 2px solid black; */
     width: 100%;
     height: 90%;
-    margin-right: 40%;
-
     background-color: white;
   }
   .listPrice {
+    /*dimensions cartes*/
     display: flex;
     justify-content: center;
-    width: 20vh;
-    height: 10.5vh;
+    width: 30vh;
+    height: 13vh;
     /* border: 2px solid rgb(200, 6, 6); */
   }
 
   .listPrice img {
-    width: 7.5vh;
-    height: 7.5vh;
+    /*dimensions images dans cartes */
+    width: 14.1vh;
+    height: 12.5vh;
   }
 
   .listProducts {
+    /* dimensions cartes   */
     display: flex;
     margin-right: 10%;
     margin-left: 10%;
     margin-bottom: 5%;
-    width: 24%;
+    width: 30%;
   }
   .listCat {
-    display: flex;
+    display: none;
     justify-content: center;
   }
 
@@ -134,7 +137,7 @@
   .listUn img {
     display: flex;
     align-items: center;
-    width: 1vh;
+    width: 3vh;
     margin-right: 1vh;
     margin-bottom: 2vh;
   }
@@ -142,7 +145,7 @@
   .price {
     display: flex;
     justify-content: space-around;
-    font-size: 50%;
+    font-size: 110%;
     font-weight: bolder;
     color: #0075a1;
   }
@@ -163,20 +166,14 @@
   .name {
     display: flex;
     justify-content: center;
-    margin-top: 0.0vh;
-    margin-bottom: 1vh;
-    font-size: 70%;
+    margin-top: 0vh;
+    margin-bottom: 2vh;
+    font-size: 100%;
   }
   .name h3 {
     text-align: center;
-    font-size: 70%;
   }
   .decrip {
     display: none;
-    justify-content: center;
-    width: 80%;
-    margin: 2vh;
-    text-align: center;
-    font-size: 50%;
   }
 }
