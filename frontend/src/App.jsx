@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Subscribe from "./pages/Subscribe";
+import ShoplistPage from "./pages/ShoplistPage";
 import Form from "./components/Form";
 import Home from "./pages/Home";
-import Subscribe from "./pages/Subscribe";
 
 import "./App.css";
 import UserProfile from "./pages/UserProfile";
@@ -17,6 +18,7 @@ function App() {
           <Route path="/profil/:id" element={<UserProfile />} />
           <Route path="/subscribe" element={<Subscribe />} />
           <Route path="/login" element={<Connexion />} />
+          <Route path="/shoplists/:id" element={<ShoplistPage />} />
         </Routes>
       </div>
     </Router>

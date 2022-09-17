@@ -1,0 +1,47 @@
+.box-container-shoplist {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+}
+
+.container-shoplist-element {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  padding: 10px;
+  width: 90%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.shoplist-description {
+  grid-column: 1/6;
+  text-align: center;
+  justify-self: left;
+}
+
+.shoplist-price {
+  grid-column: 7 /8;
+  justify-self: center;
+}
+
+.container-quantity {
+  grid-column: 9 /10;
+  align-self: center;
+  justify-self: center;
+}
+
+.show-quantity {
+  text-align: center;
+  width: 2vw;
+  border: none;
+}
+
+.ajust-quantity {
+  text-align: center;
+  padding: 1px;
+  width: 20px;
+  background-color: #0075a1;
+  border: #0075a1 1px solid;
+  border-radius: 3px;
+  color: white;
+}

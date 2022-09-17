@@ -8,6 +8,8 @@ const ticketControllers = require("./controllers/ticketControllers");
 const trainControllers = require("./controllers/trainControllers");
 const trainsTicketsClientsControllers = require("./controllers/trainTicketControllers");
 const categoryControllers = require("./controllers/categoryControllers");
+const shoplistControllers = require("./controllers/shoplistControllers");
+const shoplistElemControllers = require("./controllers/shopListElemControllers");
 
 router.get("/items", itemControllers.browse);
 router.get("/items/:id", itemControllers.read);
@@ -16,6 +18,9 @@ router.get("/ticket/:id", ticketControllers.read);
 router.get("/train", trainControllers.browse);
 router.get("/train/:id", trainControllers.read);
 router.get("/trainsTicketsClients", trainsTicketsClientsControllers.getAll);
+router.get("/shoplists", shoplistControllers.getAll);
+router.get("/shoplists/:id", shoplistControllers.getById);
+router.patch("/shoplists/:id", shoplistElemControllers.update);
 
 router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);
@@ -31,6 +36,13 @@ router.delete("/clients/:id", clientControllers.destroy);
 router.get("/forms", formControllers.getAll);
 router.get("/forms/:id", formControllers.getById);
 router.post("/forms", formControllers.add);
+
+router.get("/shoplistelem", shoplistElemControllers.getAllShoplist);
+router.get(
+  "/shoplistelem/:id",
+  shoplistElemControllers.getShoplistByShoplistId
+);
+
 /** ***************************route products******* */
 const productControllers = require("./controllers/productControllers");
 
