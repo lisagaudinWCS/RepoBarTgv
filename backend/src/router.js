@@ -21,6 +21,7 @@ router.get("/trainsTicketsClients", trainsTicketsClientsControllers.getAll);
 router.get("/shoplists", shoplistControllers.getAll);
 router.get("/shoplists/:id", shoplistControllers.getById);
 router.patch("/shoplists/:id", shoplistElemControllers.update);
+router.post("/shoplists", shoplistControllers.add);
 
 router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);

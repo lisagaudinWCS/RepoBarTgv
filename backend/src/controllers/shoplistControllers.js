@@ -28,6 +28,23 @@ const getById = (req, res) => {
     });
 };
 
+const add = (req, res) => {
+  const item = req.body;
+
+  // TODO validations (length, format...)
+
+  models.shoplist
+    .insert(item)
+    .then(([result]) => {
+      res.location(`/items/${result.insertId}`).sendStatus(201);
+      res.send(result.id);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const update = (req, res) => {
   const item = req.body;
 
@@ -54,4 +71,5 @@ module.exports = {
   getAll,
   getById,
   update,
+  add,
 };

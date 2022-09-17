@@ -1,44 +1,51 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
 
 import ShoplistDetails from "../components/ShoplistDetails";
 
 import "./shoplistPage.css";
 
 export default function ShoplistPage() {
-  const { id } = useParams();
-
-  const [shoplistElements, setShoplistElement] = useState("");
+  const savedCart = localStorage.getItem("cart");
+  const [cart, setCart] = useState(savedCart ? JSON.parse(savedCart) : []);
 
   useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/shoplistelem/${id}}`)
-      .then((response) => response.data)
-      .then((data) => setShoplistElement(data));
-  }, []);
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
-  // let totalPrice = 0;
+  const total = cart.reduce(
+    (acc, product) => acc + product.amount * product.price,
+    0
+  );
 
-  // // // eslint-disable-next-line no-unused-vars
-  // const shoplistPrice =
-  //   shoplistElements &&
-  //   shoplistElements.forEach((element) => {
-  //     totalPrice += parseFloat(element.price);
-  //     setTotal(totalPrice);
-  //   });
+  const handleAmount = (id, amount) => {
+    setCart(
+      cart.map((product) =>
+        product.id === id ? { ...product, amount } : product
+      )
+    );
+  };
 
   return (
     <div>
       <div className="container-title-menu">
-        <h1 className="title-menu-blue">Ma commande</h1>;
+        <h1 className="title-menu-blue">Ma commande</h1>
       </div>
       <h2>Mon panier</h2>
-      {shoplistElements &&
-        shoplistElements.map((element) => (
-          <ShoplistDetails key={element.id} shoplistElements={element} />
+      {cart &&
+        cart.map((element) => (
+          <ShoplistDetails
+            key={element.id}
+            id={element.id}
+            name={element.name}
+            price={element.price}
+            amount={element.amount}
+            handleAmount={handleAmount}
+          />
         ))}
-      {/* <TotalOrder total={total} /> */}
+      <button type="button" onClick={() => setCart([])}>
+        Vider Panier
+      </button>
+      <div>Total Commande : {total.toFixed(2)} €</div>
     </div>
   );
 }
