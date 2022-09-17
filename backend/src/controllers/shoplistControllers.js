@@ -28,7 +28,30 @@ const getById = (req, res) => {
     });
 };
 
+const update = (req, res) => {
+  const item = req.body;
+
+  // TODO validations (length, format...)
+
+  item.id = parseInt(req.params.id, 10);
+
+  models.item
+    .update(item)
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.sendStatus(404);
+      } else {
+        res.sendStatus(204);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 module.exports = {
   getAll,
   getById,
+  update,
 };

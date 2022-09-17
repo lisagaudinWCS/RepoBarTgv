@@ -17,6 +17,17 @@ export default function ShoplistPage() {
       .then((response) => response.data)
       .then((data) => setShoplistElement(data));
   }, []);
+
+  // let totalPrice = 0;
+
+  // // // eslint-disable-next-line no-unused-vars
+  // const shoplistPrice =
+  //   shoplistElements &&
+  //   shoplistElements.forEach((element) => {
+  //     totalPrice += parseFloat(element.price);
+  //     setTotal(totalPrice);
+  //   });
+
   return (
     <div>
       <div className="container-title-menu">
@@ -27,6 +38,7 @@ export default function ShoplistPage() {
         shoplistElements.map((element) => (
           <ShoplistDetails key={element.id} shoplistElements={element} />
         ))}
+      {/* <TotalOrder total={total} /> */}
     </div>
   );
 }

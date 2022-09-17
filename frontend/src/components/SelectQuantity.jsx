@@ -1,9 +1,6 @@
-import { useState } from "react";
-
 import "./shoplistDetails.css";
 
-export default function SelectQuantity() {
-  const [quantityValue, setQuantityValue] = useState(1);
+export default function SelectQuantity({ quantity, setQuantity }) {
   return (
     <div>
       <input
@@ -12,7 +9,7 @@ export default function SelectQuantity() {
         className="ajust-quantity"
         value="-"
         onClick={() => {
-          return quantityValue === 1 ? 1 : setQuantityValue(quantityValue - 1);
+          return quantity === 1 ? 1 : setQuantity(quantity - 1);
         }}
       />
       <input
@@ -20,7 +17,8 @@ export default function SelectQuantity() {
         id="result"
         type="text"
         min="1"
-        value={quantityValue}
+        value={quantity}
+        // onChange={(e) => setPriceProduct(e.target.value)}
         maxLength="2"
       />
       <input
@@ -29,7 +27,7 @@ export default function SelectQuantity() {
         type="button"
         value="+"
         onClick={() => {
-          setQuantityValue(quantityValue + 1);
+          setQuantity(quantity + 1);
         }}
       />
     </div>
