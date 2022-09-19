@@ -5,10 +5,10 @@ class ShoplistElemManager extends AbstractManager {
     super({ table: "shoplist_elem" });
   }
 
-  insert(item) {
+  insert(newShoplistId, item) {
     return this.connection.query(
       `insert into ${this.table} (shoplist_id, product_id, quantity) values (?, ?, ?)`,
-      [item.shoplist_id, item.product_id, item.quantity]
+      [newShoplistId, item.product_id, item.quantity]
     );
   }
 

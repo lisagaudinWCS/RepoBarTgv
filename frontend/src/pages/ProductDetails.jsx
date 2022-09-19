@@ -41,7 +41,7 @@ export default function ProductDetails() {
       <div>{productDetails.description}</div>
       <div>{productDetails.price} €</div>
       <div>
-        <img src={productDetails.image} alt="" />
+        <img src={productDetails.image} alt={productDetails.name} />
       </div>
       <button
         type="button"

@@ -12,7 +12,7 @@ export default function ShoplistDetails({
       <div className="container-shoplist-element">
         <p className="shoplist-description">{name}</p>
         <p className="shoplist-price">{price} €</p>
-        <div>
+        <div className="container-quantity">
           <input
             type="button"
             id="small"
@@ -22,7 +22,13 @@ export default function ShoplistDetails({
               return amount === 1 ? 1 : handleAmount(id, amount - 1);
             }}
           />
-          <input type="text" className="show-quantity" min="1" value={amount} />
+          <input
+            type="text"
+            className="show-quantity"
+            min="1"
+            value={amount}
+            readOnly
+          />
           <input
             id="more"
             className="ajust-quantity"

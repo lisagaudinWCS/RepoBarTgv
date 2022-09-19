@@ -18,6 +18,13 @@ class ShoplistManager extends AbstractManager {
     );
   }
 
+  insertProduct(newShoplistId, item) {
+    return this.connection.query(
+      `insert into shoplist_elem (shoplist_id, product_id, quantity) values (?, ?, ?)`,
+      [newShoplistId, item.id, item.amount]
+    );
+  }
+
   update(item) {
     return this.connection.query(
       `update ${this.table} set order_number = ?, total_price = ?, status = ?, date = ?, ticket_id = ? where id = ?`,

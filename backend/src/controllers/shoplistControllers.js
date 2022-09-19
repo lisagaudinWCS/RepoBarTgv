@@ -36,9 +36,15 @@ const add = (req, res) => {
   models.shoplist
     .insert(item)
     .then(([result]) => {
-      res.location(`/items/${result.insertId}`).sendStatus(201);
-      res.send(result.id);
+      res.location(`/shoplists/${result.insertId}`).sendStatus(201);
+      res.send(result.insertId);
+      // eslint-disable-next-line no-unused-expressions
+      item.cart &&
+        item.cart.map((product) =>
+          models.shoplist.insertProduct(result.insertId, product)
+        );
     })
+
     .catch((err) => {
       console.error(err);
       res.sendStatus(500);

@@ -9,6 +9,7 @@
   grid-template-columns: repeat(9, 1fr);
   padding: 10px;
   width: 90%;
+  height: 50px;
   border: 1px solid lightgray;
   border-radius: 5px;
 }
@@ -17,17 +18,20 @@
   grid-column: 1/6;
   text-align: center;
   justify-self: left;
+  align-self: center;
 }
 
 .shoplist-price {
   grid-column: 7 /8;
   justify-self: center;
+  align-self: center;
 }
 
 .container-quantity {
-  grid-column: 9 /10;
+  grid-column: 8 /9;
   align-self: center;
   justify-self: center;
+  align-self: center;
 }
 
 .show-quantity {

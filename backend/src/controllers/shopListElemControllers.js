@@ -1,5 +1,17 @@
 const models = require("../models");
 
+const getAll = (req, res) => {
+  models.shoplist_elem
+    .findAll()
+    .then(([rows]) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const getAllShoplist = (req, res) => {
   models.shoplist_elem
     .getAllShoplist()
@@ -34,7 +46,7 @@ const update = (req, res) => {
 
   item.id = parseInt(req.params.id, 10);
 
-  models.product
+  models.shoplist_elem
     .update(item)
     .then(([result]) => {
       if (result.affectedRows === 0) {
@@ -53,10 +65,10 @@ const insert = (req, res) => {
 
   // TODO validations (length, format...)
 
-  models.item
+  models.shoplist_elem
     .insert(item)
     .then(([result]) => {
-      res.location(`/items/${result.insertId}`).sendStatus(201);
+      res.location(`/shoplistelem/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -65,7 +77,7 @@ const insert = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.item
+  models.shoplist_elem
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
@@ -81,6 +93,7 @@ const destroy = (req, res) => {
 };
 
 module.exports = {
+  getAll,
   getAllShoplist,
   getShoplistByShoplistId,
   update,

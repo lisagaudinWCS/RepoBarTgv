@@ -4,3 +4,46 @@
   color: white;
   text-align: center;
 }
+
+.shoplist-title {
+  margin: 50px 0;
+  text-align: center;
+  color: #980c35;
+}
+
+.total-container {
+  display: grid;
+  margin-bottom: 50px;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.total-order {
+  grid-column: 6 / 7;
+}
+
+.total-number {
+  font-weight: 600;
+  grid-column: 7 / 8;
+}
+
+.container-button-shop {
+  display: flex;
+  justify-content: center;
+}
+
+.validate-button {
+  margin: 50px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  width: 150px;
+  cursor: pointer;
+  background-color: #0075a1;
+  color: white;
+  font-size: 12px;
+  height: 30px;
+}
+
+.validate-button:hover {
+  transition: 2s;
+  opacity: 70%;
+}
