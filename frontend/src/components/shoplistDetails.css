@@ -1,24 +1,43 @@
 .box-container-shoplist {
-  display: flex;
-  justify-content: space-around;
+  /* display: flex;
+  justify-content: space-around; */
   margin: 30px;
 }
 
 .container-shoplist-element {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  padding: 10px;
+  margin: auto;
   width: 90%;
-  height: 50px;
+  height: 81px;
   border: 1px solid lightgray;
   border-radius: 5px;
 }
 
-.shoplist-description {
-  grid-column: 1/6;
+.shoplist-name {
+  grid-column: 2/4;
   text-align: center;
   justify-self: left;
   align-self: center;
+}
+
+.shoplist-description {
+  grid-column: 4/7;
+  text-align: center;
+  justify-self: left;
+  align-self: center;
+}
+.shoplist-image {
+  grid-template-columns: 1 / 2;
+  align-self: center;
+  justify-self: left;
+  height: 100%;
+}
+
+.shoplist-image img {
+  border-radius: 4px;
+  height: 79px;
+  width: 100px;
 }
 
 .shoplist-price {
@@ -48,4 +67,14 @@
   border: #0075a1 1px solid;
   border-radius: 3px;
   color: white;
+}
+
+.delete-ico {
+  align-self: center;
+}
+
+.button-delete {
+  cursor: pointer;
+  border: none;
+  background-color: white ;
 }

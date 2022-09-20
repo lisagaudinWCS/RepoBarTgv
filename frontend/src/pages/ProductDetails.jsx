@@ -20,7 +20,7 @@ export default function ProductDetails() {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  function addToCart(name, price) {
+  function addToCart(name, price, description, image) {
     const currentProductAdded = cart.find((product) => product.name === name);
     if (currentProductAdded) {
       const cartFilteredCurrentProduct = cart.filter(
@@ -28,10 +28,17 @@ export default function ProductDetails() {
       );
       setCart([
         ...cartFilteredCurrentProduct,
-        { id, name, price, amount: currentProductAdded.amount + 1 },
+        {
+          id,
+          name,
+          price,
+          image,
+          description,
+          amount: currentProductAdded.amount + 1,
+        },
       ]);
     } else {
-      setCart([...cart, { id, name, price, amount: 1 }]);
+      setCart([...cart, { id, name, price, description, image, amount: 1 }]);
     }
   }
 
@@ -39,13 +46,20 @@ export default function ProductDetails() {
     <div>
       <div>{productDetails.name}</div>
       <div>{productDetails.description}</div>
-      <div>{productDetails.price} €</div>
       <div>
         <img src={productDetails.image} alt={productDetails.name} />
       </div>
+      <div>{productDetails.price} €</div>
       <button
         type="button"
-        onClick={() => addToCart(productDetails.name, productDetails.price)}
+        onClick={() =>
+          addToCart(
+            productDetails.name,
+            productDetails.price,
+            productDetails.description,
+            productDetails.image
+          )
+        }
       >
         Ajouter au panier
       </button>

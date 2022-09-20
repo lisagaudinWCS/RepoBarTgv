@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ShoplistDetails from "../components/ShoplistDetails";
 
 import "./shoplistPage.css";
+import "../components/shoplistDetails.css";
 
 export default function ShoplistPage() {
   const savedCart = localStorage.getItem("cart");
@@ -26,6 +27,10 @@ export default function ShoplistPage() {
     );
   };
 
+  const deleteProduct = (id) => {
+    setCart(cart.filter((product) => product.id !== id));
+  };
+
   const sendOrder = () => {
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/shoplists`, {
@@ -42,22 +47,6 @@ export default function ShoplistPage() {
       });
   };
 
-  // const sendSholistElements = () => {
-  //   cart &&
-  //     cart.forEach(
-  //       axios
-  //         .post("http://localhost:5000/shoplistelem", {
-  //           shoplist_id: 4,
-  //           product_id: cart.id,
-  //           quantity: cart.amount,
-  //         })
-  //         .then((response) => {
-  //           console.error(response);
-  //           console.error(response.data);
-  //         })
-  //     );
-  // };
-
   return (
     <div>
       <div className="container-title-menu">
@@ -72,13 +61,19 @@ export default function ShoplistPage() {
             name={element.name}
             price={element.price}
             amount={element.amount}
+            imageCart={element.image}
+            description={element.description}
             handleAmount={handleAmount}
+            deleteProduct={deleteProduct}
           />
         ))}
-      <div className="total-container">
-        <p className="total-order">Total Commande : </p>
-        <p className="total-number">{total.toFixed(2)} €</p>
+      <div className="box-container-shoplist">
+        <div className="total-container">
+          <p className="total-order">Total Commande : </p>
+          <p className="total-number">{total.toFixed(2)} €</p>
+        </div>
       </div>
+
       <div className="container-button-shop">
         <div>
           <button

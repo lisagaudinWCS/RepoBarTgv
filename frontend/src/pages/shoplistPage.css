@@ -5,6 +5,7 @@
   text-align: center;
 }
 
+
 .shoplist-title {
   margin: 50px 0;
   text-align: center;
@@ -13,8 +14,9 @@
 
 .total-container {
   display: grid;
-  margin-bottom: 50px;
   grid-template-columns: repeat(9, 1fr);
+  width: 90%;
+  margin: auto;
 }
 
 .total-order {
@@ -22,6 +24,7 @@
 }
 
 .total-number {
+  justify-self: center;
   font-weight: 600;
   grid-column: 7 / 8;
 }
@@ -35,15 +38,16 @@
   margin: 50px;
   border: 1px solid lightgray;
   border-radius: 5px;
-  width: 150px;
+  width: 200px;
   cursor: pointer;
   background-color: #0075a1;
   color: white;
-  font-size: 12px;
-  height: 30px;
+  font-size: 14px;
+  height: 40px;
 }
 
 .validate-button:hover {
   transition: 2s;
   opacity: 70%;
 }
+
