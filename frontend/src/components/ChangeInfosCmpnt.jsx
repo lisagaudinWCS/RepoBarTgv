@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { transBirthDate } from "../services/DateManager";
 
 export default function ChangeInfosCmpnt() {
   const { id } = useParams();
@@ -23,23 +24,14 @@ export default function ChangeInfosCmpnt() {
   };
   useEffect(() => getClientInfos(), []);
 
-  // function UpdateClients() {
-  //   const [updatedAt, setUpdatedAt] = useState({
-  //         // client_number: 101,
-  //   lastname: "",
-  //   firstname: "",
-  //   email: "",
-  //   password: "",
-  //   avatar: "",
-  //   birth_date: "",
-  //   isAdmin: 0,
-  //   });
+  // function UpdateClient() {
+  //   axios.put(
+  //     `${import.meta.env.VITE_BACKEND_URL}/clients/${id}`,
+  //     ...clientInfos
+  //   );
+  // }
 
-  //   useEffect(() => {
-  //       axios
-  //       .put('https://reqres.in/api/articles/1', ...updatedAt)
-  //       .then(response => setUpdatedAt(response.data.updatedAt));
-  //   }, []);
+  const birthdate = transBirthDate(clientInfos.birth_date);
 
   return (
     <>
@@ -91,7 +83,7 @@ export default function ChangeInfosCmpnt() {
             className="user-input"
             type="date"
             id="birth_date"
-            value={clientInfos.birth_date}
+            value={birthdate}
             required
           />
           <br />

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { transBirthDate } from "../services/DateManager";
 
 export default function UserInformations() {
   const navigate = useNavigate();
@@ -23,6 +24,8 @@ export default function UserInformations() {
       .then((data) => setClientInfos(data));
   };
   useEffect(() => getClientInfos(), []);
+
+  const birthdate = transBirthDate(clientInfos.birth_date);
 
   return (
     <>
@@ -78,7 +81,7 @@ export default function UserInformations() {
             className="user-input"
             type="date"
             id="birth_date"
-            value={clientInfos.birth_date}
+            value={birthdate}
             disabled
           />
           <br />

@@ -13,7 +13,6 @@ export default function SubscribeForm() {
     birth_date: "",
     isAdmin: 0,
   });
-
   const createClient = (e) => {
     e.preventDefault();
     axios
