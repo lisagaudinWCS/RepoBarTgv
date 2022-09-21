@@ -17,7 +17,7 @@ export default function ChangeInfosCmpnt() {
 
   const getClientInfos = () => {
     axios
-      .get(`http://localhost:5000/clients/${id}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/clients/${id}`)
       .then((response) => response.data)
       .then((data) => setClientInfos(data));
   };

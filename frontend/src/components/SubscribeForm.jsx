@@ -17,7 +17,7 @@ export default function SubscribeForm() {
   const createClient = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/clients", {
+      .post(`${import.meta.env.VITE_BACKEND_URL}/clients`, {
         ...clients,
       })
       .then((response) => {
