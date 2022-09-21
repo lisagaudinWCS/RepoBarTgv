@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import Product from "./Product";
 import "./ProductList.css";
 
-function ProductsList() {
+function CategoryListDesserts() {
   const [products, setProducts] = useState([]);
 
   const getProducts = () => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/products-details`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/categories/4`)
       .then((response) => response.data)
       .then((data) => setProducts(data));
   };
@@ -20,7 +20,6 @@ function ProductsList() {
         products.map((product) => (
           <Product
             key={product.id}
-            category={product.category}
             name={product.name}
             image={product.image}
             description={product.description}
@@ -32,4 +31,4 @@ function ProductsList() {
   );
 }
 
-export default ProductsList;
+export default CategoryListDesserts;
