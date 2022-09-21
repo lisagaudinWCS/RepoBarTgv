@@ -23,3 +23,12 @@ export const transDate = (date) => {
   const sec = myHours[2];
   return `${day}-${month}-${years} ${hours}h${min}m${sec}s`;
 };
+
+export const transBirthDate = (date) => {
+  const myFullDate = date.split("T");
+  const myDate = myFullDate[0].split("-");
+  const years = myDate[0];
+  const month = myDate[1];
+  const day = myDate[2];
+  return `${day}-${month}-${years}`;
+};
