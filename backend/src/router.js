@@ -1,7 +1,7 @@
 const express = require("express");
 
 const router = express.Router();
-const { hashPassword } = require("./auth");
+const { hashPassword, verifyPassword } = require("./auth");
 
 const itemControllers = require("./controllers/itemControllers");
 const formControllers = require("./controllers/formcontrollers");
@@ -23,6 +23,12 @@ router.post("/items", itemControllers.add);
 router.delete("/items/:id", itemControllers.destroy);
 
 const clientControllers = require("./controllers/clientControllers");
+
+router.post(
+  "/login",
+  clientControllers.getClientByEmailWithPasswordAndPassToNext,
+  verifyPassword
+);
 
 router.get("/clients", clientControllers.browse);
 router.get("/clients/:id", clientControllers.read);

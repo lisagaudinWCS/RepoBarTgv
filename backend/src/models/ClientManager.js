@@ -5,6 +5,13 @@ class ClientManager extends AbstractManager {
     super({ table: "client" });
   }
 
+  findByEmail(email) {
+    return this.connection.query(
+      `select * from  ${this.table} where email = ?`,
+      [email]
+    );
+  }
+
   insert(item) {
     return this.connection.query(
       `insert into ${this.table} (client_number, lastname, firstname, email, password, avatar, birth_date, isAdmin) values (?, ?, ?, ?, ?, ?, ?, ?)`,
