@@ -8,7 +8,7 @@ function CategoryListDrinks() {
 
   const getProducts = () => {
     axios
-      .get("http://localhost:5000/categories/5")
+      .get(`${import.meta.env.VITE_BACKEND_URL}/categories/5`)
       .then((response) => response.data)
       .then((data) => setProducts(data));
   };
