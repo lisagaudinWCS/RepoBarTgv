@@ -8,7 +8,7 @@ function CategoryListForm() {
 
   const getProducts = () => {
     axios
-      .get("http://localhost:5000/categories/1")
+      .get(`${import.meta.env.VITE_BACKEND_URL}/categories/1`)
       .then((response) => response.data)
       .then((data) => setProducts(data));
   };
