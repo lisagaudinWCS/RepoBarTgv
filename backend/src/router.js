@@ -1,6 +1,7 @@
 const express = require("express");
 
 const router = express.Router();
+const { hashPassword } = require("./auth");
 
 const itemControllers = require("./controllers/itemControllers");
 const formControllers = require("./controllers/formcontrollers");
@@ -26,7 +27,7 @@ const clientControllers = require("./controllers/clientControllers");
 router.get("/clients", clientControllers.browse);
 router.get("/clients/:id", clientControllers.read);
 router.put("/clients/:id", clientControllers.edit);
-router.post("/clients", clientControllers.add);
+router.post("/clients", hashPassword, clientControllers.add);
 router.delete("/clients/:id", clientControllers.destroy);
 router.get("/forms", formControllers.getAll);
 router.get("/forms/:id", formControllers.getById);
