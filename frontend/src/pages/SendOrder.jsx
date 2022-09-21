@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 import TotalOrder from "../components/TotalOrder";
-import ShoplistDetails from "../components/ShoplistDetails";
+import SummaryOrder from "../components/SummaryOrder";
+import { getDate } from "../services/DateManager";
 
-export default function ShoplistPage() {
+export default function SendOrder() {
   const savedCart = localStorage.getItem("cart");
   const [cart, setCart] = useState(savedCart ? JSON.parse(savedCart) : []);
-  const navigate = useNavigate();
-
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -17,16 +16,26 @@ export default function ShoplistPage() {
     .reduce((acc, product) => acc + product.amount * product.price, 0)
     .toFixed(2);
 
-  const handleAmount = (id, amount) => {
-    setCart(
-      cart.map((product) =>
-        product.id === id ? { ...product, amount } : product
-      )
-    );
+  const orderNumber = Date.now().toString(36).substring(2);
+
+  const sendOrder = (orderNum) => {
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/shoplists`, {
+        order_number: orderNum,
+        total_price: total,
+        status: "crée",
+        date: getDate(),
+        ticket_id: 1,
+        cart,
+      })
+      .then((response) => {
+        console.error(response);
+        console.error(response.data);
+      });
   };
 
-  const deleteProduct = (id) => {
-    setCart(cart.filter((product) => product.id !== id));
+  const removeOrder = () => {
+    setCart([]);
   };
 
   return (
@@ -34,10 +43,10 @@ export default function ShoplistPage() {
       <div className="container-title-menu">
         <h1 className="title-menu-blue">Ma commande</h1>
       </div>
-      <h2 className="shoplist-title">Mon panier</h2>
+      <h2 className="shoplist-title">Récapitulatif de commande</h2>
       {cart &&
         cart.map((element) => (
-          <ShoplistDetails
+          <SummaryOrder
             key={element.id}
             id={element.id}
             name={element.name}
@@ -45,29 +54,26 @@ export default function ShoplistPage() {
             amount={element.amount}
             imageCart={element.image}
             description={element.description}
-            handleAmount={handleAmount}
-            deleteProduct={deleteProduct}
           />
         ))}
       <TotalOrder total={total} />
-
       <div className="container-button-shop">
         <div>
           <button
             className="validate-button"
             type="button"
-            onClick={() => navigate("/sendorder")}
+            onClick={() => sendOrder(orderNumber)}
           >
             Valider la Commande
           </button>
         </div>
         <div>
           <button
-            className="validate-button"
+            className="cancel-button"
             type="button"
-            onClick={() => setCart([])}
+            onClick={() => removeOrder()}
           >
-            Vider Panier
+            Annuler Commande
           </button>
         </div>
       </div>

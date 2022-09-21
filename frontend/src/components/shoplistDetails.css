@@ -1,6 +1,4 @@
 .box-container-shoplist {
-  /* display: flex;
-  justify-content: space-around; */
   margin: 30px;
 }
 
@@ -8,7 +6,7 @@
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   margin: auto;
-  width: 90%;
+  width: 70%;
   height: 81px;
   border: 1px solid lightgray;
   border-radius: 5px;
@@ -26,6 +24,7 @@
   text-align: center;
   justify-self: left;
   align-self: center;
+  text-align: left;
 }
 .shoplist-image {
   grid-template-columns: 1 / 2;
@@ -46,12 +45,13 @@
   align-self: center;
 }
 
-.container-quantity {
+.container-quantity, .shoplist-amount {
   grid-column: 8 /9;
   align-self: center;
   justify-self: center;
-  align-self: center;
 }
+
+
 
 .show-quantity {
   text-align: center;
@@ -76,5 +76,5 @@
 .button-delete {
   cursor: pointer;
   border: none;
-  background-color: white ;
+  background-color: white;
 }

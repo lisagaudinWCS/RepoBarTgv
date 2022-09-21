@@ -1,25 +1,23 @@
 import "./shoplistDetails.css";
 
-export default function SelectQuantity({ quantity, setQuantity }) {
+export default function SelectQuantity({ handleAmount, amount, id }) {
   return (
-    <div>
+    <div className="container-quantity">
       <input
         type="button"
-        id="min"
+        id="small"
         className="ajust-quantity"
         value="-"
         onClick={() => {
-          return quantity === 1 ? 1 : setQuantity(quantity - 1);
+          return amount === 1 ? 1 : handleAmount(id, amount - 1);
         }}
       />
       <input
-        className="show-quantity"
-        id="result"
         type="text"
+        className="show-quantity"
         min="1"
-        value={quantity}
-        // onChange={(e) => setPriceProduct(e.target.value)}
-        maxLength="2"
+        value={amount}
+        readOnly
       />
       <input
         id="more"
@@ -27,7 +25,7 @@ export default function SelectQuantity({ quantity, setQuantity }) {
         type="button"
         value="+"
         onClick={() => {
-          setQuantity(quantity + 1);
+          handleAmount(id, amount + 1);
         }}
       />
     </div>

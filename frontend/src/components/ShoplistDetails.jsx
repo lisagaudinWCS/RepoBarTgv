@@ -1,3 +1,5 @@
+import SelectAmount from "./SelectAmount";
+
 import deleteIcon from "../assets/delete.png";
 
 import "./shoplistDetails.css";
@@ -21,33 +23,12 @@ export default function ShoplistDetails({
         <p className="shoplist-name">{name}</p>
         <p className="shoplist-description">{description}</p>
         <p className="shoplist-price">{price} €</p>
-        <div className="container-quantity">
-          <input
-            type="button"
-            id="small"
-            className="ajust-quantity"
-            value="-"
-            onClick={() => {
-              return amount === 1 ? 1 : handleAmount(id, amount - 1);
-            }}
-          />
-          <input
-            type="text"
-            className="show-quantity"
-            min="1"
-            value={amount}
-            readOnly
-          />
-          <input
-            id="more"
-            className="ajust-quantity"
-            type="button"
-            value="+"
-            onClick={() => {
-              handleAmount(id, amount + 1);
-            }}
-          />
-        </div>
+        <SelectAmount
+          handleAmount={handleAmount}
+          amount={amount}
+          deleteIcon={deleteIcon}
+          id={id}
+        />
         <div className="delete-ico">
           <button
             type="button"

@@ -5,17 +5,23 @@
   text-align: center;
 }
 
-
 .shoplist-title {
   margin: 50px 0;
   text-align: center;
   color: #980c35;
 }
 
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  color: #0075a1;
+  font-weight: 700;
+}
+
 .total-container {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  width: 90%;
+  width: 70%;
   margin: auto;
 }
 
@@ -44,10 +50,21 @@
   color: white;
   font-size: 14px;
   height: 40px;
+} 
+
+.cancel-button {
+  margin: 50px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  width: 200px;
+  cursor: pointer;
+  background-color: #980c35;
+  color: white;
+  font-size: 14px;
+  height: 40px;
 }
 
 .validate-button:hover {
   transition: 2s;
   opacity: 70%;
 }
-
