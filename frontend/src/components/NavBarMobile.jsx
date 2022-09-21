@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./NavBar.css";
+import "./NavBarMobile.css";
 
-export default function NavBar() {
+export default function NavBarMobile() {
   return (
     <div>
-      <nav className="navbar">
-        <ul className="navbar-ul">
+      <nav className="navbarMain">
+        <ul className="navbarUl">
           <li>
             <Link to="/">Formules</Link>
           </li>
@@ -14,8 +14,10 @@ export default function NavBar() {
             <Link to="/">Plats Froids</Link>
           </li>
           <li>
-            <Link to="/advanced">Plats Chauds</Link>
+            <Link to="/advanced">Plats Chaud</Link>
           </li>
+        </ul>
+        <ul className="navbarUl2">
           <li>
             <Link to="/toto">Desserts</Link>
           </li>

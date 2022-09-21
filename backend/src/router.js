@@ -59,7 +59,7 @@ router.post("/products", productControllers.add);
 router.delete("/products/:id", productControllers.destroy);
 router.get("/products-details", productControllers.readProductsDetails);
 
-/** ***************************************** */
+/** ***********************route category****************** */
 
 router.get("/categories/:id", categoryControllers.read);
 

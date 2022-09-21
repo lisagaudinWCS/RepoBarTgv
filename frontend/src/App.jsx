@@ -5,6 +5,7 @@ import Form from "./components/Form";
 import Home from "./pages/Home";
 import ProductDetails from "./pages/ProductDetails";
 import SendOrder from "./pages/SendOrder";
+import CategoryListDrinks from "./components/CategoryListDrinks";
 
 import "./App.css";
 import UserProfile from "./pages/UserProfile";
@@ -26,6 +27,7 @@ function App() {
           <Route path="/shoplists/" element={<ShoplistPage />} />
           <Route path="/productdetails/:id" element={<ProductDetails />} />
           <Route path="/sendorder" element={<SendOrder />} />
+          <Route path="/home/drinks" element={<CategoryListDrinks />} />
         </Routes>
       </div>
     </Router>
