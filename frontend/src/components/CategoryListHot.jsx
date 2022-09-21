@@ -8,7 +8,7 @@ function CategoryListHot() {
 
   const getProducts = () => {
     axios
-      .get("http://localhost:5000/categories/3")
+      .get(`${import.meta.env.VITE_BACKEND_URL}/categories/3`)
       .then((response) => response.data)
       .then((data) => setProducts(data));
   };
