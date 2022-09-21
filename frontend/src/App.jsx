@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Form from "./components/Form";
 import Home from "./pages/Home";
 import Subscribe from "./pages/Subscribe";
+import CategoryListDrinks from "./components/CategoryListDrinks";
 
 import "./App.css";
 import UserProfile from "./pages/UserProfile";
@@ -19,6 +20,7 @@ function App() {
           <Route path="/profil/:id" element={<UserProfile />} />
           <Route path="/subscribe" element={<Subscribe />} />
           <Route path="/login" element={<Connexion />} />
+          <Route path="/home/drinks" element={<CategoryListDrinks />} />
         </Routes>
       </div>
     </Router>
