@@ -8,7 +8,7 @@ function ProductsList() {
 
   const getProducts = () => {
     axios
-      .get("http://localhost:5000/products-details")
+      .get(`${import.meta.env.VITE_BACKEND_URL}/products-details`)
       .then((response) => response.data)
       .then((data) => setProducts(data));
   };
