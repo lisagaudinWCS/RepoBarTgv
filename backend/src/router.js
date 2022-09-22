@@ -31,8 +31,10 @@ router.use(verifyToken);
 // *** TRAIN / TICKET ***
 router.get("/ticket", ticketControllers.browse);
 router.get("/ticket/:id", ticketControllers.read);
+
 router.get("/train", trainControllers.browse);
 router.get("/train/:id", trainControllers.read);
+
 router.get("/trainsTicketsClients", trainsTicketsClientsControllers.getAll);
 // *** CLIENTS ***
 router.get("/clients", clientControllers.browse);
