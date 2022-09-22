@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className="header">
       <div className="inoui">
-        <Link to="/forms">
+        <Link to="/">
           <img
             src="https://res.cloudinary.com/dbkscupri/image/upload/v1663142605/headerP3/Logo-TGV-inOUI-Fd_Blanc_pb6yxt.jpg"
             alt="TGV Inoui"
@@ -23,7 +23,7 @@ export default function Header() {
         </Link>
       </div>
       <div className="panier">
-        <Link to="/forms">
+        <Link to="/shoplists">
           <img
             src="https://res.cloudinary.com/dbkscupri/image/upload/v1663142627/headerP3/panier_k34kmj.png"
             alt="panier"

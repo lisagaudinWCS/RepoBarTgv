@@ -14,7 +14,7 @@ export default function NavBar() {
             <Link to="/">Plats Froids</Link>
           </li>
           <li>
-            <Link to="/advanced">Plats Chaud</Link>
+            <Link to="/advanced">Plats Chauds</Link>
           </li>
           <li>
             <Link to="/toto">Desserts</Link>
