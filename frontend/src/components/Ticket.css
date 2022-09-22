@@ -1,6 +1,4 @@
-* {
-  background-color: #f4e9dc;
-}
+
 .ticket-container li a {
   background-color: #f4e9dc;
   list-style-type: none;
@@ -36,6 +34,4 @@
   color: rgb(0, 200, 255);
   margin: auto;
 }
-.p {
-  color: black;
-}
+

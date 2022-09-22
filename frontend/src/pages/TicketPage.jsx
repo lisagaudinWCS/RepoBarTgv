@@ -17,9 +17,9 @@ export default function TicketPage() {
   // }, []);
 
   return (
-    <>
+    <div className="container-ticket-page">
       <h2>Mes Trajets & Commandes</h2>
       <TicketsList />
-    </>
+    </div>
   );
 }
