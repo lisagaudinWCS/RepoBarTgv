@@ -15,6 +15,12 @@ export default function TicketsList() {
 
   return (
     <div>
+      <div className="img-header-profile">
+        <img
+          src="https://res.cloudinary.com/dbkscupri/image/upload/v1663166464/pexels-andrea-piacquadio-3839219_rojpxd.jpg"
+          alt="beaugossedansunegare"
+        />
+      </div>
       {tickets &&
         tickets.map((ticket) => (
           <Link to={`/tickets/${ticket.id}`} key={ticket.id}>

@@ -1,4 +1,4 @@
-@media screen and (max-width: 390px) {
+/* @media screen and (max-width: 390px) {
   .navbarUl {
     display: flex;
     justify-content: space-around;
@@ -35,15 +35,13 @@
   }
   li a:active {
     color: white;
-    /* background-color: #0075a1; */
+  
     background-color: #f4e9dc;
-  }
-  li a:hover {
+  }*/
+  /* li a:hover {
     color: #0075a1;
     background-color: white;
-  }
+  } */
   /* li {
     background-color: none;
-    
-  } */
-}
+    */

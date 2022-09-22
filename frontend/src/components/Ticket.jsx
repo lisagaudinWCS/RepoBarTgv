@@ -1,9 +1,14 @@
 import React from "react";
 import "./Ticket.css";
+import Footer from "@components/Footer";
+import NavBarTickets from "./NavBarTickets";
 
 export default function Ticket({ ticket }) {
   return (
     <div className="ticket-container">
+      <div className="navBarHome">
+        <NavBarTickets />
+      </div>
       <div className="travelDate">
         <p>{ticket.date}</p>
       </div>
@@ -27,6 +32,9 @@ export default function Ticket({ ticket }) {
             <p>Arrivée : {ticket.arr_to}</p>
           </div>
         </div>
+      </div>
+      <div className="footerHome">
+        <Footer />
       </div>
     </div>
   );

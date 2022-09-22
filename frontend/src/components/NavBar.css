@@ -1,4 +1,4 @@
-ul.navbar-ul {
+/* ul.navbar-ul {
   display: flex;
   justify-content: space-evenly;
   background-color: #0075a1;
@@ -15,7 +15,6 @@ li a {
   font-size: 4.44vh;
   list-style-type: none;
   text-decoration: none;
-  /* color: #0075a1; */
   color: white;
   background-color: #f4e9dc;
   background-color: #0075a1;
@@ -29,10 +28,7 @@ li a:hover {
   color: #0075a1;
   background-color: white;
 }
-/* li {
-  background-color: none;
-  
-} */
+
 
 @media screen and (max-width: 390px) {
   .navbar-ul {
@@ -57,10 +53,8 @@ li a:hover {
     margin-right: 2vh;
     list-style-type: none;
     text-decoration: none;
-    /* color: #0075a1; */
     color: white;
     background-color: #f4e9dc;
-    /* background-color: #0075a1; */
   }
   li a:active {
     color: white;
@@ -71,4 +65,8 @@ li a:hover {
     color: #0075a1;
     background-color: white;
   }
+} */
+
+.NavbarTicket {
+  display: flex;
 }

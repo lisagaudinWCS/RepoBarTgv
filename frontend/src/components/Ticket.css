@@ -1,8 +1,10 @@
 * {
-  background-color: rgb(246, 229, 206);
+  background-color: #f4e9dc;
 }
-.ticket-container {
-  border-color: aliceblue;
+.ticket-container li a {
+  background-color: #f4e9dc;
+  list-style-type: none;
+  text-decoration: none;
 }
 .DetalsTravel {
   background-color: rgb(255, 255, 255);
