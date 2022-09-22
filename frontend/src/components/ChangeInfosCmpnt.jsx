@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-export default function UserInformations() {
-  const navigate = useNavigate();
+export default function ChangeInfosCmpnt() {
   const { id } = useParams();
   const [clientInfos, setClientInfos] = useState({
     // client_number: 101,
@@ -24,6 +23,24 @@ export default function UserInformations() {
   };
   useEffect(() => getClientInfos(), []);
 
+  // function UpdateClients() {
+  //   const [updatedAt, setUpdatedAt] = useState({
+  //         // client_number: 101,
+  //   lastname: "",
+  //   firstname: "",
+  //   email: "",
+  //   password: "",
+  //   avatar: "",
+  //   birth_date: "",
+  //   isAdmin: 0,
+  //   });
+
+  //   useEffect(() => {
+  //       axios
+  //       .put('https://reqres.in/api/articles/1', ...updatedAt)
+  //       .then(response => setUpdatedAt(response.data.updatedAt));
+  //   }, []);
+
   return (
     <>
       <h1 className="profile-title">Mon profil</h1>
@@ -41,13 +58,9 @@ export default function UserInformations() {
         </div>
         {/* <div className="info-container" /> */}
         <div className="user-input-box">
-          <button
-            type="button"
-            className="change-info-btn"
-            onClick={() => navigate(`/profil/${id}/edit`)}
-          >
+          {/* <button type="button" className="change-info-btn">
             MODIFIER MES INFOS ✏️
-          </button>
+          </button> */}
 
           <label className="user-label" htmlFor="lastname">
             Nom :
@@ -57,7 +70,7 @@ export default function UserInformations() {
             type="text"
             id="lastname"
             value={clientInfos.lastname}
-            disabled
+            required
           />
           <br />
           <label className="user-label" htmlFor="firstname">
@@ -68,7 +81,7 @@ export default function UserInformations() {
             type="text"
             id="firstname"
             value={clientInfos.firstname}
-            disabled
+            required
           />
           <br />
           <label className="user-label" htmlFor="birth_date">
@@ -79,7 +92,7 @@ export default function UserInformations() {
             type="date"
             id="birth_date"
             value={clientInfos.birth_date}
-            disabled
+            required
           />
           <br />
           <label className="user-label" htmlFor="email">
@@ -90,7 +103,7 @@ export default function UserInformations() {
             type="email"
             id="email"
             value={clientInfos.email}
-            disabled
+            required
           />
           <br />
           <label className="user-label" htmlFor="pass">
@@ -100,9 +113,18 @@ export default function UserInformations() {
             type="password"
             id="password"
             value={clientInfos.password}
-            disabled
+            required
           />
           <br />
+          <label className="user-label" htmlFor="pass">
+            Confirmer mot de passe :
+          </label>
+          <input
+            type="password"
+            id="c-password"
+            value={clientInfos.password}
+            required
+          />
         </div>
       </div>
     </>

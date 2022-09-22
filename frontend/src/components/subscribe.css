@@ -5,6 +5,7 @@
   background-color: #980c35;
   padding: 15px;
   color: white;
+  text-align: center;
 }
 .required-field {
   color: red;

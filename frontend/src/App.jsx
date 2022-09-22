@@ -10,6 +10,7 @@ import CategoryListDrinks from "./components/CategoryListDrinks";
 import CancelOrder from "./pages/CancelOrder";
 import UserProfile from "./pages/UserProfile";
 import Connexion from "./pages/Connexion";
+import ChangeInfos from "./pages/ChangeInfos";
 
 import "./App.css";
 import "./pages/homePage.css";
@@ -25,6 +26,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/forms" element={<Form />} />
           <Route path="/profil/:id" element={<UserProfile />} />
+          <Route path="/profil/:id/edit" element={<ChangeInfos />} />
+
           <Route path="/subscribe" element={<Subscribe />} />
           <Route path="/login" element={<Connexion />} />
           <Route path="/shoplists/" element={<ShoplistPage />} />
