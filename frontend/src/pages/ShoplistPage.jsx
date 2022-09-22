@@ -5,28 +5,30 @@ import TotalOrder from "../components/TotalOrder";
 import ShoplistDetails from "../components/ShoplistDetails";
 
 export default function ShoplistPage() {
-  const savedCart = localStorage.getItem("cart");
-  const [cart, setCart] = useState(savedCart ? JSON.parse(savedCart) : []);
-  const navigate = useNavigate();
-
+  const savedShoplist = localStorage.getItem("shoplist");
+  const [shoplist, setShoplist] = useState(
+    savedShoplist ? JSON.parse(savedShoplist) : []
+  );
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
+    localStorage.setItem("shoplist", JSON.stringify(shoplist));
+  }, [shoplist]);
 
-  const total = cart
+  const navigate = useNavigate();
+  // calculer le total de la commande
+  const total = shoplist
     .reduce((acc, product) => acc + product.amount * product.price, 0)
     .toFixed(2);
-
+  // ajuster les quantité de chaque produit
   const handleAmount = (id, amount) => {
-    setCart(
-      cart.map((product) =>
+    setShoplist(
+      shoplist.map((product) =>
         product.id === id ? { ...product, amount } : product
       )
     );
   };
-
+  // supprimer un élément du panier
   const deleteProduct = (id) => {
-    setCart(cart.filter((product) => product.id !== id));
+    setShoplist(shoplist.filter((product) => product.id !== id));
   };
 
   return (
@@ -35,8 +37,8 @@ export default function ShoplistPage() {
         <h1 className="title-menu-blue">Ma commande</h1>
       </div>
       <h2 className="shoplist-title">Mon panier</h2>
-      {cart &&
-        cart.map((element) => (
+      {shoplist &&
+        shoplist.map((element) => (
           <ShoplistDetails
             key={element.id}
             id={element.id}
@@ -63,9 +65,9 @@ export default function ShoplistPage() {
         </div>
         <div>
           <button
-            className="validate-button"
+            className="cancel-button"
             type="button"
-            onClick={() => setCart([])}
+            onClick={() => setShoplist([])}
           >
             Vider Panier
           </button>

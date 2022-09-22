@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import TotalOrder from "../components/TotalOrder";
@@ -6,13 +7,13 @@ import SummaryOrder from "../components/SummaryOrder";
 import { getDate } from "../services/DateManager";
 
 export default function SendOrder() {
-  const savedCart = localStorage.getItem("cart");
-  const [cart, setCart] = useState(savedCart ? JSON.parse(savedCart) : []);
+  const savedShoplist = localStorage.getItem("shoplist");
+  const [shoplist] = useState(savedShoplist ? JSON.parse(savedShoplist) : []);
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
+    localStorage.setItem("shoplist", JSON.stringify(shoplist));
+  }, [shoplist]);
 
-  const total = cart
+  const total = shoplist
     .reduce((acc, product) => acc + product.amount * product.price, 0)
     .toFixed(2);
 
@@ -26,16 +27,17 @@ export default function SendOrder() {
         status: "crée",
         date: getDate(),
         ticket_id: 1,
-        cart,
+        shoplist,
       })
       .then((response) => {
         console.error(response);
         console.error(response.data);
       });
   };
+  const navigateTocancel = useNavigate();
 
   const removeOrder = () => {
-    setCart([]);
+    navigateTocancel("/cancelorder");
   };
 
   return (
@@ -44,8 +46,8 @@ export default function SendOrder() {
         <h1 className="title-menu-blue">Ma commande</h1>
       </div>
       <h2 className="shoplist-title">Récapitulatif de commande</h2>
-      {cart &&
-        cart.map((element) => (
+      {shoplist &&
+        shoplist.map((element) => (
           <SummaryOrder
             key={element.id}
             id={element.id}

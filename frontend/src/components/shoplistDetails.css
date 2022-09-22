@@ -45,13 +45,12 @@
   align-self: center;
 }
 
-.container-quantity, .shoplist-amount {
+.container-quantity,
+.shoplist-amount {
   grid-column: 8 /9;
   align-self: center;
   justify-self: center;
 }
-
-
 
 .show-quantity {
   text-align: center;

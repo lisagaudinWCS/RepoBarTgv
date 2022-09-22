@@ -14,7 +14,7 @@ export default function SummaryOrder({
         <p className="shoplist-name">{name}</p>
         <p className="shoplist-description">{description}</p>
         <p className="shoplist-price">{price} €</p>
-        <p className="shoplist-amount">{amount}</p>
+        <p className="shoplist-amount">Quantité : {amount}</p>
       </div>
     </div>
   );

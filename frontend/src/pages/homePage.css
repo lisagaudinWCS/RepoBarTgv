@@ -1,0 +1,80 @@
+.logo-inoui img {
+  align-self: center;
+  width: 200px;
+}
+
+.container-header {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.logo-inoui {
+  grid-column: 6/7;
+}
+
+.ban-picture {
+  width: 100%;
+}
+
+.ban-picture img {
+  width: 100%;
+}
+
+.logo-user {
+  grid-column: 11/12;
+  grid-template-rows: 1/2;
+  align-self: center;
+  justify-self: right;
+}
+
+.logo-panier {
+  grid-template-rows: 1/2;
+  align-self: center;
+  justify-self: left;
+}
+.logo-panier img,
+.logo-user img {
+  width: 60%;
+}
+
+.filter-nav {
+  margin-top: -4px;
+  height: 4vh;
+  background-color: #0075a1;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.filter-nav div {
+  cursor: pointer;
+}
+
+.container-all-product {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 30px;
+  margin: 50px 30px;
+}
+.container-element {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  height: 400px;
+}
+
+.picture {
+  border-radius: 5px;
+  width: 100%;
+  height: 300px;
+}
+
+.product-name {
+  text-align: center;
+  margin: 15px 0;
+  font-weight: 600;
+}
+
+.product-price {
+  text-align: center;
+}

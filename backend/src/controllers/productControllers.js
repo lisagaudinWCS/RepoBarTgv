@@ -93,6 +93,17 @@ const readProductsDetails = (req, res) => {
       res.sendStatus(500);
     });
 };
+const readProductsCategory = (req, res) => {
+  models.product
+    .getProductWithCategory()
+    .then(([rows]) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
 
 module.exports = {
   browse,
@@ -101,4 +112,5 @@ module.exports = {
   add,
   destroy,
   readProductsDetails,
+  readProductsCategory,
 };

@@ -14,19 +14,23 @@ export default function ProductDetails() {
       .then((data) => setProductDetails(data));
   }, []);
 
-  const savedCart = localStorage.getItem("cart");
-  const [cart, setCart] = useState(savedCart ? JSON.parse(savedCart) : []);
+  const savedShoplist = localStorage.getItem("shoplist");
+  const [shoplist, setShoplist] = useState(
+    savedShoplist ? JSON.parse(savedShoplist) : []
+  );
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
+    localStorage.setItem("shoplist", JSON.stringify(shoplist));
+  }, [shoplist]);
 
-  function addToCart(name, price, description, image) {
-    const currentProductAdded = cart.find((product) => product.name === name);
+  function addToShoplist(name, price, description, image) {
+    const currentProductAdded = shoplist.find(
+      (product) => product.name === name
+    );
     if (currentProductAdded) {
-      const cartFilteredCurrentProduct = cart.filter(
+      const cartFilteredCurrentProduct = shoplist.filter(
         (product) => product.name !== name
       );
-      setCart([
+      setShoplist([
         ...cartFilteredCurrentProduct,
         {
           id,
@@ -38,7 +42,10 @@ export default function ProductDetails() {
         },
       ]);
     } else {
-      setCart([...cart, { id, name, price, description, image, amount: 1 }]);
+      setShoplist([
+        ...shoplist,
+        { id, name, price, description, image, amount: 1 },
+      ]);
     }
   }
 
@@ -53,7 +60,7 @@ export default function ProductDetails() {
       <button
         type="button"
         onClick={() =>
-          addToCart(
+          addToShoplist(
             productDetails.name,
             productDetails.price,
             productDetails.description,

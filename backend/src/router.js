@@ -57,7 +57,8 @@ router.get("/products/:id", productControllers.read);
 router.put("/products/:id", productControllers.edit);
 router.post("/products", productControllers.add);
 router.delete("/products/:id", productControllers.destroy);
-router.get("/products-details", productControllers.readProductsDetails);
+router.get("/productsdetails", productControllers.readProductsDetails);
+router.get("/getproductdetails", productControllers.readProductsCategory);
 
 /** ***********************route category****************** */
 
