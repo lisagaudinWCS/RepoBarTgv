@@ -1,7 +1,7 @@
 const models = require("../models");
 
-const browse = (req, res) => {
-  models.product
+const getAll = (req, res) => {
+  models.shoplist_elem
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -12,15 +12,11 @@ const browse = (req, res) => {
     });
 };
 
-const read = (req, res) => {
-  models.product
-    .find(req.params.id)
+const getAllShoplist = (req, res) => {
+  models.shoplist_elem
+    .getAllShoplist()
     .then(([rows]) => {
-      if (rows[0] == null) {
-        res.sendStatus(404);
-      } else {
-        res.send(rows[0]);
-      }
+      res.send(rows);
     })
     .catch((err) => {
       console.error(err);
@@ -28,15 +24,30 @@ const read = (req, res) => {
     });
 };
 
-const edit = (req, res) => {
-  const product = req.body;
+const getShoplistByShoplistId = (req, res) => {
+  models.shoplist_elem
+    .getShoplistByShoplistId(req.params.id)
+    .then(([rows]) => {
+      if (rows[0] == null) {
+        res.sendStatus(404);
+      } else {
+        res.send(rows);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+const update = (req, res) => {
+  const item = req.body;
 
   // TODO validations (length, format...)
 
-  product.id = parseInt(req.params.id, 10);
+  item.id = parseInt(req.params.id, 10);
 
-  models.product
-    .update(product)
+  models.shoplist_elem
+    .update(item)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -49,16 +60,15 @@ const edit = (req, res) => {
       res.sendStatus(500);
     });
 };
-
-const add = (req, res) => {
-  const product = req.body;
+const insert = (req, res) => {
+  const item = req.body;
 
   // TODO validations (length, format...)
 
-  models.product
-    .insert(product)
+  models.shoplist_elem
+    .insert(item)
     .then(([result]) => {
-      res.location(`/products/${result.insertId}`).sendStatus(201);
+      res.location(`/shoplistelem/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -67,7 +77,7 @@ const add = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.product
+  models.shoplist_elem
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
@@ -82,35 +92,11 @@ const destroy = (req, res) => {
     });
 };
 
-const readProductsDetails = (req, res) => {
-  models.product
-    .getProductsDetails()
-    .then(([rows]) => {
-      res.send(rows);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-const readProductsCategory = (req, res) => {
-  models.product
-    .getProductWithCategory()
-    .then(([rows]) => {
-      res.send(rows);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-
 module.exports = {
-  browse,
-  read,
-  edit,
-  add,
+  getAll,
+  getAllShoplist,
+  getShoplistByShoplistId,
+  update,
+  insert,
   destroy,
-  readProductsDetails,
-  readProductsCategory,
 };

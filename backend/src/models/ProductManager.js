@@ -54,6 +54,17 @@ class ProductManager extends AbstractManager {
       `
     );
   }
+
+  getProductWithCategory() {
+    return this.connection.query(
+      `SELECT product.id, 
+        product.description, 
+        product.name, 
+        product.image, product.price, 
+        category_product.name  as category from  ${this.table}
+    join category_product on product.category_id = category_product.id`
+    );
+  }
 }
 
 module.exports = ProductManager;
