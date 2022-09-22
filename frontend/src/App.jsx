@@ -24,7 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/forms" element={<Form />} />
-            <Route path="/profil/:id" element={<UserProfile />} />
+            <Route path="/profil/:email" element={<UserProfile />} />
             <Route path="/profil/:id/edit" element={<ChangeInfos />} />
 
             <Route path="/subscribe" element={<Subscribe />} />

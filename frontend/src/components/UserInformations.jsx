@@ -17,13 +17,12 @@ export default function UserInformations() {
     // isAdmin: 1,
   });
 
-  const getClientInfos = () => {
+  useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/clients/${id}`)
       .then((response) => response.data)
       .then((data) => setClientInfos(data));
-  };
-  useEffect(() => getClientInfos(), []);
+  }, []);
 
   const birthdate = transBirthDate(clientInfos.birth_date);
 

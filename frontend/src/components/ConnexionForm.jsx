@@ -15,7 +15,7 @@ export default function ConnexionForm() {
     e.preventDefault();
     try {
       await AuthAPI.authenticate(users);
-      navigate("/profil/1");
+      navigate(`/profil/1`);
     } catch (err) {
       console.error(err);
     }
