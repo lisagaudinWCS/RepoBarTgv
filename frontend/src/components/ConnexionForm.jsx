@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthAPI from "../services/AuthAPI";
+import AuthContext from "../contexts/AuthContext";
 import "./connexion.css";
 
 export default function ConnexionForm() {
@@ -11,10 +12,13 @@ export default function ConnexionForm() {
     password: "",
   });
 
+  const { setIsAuthenticated } = useContext(AuthContext);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await AuthAPI.authenticate(users);
+      setIsAuthenticated(true);
       navigate(`/profil/1`);
     } catch (err) {
       console.error(err);

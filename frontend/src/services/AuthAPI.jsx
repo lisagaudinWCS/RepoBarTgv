@@ -31,7 +31,13 @@ function isAuthenticated() {
   return false;
 }
 
+function logout() {
+  window.localStorage.removeItem("authToken");
+  delete axios.defaults.headers.Authorization;
+}
+
 export default {
   authenticate,
   isAuthenticated,
+  logout,
 };
