@@ -1,45 +1,35 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { transBirthDate } from "../services/DateManager";
 
 export default function ChangeInfosCmpnt() {
   const { id } = useParams();
   const [clientInfos, setClientInfos] = useState({
-    // client_number: 101,
+    client_number: "",
     lastname: "",
     firstname: "",
     email: "",
     password: "",
     avatar: "",
     birth_date: "",
-    // isAdmin: 1,
+    isAdmin: "",
   });
 
-  const getClientInfos = () => {
+  useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/clients/${id}`)
       .then((response) => response.data)
       .then((data) => setClientInfos(data));
-  };
-  useEffect(() => getClientInfos(), []);
+  }, []);
 
-  // function UpdateClients() {
-  //   const [updatedAt, setUpdatedAt] = useState({
-  //         // client_number: 101,
-  //   lastname: "",
-  //   firstname: "",
-  //   email: "",
-  //   password: "",
-  //   avatar: "",
-  //   birth_date: "",
-  //   isAdmin: 0,
-  //   });
+  function updateClient() {
+    axios.put(`${import.meta.env.VITE_BACKEND_URL}/clients/${id}`, {
+      ...clientInfos,
+    });
+  }
 
-  //   useEffect(() => {
-  //       axios
-  //       .put('https://reqres.in/api/articles/1', ...updatedAt)
-  //       .then(response => setUpdatedAt(response.data.updatedAt));
-  //   }, []);
+  const birthdate = transBirthDate(clientInfos.birth_date);
 
   return (
     <>
@@ -57,15 +47,24 @@ export default function ChangeInfosCmpnt() {
           </button>
         </div>
         {/* <div className="info-container" /> */}
-        <div className="user-input-box">
-          {/* <button type="button" className="change-info-btn">
+        {/* <button type="button" className="change-info-btn">
             MODIFIER MES INFOS ✏️
           </button> */}
-
+        <form
+          className="user-input-box"
+          onSubmit={(e) => {
+            e.preventDefault();
+            clientInfos.birth_date = transBirthDate(clientInfos.birth_date);
+            updateClient();
+          }}
+        >
           <label className="user-label" htmlFor="lastname">
             Nom :
           </label>
           <input
+            onChange={(e) =>
+              setClientInfos({ ...clientInfos, lastname: e.target.value })
+            }
             className="user-input"
             type="text"
             id="lastname"
@@ -77,6 +76,9 @@ export default function ChangeInfosCmpnt() {
             Prénom :
           </label>
           <input
+            onChange={(e) =>
+              setClientInfos({ ...clientInfos, firstname: e.target.value })
+            }
             className="user-input"
             type="text"
             id="firstname"
@@ -88,10 +90,13 @@ export default function ChangeInfosCmpnt() {
             Date de naissance :
           </label>
           <input
+            onChange={(e) =>
+              setClientInfos({ ...clientInfos, birth_date: e.target.value })
+            }
             className="user-input"
             type="date"
             id="birth_date"
-            value={clientInfos.birth_date}
+            value={birthdate}
             required
           />
           <br />
@@ -99,6 +104,9 @@ export default function ChangeInfosCmpnt() {
             E-mail :
           </label>
           <input
+            onChange={(e) =>
+              setClientInfos({ ...clientInfos, email: e.target.value })
+            }
             className="user-input"
             type="email"
             id="email"
@@ -110,6 +118,9 @@ export default function ChangeInfosCmpnt() {
             Mot de passe :
           </label>
           <input
+            onChange={(e) =>
+              setClientInfos({ ...clientInfos, password: e.target.value })
+            }
             type="password"
             id="password"
             value={clientInfos.password}
@@ -120,12 +131,18 @@ export default function ChangeInfosCmpnt() {
             Confirmer mot de passe :
           </label>
           <input
+            onChange={(e) =>
+              setClientInfos({ ...clientInfos, password: e.target.value })
+            }
             type="password"
             id="c-password"
             value={clientInfos.password}
             required
           />
-        </div>
+          <button className="subscribe-btn" type="submit" id="submit-button">
+            S'inscrire
+          </button>
+        </form>
       </div>
     </>
   );

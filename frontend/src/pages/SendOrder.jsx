@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
+import ShoplistContext from "../context/ShoplistContext";
 
 import TotalOrder from "../components/TotalOrder";
 import SummaryOrder from "../components/SummaryOrder";
 import { getDate } from "../services/DateManager";
 
 export default function SendOrder() {
-  const savedShoplist = localStorage.getItem("shoplist");
-  const [shoplist] = useState(savedShoplist ? JSON.parse(savedShoplist) : []);
+  const { shoplist } = useContext(ShoplistContext);
   useEffect(() => {
     localStorage.setItem("shoplist", JSON.stringify(shoplist));
   }, [shoplist]);
