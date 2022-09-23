@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function ProductDetails() {
+import ShoplistContext from "../context/ShoplistContext";
+
+import ProductDetails from "../components/ProductDetails";
+
+export default function ProductDetailsPage() {
   const [productDetails, setProductDetails] = useState("");
   const { id } = useParams();
-  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -14,10 +17,8 @@ export default function ProductDetails() {
       .then((data) => setProductDetails(data));
   }, []);
 
-  const savedShoplist = localStorage.getItem("shoplist");
-  const [shoplist, setShoplist] = useState(
-    savedShoplist ? JSON.parse(savedShoplist) : []
-  );
+  const { shoplist, setShoplist } = useContext(ShoplistContext);
+
   useEffect(() => {
     localStorage.setItem("shoplist", JSON.stringify(shoplist));
   }, [shoplist]);
@@ -51,15 +52,15 @@ export default function ProductDetails() {
 
   return (
     <div>
-      <div>{productDetails.name}</div>
-      <div>{productDetails.description}</div>
-      <div>
-        <img src={productDetails.image} alt={productDetails.name} />
+      <div className="container-title-menu">
+        <h1 className="title-menu-blue">Description</h1>
       </div>
-      <div>{productDetails.price} €</div>
-      <button
-        type="button"
-        onClick={() =>
+      <ProductDetails
+        name={productDetails.name}
+        description={productDetails.description}
+        image={productDetails.image}
+        price={productDetails.price}
+        addToShoplist={() =>
           addToShoplist(
             productDetails.name,
             productDetails.price,
@@ -67,13 +68,7 @@ export default function ProductDetails() {
             productDetails.image
           )
         }
-      >
-        Ajouter au panier
-      </button>
-      {/* <ButtonComponent name="Ajouter au panier" /> */}
-      <button type="button" onClick={() => navigate(`/shoplists/`)}>
-        Panier
-      </button>
+      />
     </div>
   );
 }
