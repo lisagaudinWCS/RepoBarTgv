@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
+
+import ShoplistContext from "../context/ShoplistContext";
 
 export default function CancelOrder() {
-  const savedShoplist = localStorage.getItem("shoplist");
-  const [shoplist, setShoplist] = useState(
-    savedShoplist ? JSON.parse(savedShoplist) : []
-  );
+  const { shoplist, setShoplist } = useContext(ShoplistContext);
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(shoplist));
   }, [shoplist]);

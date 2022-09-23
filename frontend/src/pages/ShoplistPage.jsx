@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+
+import ShoplistContext from "../context/ShoplistContext";
 
 import TotalOrder from "../components/TotalOrder";
 import ShoplistDetails from "../components/ShoplistDetails";
 
 export default function ShoplistPage() {
-  const savedShoplist = localStorage.getItem("shoplist");
-  const [shoplist, setShoplist] = useState(
-    savedShoplist ? JSON.parse(savedShoplist) : []
-  );
+  const { shoplist, setShoplist } = useContext(ShoplistContext);
   useEffect(() => {
     localStorage.setItem("shoplist", JSON.stringify(shoplist));
   }, [shoplist]);
@@ -52,27 +51,30 @@ export default function ShoplistPage() {
           />
         ))}
       <TotalOrder total={total} />
-
-      <div className="container-button-shop">
-        <div>
-          <button
-            className="validate-button"
-            type="button"
-            onClick={() => navigate("/sendorder")}
-          >
-            Valider la Commande
-          </button>
+      {shoplist.length ? (
+        <div className="container-button-shop">
+          <div>
+            <button
+              className="validate-button"
+              type="button"
+              onClick={() => navigate("/sendorder")}
+            >
+              Valider la Commande
+            </button>
+          </div>
+          <div>
+            <button
+              className="cancel-button"
+              type="button"
+              onClick={() => setShoplist([])}
+            >
+              Vider Panier
+            </button>
+          </div>
         </div>
-        <div>
-          <button
-            className="cancel-button"
-            type="button"
-            onClick={() => setShoplist([])}
-          >
-            Vider Panier
-          </button>
-        </div>
-      </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

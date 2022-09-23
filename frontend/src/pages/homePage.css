@@ -9,7 +9,8 @@
 }
 
 .logo-inoui {
-  grid-column: 6/7;
+  grid-column: 6/8;
+  justify-self: center;
 }
 
 .ban-picture {
@@ -22,13 +23,13 @@
 
 .logo-user,
 .logo-disconnect {
-  grid-column: 11/12;
-  grid-template-rows: 1/2;
+  grid-column: 10/12;
   align-self: center;
   justify-self: right;
 }
 
 .logo-panier {
+  display: flex;
   grid-template-rows: 1/2;
   align-self: center;
   justify-self: left;
@@ -37,6 +38,13 @@
 .logo-user img,
 .disconnect-btn {
   width: 60%;
+}
+
+.amount-order {
+  color: #980c35;
+  margin-left: -25px;
+
+  font-weight: bold;
 }
 
 .filter-nav {
@@ -49,8 +57,18 @@
   align-items: center;
 }
 
-.filter-nav div {
+.filter-nav button {
   cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+}
+.category-product {
+  margin: 30px;
+  font-size: 32px;
+  color: #0075a1;
 }
 
 .container-all-product {
@@ -60,9 +78,11 @@
   margin: 50px 30px;
 }
 .container-element {
+  justify-self: center;
+  max-width: 90%;
   border: 1px solid lightgray;
   border-radius: 5px;
-  height: 400px;
+  height: auto;
 }
 
 .picture {
@@ -75,8 +95,38 @@
   text-align: center;
   margin: 15px 0;
   font-weight: 600;
+  font-size: 20px;
 }
 
 .product-price {
   text-align: center;
+  margin: 20px;
+  color: #0075a1;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.product-description {
+  padding-bottom: 30px;
+  text-align: center;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1500px) {
+  .container-all-product {
+    grid-template-columns: repeat(3, 1fr);
+}
+}
+@media screen and (max-width: 1100px) {
+  .container-all-product {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container-all-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
