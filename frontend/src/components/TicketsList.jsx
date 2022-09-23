@@ -1,7 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Footer from "@components/Footer";
 import Ticket from "./Ticket";
+import NavBarTickets from "./NavBarTickets";
+import banbg from "../assets/banbg.jpg";
+import "./connexion.css";
 
 export default function TicketsList() {
   const [tickets, setTickets] = useState("");
@@ -16,10 +20,10 @@ export default function TicketsList() {
   return (
     <div>
       <div className="img-header-profile">
-        <img
-          src="https://res.cloudinary.com/dbkscupri/image/upload/v1663166464/pexels-andrea-piacquadio-3839219_rojpxd.jpg"
-          alt="beaugossedansunegare"
-        />
+        <img src={banbg} alt="beaugossedansunegare" />
+      </div>
+      <div className="nav-bar-home">
+        <NavBarTickets />
       </div>
       {tickets &&
         tickets.map((ticket) => (
@@ -27,6 +31,9 @@ export default function TicketsList() {
             <Ticket ticket={ticket} />
           </Link>
         ))}
+      <div className="footer-home">
+        <Footer />
+      </div>
     </div>
   );
 }

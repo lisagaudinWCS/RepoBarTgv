@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import TicketPage from "@pages/TicketPage";
-import HomePage from "@pages/HomePage";
-import HeaderHome from "@components/HeaderHome";
+import HomePage from "./pages/HomePage";
+import HeaderHome from "./components/HeaderHome";
 import TicketsList from "./components/TicketsList";
 import Form from "./components/Form";
 import Subscribe from "./pages/Subscribe";
@@ -18,6 +18,7 @@ import "./App.css";
 import "./pages/homePage.css";
 import "./pages/shoplistPage.css";
 import "./components/shoplistDetails.css";
+import "./components/connexion.css";
 
 function App() {
   return (

@@ -42,3 +42,15 @@
   font-size: 12px;
   text-decoration: none;
 }
+
+/* css de loulou */
+
+.ticket-nav {
+  margin-top: -4px;
+  height: 4vh;
+  background-color: #0075a1;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
