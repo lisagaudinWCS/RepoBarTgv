@@ -54,7 +54,7 @@ function App() {
               <Route path="/sendorder" element={<SendOrder />} />
               <Route path="/home/drinks" element={<CategoryListDrinks />} />
               <Route path="/cancelorder" element={<CancelOrder />} />
-              <Route path="/orderfinito" elemnt={<SendOrderFinito />} />
+              <Route path="/orderfinito" element={<SendOrderFinito />} />
             </Routes>
           </div>
         </Router>
