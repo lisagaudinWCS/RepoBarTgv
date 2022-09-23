@@ -24,6 +24,7 @@ import "./pages/shoplistPage.css";
 import "./components/shoplistDetails.css";
 import "./components/connexion.css";
 import "./components/productDetails.css";
+import TicketPage from "@pages/TicketPage";
 
 function App() {
   const savedShoplist = localStorage.getItem("shoplist");
@@ -47,6 +48,8 @@ function App() {
               <Route path="/subscribe" element={<Subscribe />} />
               <Route path="/login" element={<Connexion />} />
               <Route path="/shoplists/" element={<ShoplistPage />} />
+              <Route path="/ticket/" element={<TicketPage />} />
+
               <Route
                 path="/productdetails/:id"
                 element={<ProductDetailsPage />}
