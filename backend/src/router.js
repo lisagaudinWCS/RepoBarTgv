@@ -1,7 +1,7 @@
 const express = require("express");
 
 const router = express.Router();
-const { hashPassword, verifyPassword, verifyToken } = require("./auth");
+const { hashPassword, verifyPassword } = require("./auth");
 
 const formControllers = require("./controllers/formcontrollers");
 const ticketControllers = require("./controllers/ticketControllers");
@@ -25,7 +25,7 @@ router.post(
   verifyPassword
 );
 
-router.use(verifyToken);
+// router.use(verifyToken);
 // ******** HIDDEN ROUTES ********
 
 // *** TRAIN / TICKET ***

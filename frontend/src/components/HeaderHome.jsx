@@ -5,6 +5,7 @@ import AuthContext from "../contexts/AuthContext";
 import logoInoui from "../assets/tgvInoui.png";
 import panier from "../assets/panier.png";
 import user from "../assets/utilisateur.png";
+import deconnexion1 from "../assets/deconnexion1.png";
 
 export default function HeaderHome() {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
@@ -27,9 +28,13 @@ export default function HeaderHome() {
 
         {isAuthenticated ? (
           <div className="logo-disconnect">
-            <button type="button" onClick={() => handleLogout()}>
-              Deconnexion
-            </button>
+            <input
+              type="image"
+              className="disconnect-btn"
+              alt="logout"
+              src={deconnexion1}
+              onClick={() => handleLogout()}
+            />
           </div>
         ) : (
           <div className="logo-user">

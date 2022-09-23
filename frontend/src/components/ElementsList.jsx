@@ -7,7 +7,7 @@ export default function ElementsList() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/getproductdetails`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/products`)
       .then((response) => response.data)
       .then((data) => setAllproducts(data));
   }, []);

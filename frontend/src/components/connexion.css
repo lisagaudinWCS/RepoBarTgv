@@ -8,6 +8,7 @@
   color: red;
 }
 .connexion-form {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,6 +31,7 @@
   border-radius: 25px;
   height: 25px;
   border: none;
+  font-size: 16px;
 }
 .login-submit {
   display: flex;

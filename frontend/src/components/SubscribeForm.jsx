@@ -4,14 +4,14 @@ import "./subscribe.css";
 
 export default function SubscribeForm() {
   const [clients, setClients] = useState({
-    client_number: 800,
+    // client_number: 800,
     lastname: "",
     firstname: "",
     email: "",
     password: "",
     avatar: "",
     birth_date: "",
-    isAdmin: 0,
+    // isAdmin: 0,
   });
   const createClient = (e) => {
     e.preventDefault();
