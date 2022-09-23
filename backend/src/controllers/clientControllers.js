@@ -28,6 +28,25 @@ const read = (req, res) => {
     });
 };
 
+const getClientByEmailWithPasswordAndPassToNext = (req, res, next) => {
+  const { email } = req.body;
+  models.client
+    .findByEmail(email)
+    .then(([rows]) => {
+      if (rows[0] != null) {
+        // eslint-disable-next-line prefer-destructuring
+        req.user = rows[0];
+        next();
+      } else {
+        res.sendStatus(401);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const edit = (req, res) => {
   const item = req.body;
 
@@ -52,9 +71,6 @@ const edit = (req, res) => {
 
 const add = (req, res) => {
   const item = req.body;
-
-  // TODO validations (length, format...)
-
   models.client
     .insert(item)
     .then(([result]) => {
@@ -85,6 +101,7 @@ const destroy = (req, res) => {
 module.exports = {
   browse,
   read,
+  getClientByEmailWithPasswordAndPassToNext,
   edit,
   add,
   destroy,

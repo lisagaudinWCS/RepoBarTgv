@@ -4,6 +4,7 @@ import ConnexionForm from "../components/ConnexionForm";
 function Connexion() {
   return (
     <div>
+      {/* Components header INOUI + ban-img + navbar */}
       <h3 className="connexion-title-blue">CONNEXION</h3>
       <ConnexionForm />
     </div>
