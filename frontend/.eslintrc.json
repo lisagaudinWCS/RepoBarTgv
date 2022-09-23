@@ -17,6 +17,20 @@
   },
   "plugins": ["react", "import"],
   "rules": {
+    "jsx-a11y/no-noninteractive-element-interactions": [
+      "error",
+      {
+        "handlers": [
+          // "onClick",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ]
+      }
+    ],
+
     "no-console": "off",
     "no-restricted-syntax": [
       "error",
