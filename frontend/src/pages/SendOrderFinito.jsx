@@ -1,6 +1,6 @@
 import { useEffect, useContext } from "react";
 
-import Form from "../components/Form"
+import Form from "../components/Form";
 
 import ShoplistContext from "../context/ShoplistContext";
 
