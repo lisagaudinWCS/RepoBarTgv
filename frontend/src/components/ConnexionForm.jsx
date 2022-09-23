@@ -1,14 +1,32 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import AuthAPI from "../services/AuthAPI";
+import AuthContext from "../contexts/AuthContext";
 import "./connexion.css";
 
 export default function ConnexionForm() {
+  const navigate = useNavigate();
+
   const [users, setUsers] = useState({
     email: "",
     password: "",
   });
 
+  const { setIsAuthenticated } = useContext(AuthContext);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await AuthAPI.authenticate(users);
+      setIsAuthenticated(true);
+      navigate(`/profil/1`);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
-    <form className="connexion-form">
+    <form className="connexion-form" onSubmit={(e) => handleSubmit(e)}>
       <div className="connexion-inputs">
         <label htmlFor="email">
           email: <span className="required-field">*</span>

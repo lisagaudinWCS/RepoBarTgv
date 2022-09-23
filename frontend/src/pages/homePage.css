@@ -21,7 +21,8 @@
   width: 100%;
 }
 
-.logo-user {
+.logo-user,
+.logo-disconnect {
   grid-column: 10/12;
   align-self: center;
   justify-self: right;
@@ -34,7 +35,8 @@
   justify-self: left;
 }
 .logo-panier img,
-.logo-user img {
+.logo-user img,
+.disconnect-btn {
   width: 60%;
 }
 
