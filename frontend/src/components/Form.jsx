@@ -87,7 +87,7 @@ function Form() {
           id="email"
           required
         />
-        <div className="App">
+        <div className="rating-form">
           <Rating
             fillColor="#0075A1"
             allowHalfIcon
@@ -108,7 +108,7 @@ function Form() {
           required
         />
       </div>
-      <div>
+      <div className="container-button">
         <button className="input-box" type="submit" id="send-button">
           {buttonText}
         </button>

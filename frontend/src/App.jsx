@@ -15,6 +15,7 @@ import CancelOrder from "./pages/CancelOrder";
 import UserProfile from "./pages/UserProfile";
 import Connexion from "./pages/Connexion";
 import ChangeInfos from "./pages/ChangeInfos";
+import SendOrderFinito from "./pages/SendOrderFinito";
 
 import ShoplistContext from "./context/ShoplistContext";
 
@@ -53,6 +54,7 @@ function App() {
               <Route path="/sendorder" element={<SendOrder />} />
               <Route path="/home/drinks" element={<CategoryListDrinks />} />
               <Route path="/cancelorder" element={<CancelOrder />} />
+              <Route path="/orderfinito" element={<SendOrderFinito />} />
             </Routes>
           </div>
         </Router>
