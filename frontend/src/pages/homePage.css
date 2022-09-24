@@ -1,3 +1,13 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 15em;
+}
+
 .logo-inoui img {
   align-self: center;
   width: 200px;
@@ -6,8 +16,15 @@
 .container-header {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  width: 100%;
 }
 
+.container-header.fixed {
+  background-color: white;
+  top: 0;
+  position: fixed;
+  transition: 0.3s ease-in-out;
+}
 .logo-inoui {
   grid-column: 6/8;
   justify-self: center;
@@ -17,21 +34,29 @@
   width: 100%;
 }
 
+.ban-picture.fixed {
+  display: none;
+  transition: 0.3s ease-in-out;
+}
+
 .ban-picture img {
   width: 100%;
 }
 
-.logo-user,
-.logo-disconnect {
-  grid-column: 10/12;
+.container-user {
+  grid-column: 11/12;
+  display: flex;
   align-self: center;
   justify-self: right;
+}
+
+.logo-disconnect input {
+  padding-top: 5px;
 }
 
 .logo-panier {
   display: flex;
   padding-bottom: 5px;
-  grid-template-rows: 1/2;
   align-self: center;
   justify-self: left;
 }
@@ -48,6 +73,7 @@
 }
 
 .filter-nav {
+  width: 100%;
   margin-top: -4px;
   height: 6vh;
   background-color: #0075a1;
@@ -55,6 +81,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.filter-nav.fixed {
+  position: fixed;
+  top: 100px;
+  transition: 0.3s ease-in-out;
 }
 
 .filter-nav button {

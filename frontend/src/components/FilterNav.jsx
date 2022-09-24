@@ -1,7 +1,29 @@
+import { useState, useEffect } from "react";
+
 export default function FilterNav({ setfilterNavigation }) {
+  const [fix, setFix] = useState(false);
+
+  function setFixed() {
+    if (window.scrollY >= 600) {
+      setFix(true);
+    } else {
+      setFix(false);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", setFixed);
+  }, []);
   return (
     <div>
-      <div className="filter-nav">
+      <div className={fix ? "filter-nav fixed" : "filter-nav"}>
+        <button
+          type="button"
+          value="
+          0"
+          onClick={(e) => setfilterNavigation(e.target.value)}
+        >
+          Tous les Produits
+        </button>
         <button
           type="button"
           value="

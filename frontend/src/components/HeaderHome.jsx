@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import AuthAPI from "../services/AuthAPI";
 import AuthContext from "../contexts/AuthContext";
 import logoInoui from "../assets/tgvInoui.png";
@@ -12,8 +12,24 @@ import ShoplistContext from "../context/ShoplistContext";
 export default function HeaderHome() {
   const { shoplist } = useContext(ShoplistContext);
   const amount = shoplist.reduce((acc, product) => acc + product.amount, 0);
+
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+
   const navigate = useNavigate();
+
+  const [fix, setFix] = useState(false);
+
+  function setFixed() {
+    if (window.scrollY >= 600) {
+      setFix(true);
+    } else {
+      setFix(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", setFixed);
+  }, []);
 
   function handleLogout() {
     AuthAPI.logout();
@@ -23,31 +39,32 @@ export default function HeaderHome() {
 
   return (
     <div>
-      <div className="container-header">
+      <div className={fix ? "container-header fixed" : "container-header"}>
         <div className="logo-inoui">
           <Link to="/">
             <img src={logoInoui} alt="logo-inoui" />
           </Link>
         </div>
-
-        {isAuthenticated ? (
-          <div className="logo-disconnect">
-            <input
-              type="image"
-              className="disconnect-btn"
-              alt="logout"
-              src={deconnexion1}
-              onClick={() => handleLogout()}
-            />
-          </div>
-        ) : (
+        <div className="container-user">
+          {isAuthenticated ? (
+            <div className="logo-disconnect">
+              <input
+                type="image"
+                className="disconnect-btn"
+                alt="logout"
+                src={deconnexion1}
+                onClick={() => handleLogout()}
+              />
+            </div>
+          ) : (
+            ""
+          )}
           <div className="logo-user">
             <Link to="/login">
               <img src={user} alt="logo user" />
             </Link>
           </div>
-        )}
-
+        </div>
         <div className="logo-panier">
           <Link to="/shoplists">
             <img src={panier} alt="logo panier" />

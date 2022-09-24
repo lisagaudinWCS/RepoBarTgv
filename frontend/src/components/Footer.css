@@ -1,63 +1,44 @@
-.blocFooter {
-  display: flex;
+.container-footer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-}
-
-.footer {
-  display: flex;
-  flex-direction: column-reverse;
   background-color: black;
-  /* width: 209.8vh; */
-  width: 100%;
-  height: 50.2vh;
-  top: 425.5vh;
-  left: 0vh;
-  /* position: absolute; */
-}
-
-.sncfConnect {
-  margin-top: 20vh;
-  margin-left: 130vh;
-  margin-bottom: 10vh;
-}
-.sncfConnect a {
   color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px 50px;
+  
 }
 
-.logoSncf {
-  margin-left: 50vh;
+.site-plan {
+  align-self: center;
 }
 
-/* .logoSncf img {
-} */
 
-@media screen and (max-width: 390px) {
-  .blocFooter {
-    width: 100%;
-  }
+.site-plan a, .site-plan h5{
+  display: block;
+  color: white;
+  padding: 5px;
+}
 
-  .footer {
-    display: flex;
-    flex-direction: column-reverse;
-    background-color: black;
-    /* width: 209.8vh; */
-    width: 100%;
-    height: 36.8vh;
-    top: 425.5vh;
-    left: 0vh;
-    /* position: absolute; */
-  }
-  .sncfConnect {
-    margin-top: 15vh;
-    margin-left: 21.5vh;
-    margin-bottom: 1vh;
-  }
-  .sncfConnect a {
-    color: white;
-  }
+.container-image-footer {
+  width: 80px;
+  justify-self: center;
+  align-self: center;
+}
 
-  .logoSncf {
-    margin-top: 5vh;
-    margin-left: 3vh;
-  }
+.container-image-footer img{  
+  width: 100%;
+}
+
+.container-ext {
+  justify-self: right;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-ext a {
+  padding: 5px;
+  color: white;
 }

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import HomePage from "@pages/HomePage";
 import HeaderHome from "@components/HeaderHome";
+import Footer from "@components/Footer";
 import AuthAPI from "./services/AuthAPI";
 import AuthContext from "./contexts/AuthContext";
 import FormPage from "./pages/FormPage";
@@ -37,7 +38,7 @@ function App() {
     <ShoplistContext.Provider value={{ shoplist, setShoplist }}>
       <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
         <Router>
-          <div>
+          <div className="main">
             <HeaderHome />
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -56,6 +57,7 @@ function App() {
               <Route path="/cancelorder" element={<CancelOrder />} />
               <Route path="/orderfinito" element={<SendOrderFinito />} />
             </Routes>
+            <Footer />
           </div>
         </Router>
       </AuthContext.Provider>
