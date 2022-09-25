@@ -38,7 +38,7 @@ function App() {
     <ShoplistContext.Provider value={{ shoplist, setShoplist }}>
       <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
         <Router>
-          <div className="main">
+          <div>
             <HeaderHome />
             <Routes>
               <Route path="/" element={<HomePage />} />

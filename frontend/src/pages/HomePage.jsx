@@ -7,7 +7,7 @@ import FilterNav from "@components/FilterNav";
 export default function HomePage() {
   const [filterNavigation, setfilterNavigation] = useState("");
   return (
-    <div className="container-main">
+    <div>
       <BanniereHome />
       <FilterNav setfilterNavigation={setfilterNavigation} />
       <ElementsList

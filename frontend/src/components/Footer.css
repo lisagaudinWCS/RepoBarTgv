@@ -7,15 +7,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 20px 50px;
-  
 }
 
 .site-plan {
   align-self: center;
 }
 
-
-.site-plan a, .site-plan h5{
+.site-plan a,
+.site-plan h5 {
   display: block;
   color: white;
   padding: 5px;
@@ -27,7 +26,7 @@
   align-self: center;
 }
 
-.container-image-footer img{  
+.container-image-footer img {
   width: 100%;
 }
 

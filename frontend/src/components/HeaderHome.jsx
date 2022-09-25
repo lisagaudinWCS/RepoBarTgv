@@ -20,7 +20,7 @@ export default function HeaderHome() {
   const [fix, setFix] = useState(false);
 
   function setFixed() {
-    if (window.scrollY >= 600) {
+    if (window.scrollY >= 390) {
       setFix(true);
     } else {
       setFix(false);

@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 
+import homeIco from "../assets/homeIco.png";
+
 export default function FilterNav({ setfilterNavigation }) {
   const [fix, setFix] = useState(false);
 
   function setFixed() {
-    if (window.scrollY >= 600) {
+    if (window.scrollY >= 390) {
       setFix(true);
     } else {
       setFix(false);
@@ -22,7 +24,7 @@ export default function FilterNav({ setfilterNavigation }) {
           0"
           onClick={(e) => setfilterNavigation(e.target.value)}
         >
-          Tous les Produits
+          <img className="home-icon" src={homeIco} alt="home-icon" />
         </button>
         <button
           type="button"
