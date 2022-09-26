@@ -2,6 +2,17 @@ const argon2 = require("argon2");
 
 const jwt = require("jsonwebtoken");
 
+// test de recuperation de l'id dans le token
+// const saveToken = (req, res, next) => {
+//   const clientId = token.sub;
+// };
+
+// const testToken =
+//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE4LCJpYXQiOjE2NjQwMTM0NTksImV4cCI6MTY2NDAxNzA1OX0.Ueaa3Y_efqHjNovbEIDEXzUtvg4OiaUPkL1kbhjeECs";
+// const token = jwt.decode(testToken);
+// const subjectId = token.sub;
+// console.log(subjectId);
+
 const verifyToken = (req, res, next) => {
   try {
     const authorizationHeader = req.get("Authorization");
