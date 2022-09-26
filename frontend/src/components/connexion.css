@@ -45,6 +45,13 @@
   text-decoration: none;
 }
 
+
+
+
+
+
+
+
 /* css de loulou */
 
 .ticket-nav {
@@ -55,4 +62,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.trajets{
+  color: #0075a1;
+  background-color: #f4e9dc;
+  padding-top: 30px;
+
 }

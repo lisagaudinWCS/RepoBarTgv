@@ -1,18 +1,26 @@
 import React from "react";
+import { transBirthDate } from "@services/DateManager";
 import "./Ticket.css";
 
 export default function Ticket({ ticket }) {
+  const travelDate = transBirthDate(ticket.date);
+
+  const departureTime = ticket.departure_time.split(":");
+  const res = `${departureTime[0]}h${departureTime[1]}`;
+  const arrivalTime = ticket.arrival_time.split(":");
+  const result = `${arrivalTime[0]}h${arrivalTime[1]}`;
+
   return (
     <div className="ticket-container">
       <div className="travel-date">
-        <p>{ticket.date}</p>
+        <p>{travelDate}</p>
       </div>
       <div className="detals-travel">
         <div className="detals-time">
           <div className="departure-time">
-            <p>{ticket.departure_time}</p>
+            <p>{res}</p>
             <div className="arrival-time">
-              <p>{ticket.arrival_time}</p>
+              <p>{result}</p>
             </div>
           </div>
         </div>

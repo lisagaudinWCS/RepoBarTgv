@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Footer from "@components/Footer";
 import Ticket from "./Ticket";
 import NavBarTickets from "./NavBarTickets";
 import banbg from "../assets/banbg.jpg";
@@ -25,15 +24,16 @@ export default function TicketsList() {
       <div className="nav-bar-home">
         <NavBarTickets />
       </div>
+      <h2 className="trajets">Mes Trajets & Commandes</h2>
       {tickets &&
         tickets.map((ticket) => (
           <Link to={`/tickets/${ticket.id}`} key={ticket.id}>
             <Ticket ticket={ticket} />
           </Link>
         ))}
-      <div className="footer-home">
-        <Footer />
-      </div>
+      {/* <div className="footer-home">
+        <Footer /> */}
+      {/* </div> */}
     </div>
   );
 }

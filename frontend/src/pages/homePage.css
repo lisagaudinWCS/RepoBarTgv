@@ -92,6 +92,7 @@
 }
 
 .product-name {
+  color: black;
   text-align: center;
   margin: 15px 0;
   font-weight: 600;
@@ -107,6 +108,7 @@
 }
 
 .product-description {
+  color: black; 
   padding-bottom: 30px;
   text-align: center;
   padding: 10px;

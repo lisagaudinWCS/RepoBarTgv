@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import HomePage from "@pages/HomePage";
 import HeaderHome from "@components/HeaderHome";
+import TicketPage from "@pages/TicketPage";
 import AuthAPI from "./services/AuthAPI";
 import AuthContext from "./contexts/AuthContext";
 import FormPage from "./pages/FormPage";
@@ -24,7 +25,6 @@ import "./pages/shoplistPage.css";
 import "./components/shoplistDetails.css";
 import "./components/connexion.css";
 import "./components/productDetails.css";
-import TicketPage from "@pages/TicketPage";
 
 function App() {
   const savedShoplist = localStorage.getItem("shoplist");
