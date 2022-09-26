@@ -61,6 +61,9 @@ body {
 .disconnect-btn {
   width: 60%;
 }
+.when-authenticated-container {
+  display: flex;
+}
 
 .amount-order {
   color: #980c35;
