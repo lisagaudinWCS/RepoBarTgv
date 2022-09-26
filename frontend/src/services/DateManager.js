@@ -30,5 +30,5 @@ export const transBirthDate = (date) => {
   const years = myDate[0];
   const month = myDate[1];
   const day = myDate[2];
-  return `${day}-${month}-${years}`;
+  return `${years}-${month}-${day}`;
 };

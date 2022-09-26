@@ -51,7 +51,7 @@ function Form() {
   return (
     // form_number, date, description, email, name, category_form_id
     <form className="container" onSubmit={createItem}>
-      <h1 className="comment-title">Donnez votre avis :</h1>
+      <h1 className="comment-title">Votre avis nous intéresse :</h1>
       <div className="input-form">
         <label htmlFor="name">Votre nom: </label>
         <input

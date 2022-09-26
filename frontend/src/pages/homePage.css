@@ -1,3 +1,13 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 15em;
+}
+
 .logo-inoui img {
   align-self: center;
   width: 200px;
@@ -6,8 +16,16 @@
 .container-header {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  width: 100%;
 }
 
+.container-header.fixed {
+  z-index: 100;
+  background-color: white;
+  top: 0;
+  position: fixed;
+  transition: 0.3s ease-in-out;
+}
 .logo-inoui {
   grid-column: 6/8;
   justify-self: center;
@@ -21,17 +39,20 @@
   width: 100%;
 }
 
-.logo-user,
-.logo-disconnect {
-  grid-column: 10/12;
+.container-user {
+  grid-column: 11/12;
+  display: flex;
   align-self: center;
   justify-self: right;
+}
+
+.logo-disconnect input {
+  padding-top: 5px;
 }
 
 .logo-panier {
   display: flex;
   padding-bottom: 5px;
-  grid-template-rows: 1/2;
   align-self: center;
   justify-self: left;
 }
@@ -48,6 +69,7 @@
 }
 
 .filter-nav {
+  width: 100%;
   margin-top: -4px;
   height: 6vh;
   background-color: #0075a1;
@@ -57,6 +79,13 @@
   align-items: center;
 }
 
+.filter-nav.fixed {
+  position: fixed;
+  top: 100px;
+  transition: 0.3s ease-in-out;
+  z-index: 100;
+}
+
 .filter-nav button {
   cursor: pointer;
   background: none;
@@ -64,6 +93,11 @@
   color: white;
   font-weight: 500;
   font-size: 18px;
+}
+
+.home-icon {
+  padding-top: 5px;
+  width: 40%;
 }
 .category-product {
   margin: 50px;
@@ -102,7 +136,6 @@
 
 .product-price {
   text-align: center;
-  margin: 20px;
   color: #0075a1;
   font-weight: bold;
   font-size: 20px;
@@ -113,6 +146,40 @@
   padding-bottom: 30px;
   text-align: center;
   padding: 10px;
+  min-height: 60px;
+}
+
+.container-price-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.add-to-shoplist-from-home,
+.add-to-shoplist-from-home-hide {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid #0075a1;
+  border-radius: 5px;
+  font-size: 30px;
+  color: #0075a1;
+}
+
+.add-to-shoplist-from-home:hover {
+  background-color: #0075a1;
+  color: white;
+  transition: 0.3s;
+}
+
+.add-to-shoplist-from-home-hide {
+  border: #980c35;
+  color: white;
+  background-color: #980c35;
+  scale: 1.1;
+  transition: 0.3s;
 }
 
 @media screen and (max-width: 1100px) {
