@@ -105,6 +105,9 @@ export default function UserInformations() {
             disabled
           />
           <br />
+          <button type="button" className="delete-account-btn">
+            SUPPRIMER MON COMPTE ❌
+          </button>
         </div>
       </div>
     </>

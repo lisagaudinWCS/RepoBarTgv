@@ -140,7 +140,7 @@ export default function ChangeInfosCmpnt() {
             required
           />
           <button className="subscribe-btn" type="submit" id="submit-button">
-            S'inscrire
+            Je valide !
           </button>
         </form>
       </div>
