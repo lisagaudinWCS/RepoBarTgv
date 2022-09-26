@@ -4,6 +4,7 @@ import { useState } from "react";
 import HomePage from "@pages/HomePage";
 import HeaderHome from "@components/HeaderHome";
 import TicketPage from "@pages/TicketPage";
+import Footer from "@components/Footer";
 import AuthAPI from "./services/AuthAPI";
 import AuthContext from "./contexts/AuthContext";
 import FormPage from "./pages/FormPage";
@@ -16,6 +17,7 @@ import CancelOrder from "./pages/CancelOrder";
 import UserProfile from "./pages/UserProfile";
 import Connexion from "./pages/Connexion";
 import ChangeInfos from "./pages/ChangeInfos";
+import SendOrderFinito from "./pages/SendOrderFinito";
 
 import ShoplistContext from "./context/ShoplistContext";
 
@@ -57,7 +59,9 @@ function App() {
               <Route path="/sendorder" element={<SendOrder />} />
               <Route path="/home/drinks" element={<CategoryListDrinks />} />
               <Route path="/cancelorder" element={<CancelOrder />} />
+              <Route path="/orderfinito" element={<SendOrderFinito />} />
             </Routes>
+            <Footer />
           </div>
         </Router>
       </AuthContext.Provider>

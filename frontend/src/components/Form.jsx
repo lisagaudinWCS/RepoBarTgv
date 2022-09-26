@@ -51,7 +51,7 @@ function Form() {
   return (
     // form_number, date, description, email, name, category_form_id
     <form className="container" onSubmit={createItem}>
-      <h1 className="comment-title">Donnez votre avis :</h1>
+      <h1 className="comment-title">Votre avis nous intéresse :</h1>
       <div className="input-form">
         <label htmlFor="name">Votre nom: </label>
         <input
@@ -87,7 +87,7 @@ function Form() {
           id="email"
           required
         />
-        <div className="App">
+        <div className="rating-form">
           <Rating
             fillColor="#0075A1"
             allowHalfIcon
@@ -108,7 +108,7 @@ function Form() {
           required
         />
       </div>
-      <div>
+      <div className="container-button">
         <button className="input-box" type="submit" id="send-button">
           {buttonText}
         </button>

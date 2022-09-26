@@ -10,12 +10,15 @@ const trainsTicketsClientsControllers = require("./controllers/trainTicketContro
 const categoryControllers = require("./controllers/categoryControllers");
 const productControllers = require("./controllers/productControllers");
 const clientControllers = require("./controllers/clientControllers");
+const shoplistControllers = require("./controllers/shoplistControllers");
+const shoplistselem = require("./controllers/shopListElemControllers");
 
 // ********* PUBLIC ROUTES ********
 router.get("/products", productControllers.browse);
 router.get("/products/:id", productControllers.read);
 router.get("/categories/:id", categoryControllers.read);
 router.get("/productsdetails", productControllers.readProductsDetails);
+
 // get shoplist
 
 // ******** LOGIN ROUTE ********
@@ -47,7 +50,9 @@ router.get("/forms", formControllers.getAll);
 router.get("/forms/:id", formControllers.getById);
 router.post("/forms", formControllers.add);
 // *** SHOPLIST ***
-
+router.get("/shoplists", shoplistControllers.getAll);
+router.get("/shoplistselem", shoplistselem.getAll);
+router.post("/shoplists", shoplistControllers.add);
 // -----------------------------------------------------------------
 
 // ICI IL VA FALLOIR PROTEGER AUTREMENT QUAVEC LE TOKEN CAR ADMIN UNIQUEMENT !!
