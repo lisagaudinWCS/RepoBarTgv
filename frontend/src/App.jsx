@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import HomePage from "@pages/HomePage";
-import HeaderHome from "@components/HeaderHome";
-import Footer from "@components/Footer";
+import HomePage from "./pages/HomePage";
+import HeaderHome from "./components/HeaderHome";
+import Footer from "./components/Footer";
 import AuthAPI from "./services/AuthAPI";
 import AuthContext from "./contexts/AuthContext";
 import FormPage from "./pages/FormPage";
