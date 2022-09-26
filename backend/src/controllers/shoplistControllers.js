@@ -39,8 +39,8 @@ const add = (req, res) => {
       res.location(`/shoplists/${result.insertId}`).sendStatus(201);
       res.send(result.insertId);
       // eslint-disable-next-line no-unused-expressions
-      item.cart &&
-        item.cart.map((product) =>
+      item.shoplist &&
+        item.shoplist.map((product) =>
           models.shoplist.insertProduct(result.insertId, product)
         );
     })

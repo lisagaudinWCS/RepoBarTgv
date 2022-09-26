@@ -7,7 +7,7 @@ export default function TotalOrder({ total }) {
           <p className="total-number">{total} €</p>
         </div>
       ) : (
-        <div className="empty-cart">Votre pannier est vide</div>
+        <div className="empty-cart">Votre panier est vide</div>
       )}
     </div>
   );

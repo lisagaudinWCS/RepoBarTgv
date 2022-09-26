@@ -6,26 +6,25 @@ import ShoplistContext from "../context/ShoplistContext";
 
 export default function Element({ id, name, price, image, description }) {
   const { shoplist, setShoplist } = useContext(ShoplistContext);
+  const [addProductToShoplist, setAddProductToShoplist] = useState(false);
+  const [productDetails, setProductDetails] = useState("");
+
   useEffect(() => {
     localStorage.setItem("shoplist", JSON.stringify(shoplist));
   }, [shoplist]);
 
-  const [addProductToShoplist, setAddProductToShoplist] = useState(false);
-
-  const [productDetails, setProductDetails] = useState("");
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/products/${id}`)
       .then((response) => response.data)
       .then((data) => setProductDetails(data));
   }, []);
+
   function addToShoplist() {
-    const currentProductAdded = shoplist.find(
-      (product) => product.name === name
-    );
+    const currentProductAdded = shoplist.find((product) => product.id === id);
     if (currentProductAdded) {
       const cartFilteredCurrentProduct = shoplist.filter(
-        (product) => product.name !== name
+        (product) => product.id !== id
       );
       setShoplist([
         ...cartFilteredCurrentProduct,
@@ -48,6 +47,7 @@ export default function Element({ id, name, price, image, description }) {
   function handleAddProduct() {
     setAddProductToShoplist(true);
     addToShoplist(
+      productDetails.id,
       productDetails.name,
       productDetails.price,
       productDetails.description,
@@ -66,7 +66,6 @@ export default function Element({ id, name, price, image, description }) {
       </Link>
       <div className="container-price-button">
         <div className="product-price">{price.split(".").join(",")} €</div>
-
         <button
           type="button"
           className={
