@@ -47,23 +47,30 @@ export default function HeaderHome() {
         </div>
         <div className="container-user">
           {isAuthenticated ? (
-            <div className="logo-disconnect">
-              <input
-                type="image"
-                className="disconnect-btn"
-                alt="logout"
-                src={deconnexion1}
-                onClick={() => handleLogout()}
-              />
+            <div className="when-authenticated-container">
+              <div className="logo-disconnect">
+                <input
+                  type="image"
+                  className="disconnect-btn"
+                  alt="logout"
+                  src={deconnexion1}
+                  onClick={() => handleLogout()}
+                />
+              </div>
+
+              <div className="logo-user">
+                <Link to="/profil/1">
+                  <img src={user} alt="logo user" />
+                </Link>
+              </div>
             </div>
           ) : (
-            ""
+            <div className="logo-user">
+              <Link to="/login">
+                <img src={user} alt="logo user" />
+              </Link>
+            </div>
           )}
-          <div className="logo-user">
-            <Link to="/login">
-              <img src={user} alt="logo user" />
-            </Link>
-          </div>
         </div>
         <div className="logo-panier">
           <Link to="/shoplists">
