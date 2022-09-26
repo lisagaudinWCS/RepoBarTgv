@@ -37,6 +37,11 @@ export default function SendOrder() {
       });
     navigate("/orderfinito");
   };
+
+  // const loaderSend = () => {
+  //   navigate("/loader");
+  //   setInterval(() => sendOrder(orderNumber), 3000);
+  // };
   const navigateTocancel = useNavigate();
 
   const removeOrder = () => {

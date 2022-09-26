@@ -1,0 +1,42 @@
+/*Element de transition à la soumission du formulaire - attente*/
+.pointDiv {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}
+.msgAfter,
+.msgAfter1,
+.msgAfter2 {
+  margin: 8px;
+  background-color: #0075a1;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  position: relative;
+  animation-name: ball;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+}
+.msgAfter1 {
+  animation-delay: 0.1s;
+  
+}
+.msgAfter2 {
+  animation-delay: 0.2s;
+}
+@keyframes ball {
+  0% {
+    bottom: 0px;
+  }
+  50% {
+    bottom: 50px;
+    background-color: #980c35;
+    
+  }
+  100% {
+    bottom: 0px;
+  }
+}
