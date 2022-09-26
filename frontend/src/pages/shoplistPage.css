@@ -11,6 +11,10 @@
   color: #980c35;
 }
 
+.shoplist-name {
+  padding-left: 10px;
+}
+
 .empty-cart {
   display: flex;
   justify-content: center;
@@ -21,12 +25,14 @@
 .total-container {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  width: 70%;
+  grid-gap: 10px;
+  width: 90%;
   margin: auto;
 }
 
 .total-order {
-  grid-column: 6 / 7;
+  grid-column: 5 / 7;
+  justify-self: right;
 }
 
 .total-number {
@@ -64,7 +70,8 @@
   height: 40px;
 }
 
-.validate-button:hover {
-  transition: 2s;
+.validate-button:hover,
+.cancel-button:hover {
+  transition: 0.3s;
   opacity: 70%;
 }

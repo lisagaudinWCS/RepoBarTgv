@@ -14,6 +14,7 @@ export default function SendOrder() {
     localStorage.setItem("shoplist", JSON.stringify(shoplist));
   }, [shoplist]);
 
+  const navigate = useNavigate();
   const total = shoplist
     .reduce((acc, product) => acc + product.amount * product.price, 0)
     .toFixed(2);
@@ -34,7 +35,13 @@ export default function SendOrder() {
         console.error(response);
         console.error(response.data);
       });
+    navigate("/orderfinito");
   };
+
+  // const loaderSend = () => {
+  //   navigate("/loader");
+  //   setInterval(() => sendOrder(orderNumber), 3000);
+  // };
   const navigateTocancel = useNavigate();
 
   const removeOrder = () => {

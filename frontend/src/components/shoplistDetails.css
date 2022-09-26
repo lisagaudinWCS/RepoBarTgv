@@ -5,8 +5,9 @@
 .container-shoplist-element {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
+  grid-gap: 10px;
   margin: auto;
-  width: 70%;
+  width: 90%;
   height: 81px;
   border: 1px solid lightgray;
   border-radius: 5px;
@@ -70,6 +71,7 @@
 
 .delete-ico {
   align-self: center;
+  justify-self: center;
 }
 
 .button-delete {

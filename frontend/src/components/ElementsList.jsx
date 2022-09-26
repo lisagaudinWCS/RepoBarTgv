@@ -20,7 +20,7 @@ export default function ElementsList({ filterNavigation }) {
   }, []);
 
   return (
-    <div>
+    <div className="container-product">
       <h2 className="category-product">
         {filterNavigation > 0
           ? category[filterNavigation - 1]
