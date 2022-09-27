@@ -1,17 +1,20 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./subscribe.css";
 
 export default function SubscribeForm() {
+  const navigate = useNavigate();
   const [clients, setClients] = useState({
-    // client_number: 800,
+    client_number: 800,
     lastname: "",
     firstname: "",
     email: "",
     password: "",
-    avatar: "",
+    avatar:
+      "https://res.cloudinary.com/dbkscupri/image/upload/v1663156807/picto/default-avatar_jw3oxv.png",
     birth_date: "",
-    // isAdmin: 0,
+    isAdmin: 0,
   });
   const createClient = (e) => {
     e.preventDefault();
@@ -23,6 +26,7 @@ export default function SubscribeForm() {
         console.error(response);
         console.error(response.data);
       });
+    navigate("/createdprofile");
   };
 
   return (
@@ -62,7 +66,10 @@ export default function SubscribeForm() {
           className="subscribe-box"
           placeholder="----/--/--"
           onChange={(e) =>
-            setClients({ ...clients, birth_date: e.target.value })
+            setClients({
+              ...clients,
+              birth_date: e.target.value,
+            })
           }
           value={clients.birth_date}
           type="date"

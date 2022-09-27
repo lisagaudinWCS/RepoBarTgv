@@ -17,6 +17,8 @@ import UserProfile from "./pages/UserProfile";
 import Connexion from "./pages/Connexion";
 import ChangeInfos from "./pages/ChangeInfos";
 import SendOrderFinito from "./pages/SendOrderFinito";
+import DeleteClientPage from "./pages/DeleteClientPage";
+import SubscribeConfirmPage from "./pages/SubscribeConfirmPage";
 
 import ShoplistContext from "./context/ShoplistContext";
 
@@ -56,6 +58,11 @@ function App() {
               <Route path="/home/drinks" element={<CategoryListDrinks />} />
               <Route path="/cancelorder" element={<CancelOrder />} />
               <Route path="/orderfinito" element={<SendOrderFinito />} />
+              <Route path="/deleteclient" element={<DeleteClientPage />} />
+              <Route
+                path="/createdprofile"
+                element={<SubscribeConfirmPage />}
+              />
             </Routes>
             <Footer />
           </div>

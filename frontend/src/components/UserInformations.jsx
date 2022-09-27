@@ -24,6 +24,11 @@ export default function UserInformations() {
       .then((data) => setClientInfos(data));
   }, []);
 
+  function deleteClient() {
+    axios.delete(`${import.meta.env.VITE_BACKEND_URL}/clients/${id}`);
+    navigate("/deleteclient");
+  }
+
   const birthdate = transBirthDate(clientInfos.birth_date);
 
   return (
@@ -105,7 +110,11 @@ export default function UserInformations() {
             disabled
           />
           <br />
-          <button type="button" className="delete-account-btn">
+          <button
+            type="button"
+            className="delete-account-btn"
+            onClick={() => deleteClient()}
+          >
             SUPPRIMER MON COMPTE ❌
           </button>
         </div>
