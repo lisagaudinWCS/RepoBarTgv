@@ -16,6 +16,7 @@
 .avatar-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 30%;
   /* background-color: blue; */
@@ -24,16 +25,20 @@
   border-radius: 50%;
   border: 1px solid black;
   margin: auto;
-  width: 30vh;
+  width: 50%;
 }
 .avatar-btn {
   background-color: #0075a1;
   color: white;
+  margin-top: 30px;
   padding: 0px 25px;
   border-radius: 25px;
   height: 25px;
   border: none;
-  width: 30vh;
+  width: 50%;
+  height: auto;
+  min-height: 30px;
+
 }
 
 .user-input-box {
