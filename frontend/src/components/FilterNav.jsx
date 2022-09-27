@@ -19,6 +19,7 @@ export default function FilterNav({ setfilterNavigation }) {
     <div>
       <div className={fix ? "filter-nav fixed" : "filter-nav"}>
         <button
+          className="container-home-icon"
           type="button"
           value="
           0"
