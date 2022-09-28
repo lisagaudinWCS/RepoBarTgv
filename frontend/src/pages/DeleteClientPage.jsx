@@ -6,7 +6,6 @@ export default function DeleteClientPage() {
   return (
     <ConfirmationPage
       title="Mon Profil"
-      pagename="Mon Compte"
       name="compte client"
       action="supprimé"
     />

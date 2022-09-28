@@ -6,7 +6,7 @@ export default function SubscribeConfirmPage() {
   return (
     <ConfirmationPage
       title="INSCRIPTION"
-      pagename="Mon Profil"
+      pagename="Vous allez être redirigé vers la page de connexion."
       name="compte client"
       action="créé"
     />

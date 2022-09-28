@@ -3,6 +3,7 @@
   padding: 15px;
   color: white;
   text-align: center;
+  width: 100%;
 }
 .required-field {
   color: red;
@@ -49,9 +50,11 @@
 
 .ticket-nav {
   margin-top: -4px;
-  height: 4vh;
+  height: 6vh;
   background-color: #0075a1;
   color: white;
+  font-weight: 500;
+  font-size: 18px;
   display: flex;
   justify-content: space-around;
   align-items: center;

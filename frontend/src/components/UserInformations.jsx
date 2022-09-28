@@ -26,7 +26,7 @@ export default function UserInformations() {
 
   function deleteClient() {
     axios.delete(`${import.meta.env.VITE_BACKEND_URL}/clients/${id}`);
-    navigate("/deleteclient");
+    navigate("/profil/deleteclient");
   }
 
   const birthdate = transBirthDate(clientInfos.birth_date);

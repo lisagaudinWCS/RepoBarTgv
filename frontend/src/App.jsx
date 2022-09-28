@@ -5,6 +5,7 @@ import HomePage from "@pages/HomePage";
 import HeaderHome from "@components/HeaderHome";
 import TicketPage from "@pages/TicketPage";
 import Footer from "@components/Footer";
+import BothIdentificationPage from "@pages/BothIdentificationPage";
 import AuthAPI from "./services/AuthAPI";
 import AuthContext from "./contexts/AuthContext";
 import FormPage from "./pages/FormPage";
@@ -51,6 +52,7 @@ function App() {
               <Route path="/profil/:id/edit" element={<ChangeInfos />} />
               <Route path="/subscribe" element={<Subscribe />} />
               <Route path="/login" element={<Connexion />} />
+              <Route path="/signin" element={<BothIdentificationPage />} />
               <Route path="/shoplists/" element={<ShoplistPage />} />
               <Route path="/ticket/" element={<TicketPage />} />
 
@@ -62,9 +64,12 @@ function App() {
               <Route path="/home/drinks" element={<CategoryListDrinks />} />
               <Route path="/cancelorder" element={<CancelOrder />} />
               <Route path="/orderfinito" element={<SendOrderFinito />} />
-              <Route path="/deleteclient" element={<DeleteClientPage />} />
               <Route
-                path="/createdprofile"
+                path="/profil/deleteclient"
+                element={<DeleteClientPage />}
+              />
+              <Route
+                path="/subscribe/createdprofile"
                 element={<SubscribeConfirmPage />}
               />
             </Routes>
