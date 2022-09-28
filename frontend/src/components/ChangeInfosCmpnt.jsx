@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { transBirthDate } from "../services/DateManager";
 
 export default function ChangeInfosCmpnt() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [clientInfos, setClientInfos] = useState({
     client_number: "",
     lastname: "",
@@ -55,6 +56,7 @@ export default function ChangeInfosCmpnt() {
           onSubmit={(e) => {
             e.preventDefault();
             updateClient();
+            navigate(`/profil/${id}`);
           }}
         >
           <label className="user-label" htmlFor="lastname">
