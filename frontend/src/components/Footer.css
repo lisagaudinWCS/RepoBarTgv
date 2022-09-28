@@ -41,3 +41,16 @@
   padding: 5px;
   color: white;
 }
+
+@media screen and (max-width: 800px) {
+  .site-plan {
+    display: none;
+  }
+  .container-footer {
+    display: flex;
+    justify-content: space-around;
+  }
+  .container-image-footer {
+    margin-right: 30px;
+  }
+}
