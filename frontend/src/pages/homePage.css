@@ -46,7 +46,6 @@ body {
   justify-self: right;
 }
 
-
 .logo-disconnect input {
   padding-top: 5px;
 }
@@ -58,7 +57,7 @@ body {
 }
 .logo-panier img,
 .logo-user img,
-.disconnect-btn{
+.disconnect-btn {
   width: 60%;
 }
 .when-authenticated-container {
@@ -206,7 +205,7 @@ body {
   .category-product {
     text-align: center;
   }
-  .container-header{
+  .container-header {
     display: flex;
     justify-content: space-around;
   }
@@ -216,7 +215,7 @@ body {
   }
   .logo-inoui {
     width: 80%;
-  } 
+  }
 
   @media screen and (max-width: 600px) {
     .filter-nav {
@@ -241,7 +240,4 @@ body {
       display: none;
     }
   }
-  
-
-
 }
