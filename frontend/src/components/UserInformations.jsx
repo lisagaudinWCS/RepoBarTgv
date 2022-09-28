@@ -24,8 +24,16 @@ export default function UserInformations() {
       .then((data) => setClientInfos(data));
   }, [clientInfos]);
   function deleteClient() {
-    axios.delete(`${import.meta.env.VITE_BACKEND_URL}/clients/${id}`);
-    navigate("/profil/deleteclient");
+    axios
+      .delete(`${import.meta.env.VITE_BACKEND_URL}/clients/${id}`)
+      .then(() => {
+        navigate("/profil/deleteclient");
+      })
+      .then(() => {
+        setTimeout(() => {
+          navigate("/");
+        }, 3000);
+      });
   }
 
   const birthdate = transBirthDate(clientInfos.birth_date);

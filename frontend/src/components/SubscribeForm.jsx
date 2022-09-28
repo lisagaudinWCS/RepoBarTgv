@@ -34,7 +34,7 @@ export default function SubscribeForm() {
       .then(() => {
         setTimeout(() => {
           navigate("/login");
-        }, 6000);
+        }, 3000);
       });
   };
 
