@@ -27,9 +27,7 @@ export default function SubscribeForm() {
         console.error(response.data);
       })
       .then(() => {
-        // setTimeout(() => {
         navigate("/subscribe/createdprofile");
-        // }, 6000);
       })
       .then(() => {
         setTimeout(() => {
