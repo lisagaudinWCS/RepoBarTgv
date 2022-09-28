@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="site-plan">
         <h5>Plan du site</h5>
         <a href="/">Accueil</a>
-        <a href="/login">Inscription/Connexion</a>
+        <a href="/signin">Inscription/Connexion</a>
         <a href="/shoplist">Panier</a>
         <a href="/forms">Nous contactez</a>
       </div>
