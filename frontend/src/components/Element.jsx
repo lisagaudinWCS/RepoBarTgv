@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 import ShoplistContext from "../context/ShoplistContext";
+import FavOff from "../assets/favorite-btn-off.png";
+import FavOn from "../assets/favorite-btn-on.png";
 
 export default function Element({ id, name, price, image, description }) {
   const { shoplist, setShoplist } = useContext(ShoplistContext);
@@ -88,21 +90,21 @@ export default function Element({ id, name, price, image, description }) {
         </button>
 
         {!isFavorite ? (
-          <button
+          <input
             className="favorite-btn-off"
-            type="button"
+            type="image"
+            src={FavOff}
+            alt="favorite unselected"
             onClick={addFavorite}
-          >
-            🤍
-          </button>
+          />
         ) : (
-          <button
-            type="button"
+          <input
+            type="image"
             className="favorite-btn-on"
+            src={FavOn}
+            alt="favorite selected"
             onClick={deleteFavorite}
-          >
-            ❤️
-          </button>
+          />
         )}
       </div>
     </div>

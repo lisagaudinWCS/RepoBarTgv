@@ -170,6 +170,10 @@ body {
   color: #0075a1;
 }
 
+.favorite-btn-off, .favorite-btn-on {
+  border: none;
+}
+
 .add-to-shoplist-from-home:hover {
   background-color: #0075a1;
   color: white;
