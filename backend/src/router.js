@@ -42,7 +42,7 @@ router.get("/trainsTicketsClients", trainsTicketsClientsControllers.getAll);
 // *** CLIENTS ***
 router.get("/clients", clientControllers.browse);
 router.get("/clients/:id", clientControllers.read);
-router.put("/clients/:id", clientControllers.edit);
+router.put("/clients/:id", hashPassword, clientControllers.edit);
 router.post("/clients", hashPassword, clientControllers.add);
 router.delete("/clients/:id", clientControllers.destroy);
 // *** FORM ***

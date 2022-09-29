@@ -7,6 +7,7 @@ import CategoryListDrinks from "@components/CategoryListDrinks";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import NavBar from "@components/NavBar";
+
 import NavBarMobile from "@components/NavBarMobile";
 import Ban from "@components/Ban";
 import "./Home.css";
