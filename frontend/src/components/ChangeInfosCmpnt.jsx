@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Cloudinary from "./cloudinary";
 import { transBirthDate } from "../services/DateManager";
 
 export default function ChangeInfosCmpnt() {
   const { id } = useParams();
+  const [url, setUrl] = useState("");
+
   const [clientInfos, setClientInfos] = useState({
     client_number: "",
     lastname: "",
@@ -37,14 +40,12 @@ export default function ChangeInfosCmpnt() {
       <div className="profile-container">
         <div className="avatar-container">
           <img
-            src={clientInfos.avatar}
+            src={url || clientInfos.avatar}
             // alt="avatar"
             className="avatar"
             alt={`avatar of ${clientInfos.name}`}
           />
-          <button type="button" className="avatar-btn" id="avatar-btn">
-            Modifier image
-          </button>
+          <Cloudinary url={url} setUrl={setUrl} />
         </div>
         {/* <div className="info-container" /> */}
         {/* <button type="button" className="change-info-btn">

@@ -1,24 +1,15 @@
 import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 
 import ShoplistContext from "../context/ShoplistContext";
 
 export default function Element({ id, name, price, image, description }) {
   const { shoplist, setShoplist } = useContext(ShoplistContext);
   const [addProductToShoplist, setAddProductToShoplist] = useState(false);
-  const [productDetails, setProductDetails] = useState("");
 
   useEffect(() => {
     localStorage.setItem("shoplist", JSON.stringify(shoplist));
   }, [shoplist]);
-
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/products/${id}`)
-      .then((response) => response.data)
-      .then((data) => setProductDetails(data));
-  }, []);
 
   function addToShoplist() {
     const currentProductAdded = shoplist.find((product) => product.id === id);
@@ -46,13 +37,7 @@ export default function Element({ id, name, price, image, description }) {
   }
   function handleAddProduct() {
     setAddProductToShoplist(true);
-    addToShoplist(
-      productDetails.id,
-      productDetails.name,
-      productDetails.price,
-      productDetails.description,
-      productDetails.image
-    );
+    addToShoplist(id, name, price, description, image);
   }
 
   return (

@@ -37,6 +37,7 @@ export default function UserInformations() {
             className="avatar"
             alt={`avatar of ${clientInfos.name}`}
           />
+
           {/* <label htmlFor="file" className="label-button-upload" id="upload">
             Upload Fichier
           </label>

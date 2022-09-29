@@ -65,18 +65,44 @@
 .user-label {
   font-weight: 600;
 }
+.container-close-button {
+  width: 100%;
+  text-align: right;
+}
 
-.upload-button {
+.close-button {
+  cursor: pointer;
+  background-color: #980c35;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  flex-direction: right;
+}
+
+.upload-file {
   display: none;
 }
 
-.label-button-upload {
+.label-upload {
   cursor: pointer;
-  text-align: center;
   background-color: #0075a1;
   color: white;
-  padding: 7px;
-  border-radius: 20px;
-  margin-top: 30px;
-  width: 150px;
+  padding: 10px 70px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin-left: 50px;
+}
+
+.label-upload.ok {
+  padding: 10px 50px;
+}
+
+.label-upload:hover {
+  opacity: 80%;
+}
+
+.validate-button.ok {
+  background-color: green;
 }
