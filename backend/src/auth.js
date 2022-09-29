@@ -42,7 +42,7 @@ const verifyPassword = (req, res) => {
     .verify(req.user.password, req.body.password)
     .then((isVerified) => {
       if (isVerified) {
-        const payload = { sub: req.user.id }; // rajouter du context ici si on veut !
+        const payload = { sub: req.user.id }; // rajouter du context ici si on veut ! isAdmin: req.user.isAdmin
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
           expiresIn: "1h",
         });

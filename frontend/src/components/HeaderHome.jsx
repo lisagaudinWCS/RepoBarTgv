@@ -52,7 +52,7 @@ export default function HeaderHome() {
             </div>
           ) : (
             <div className="logo-user">
-              <Link to="/login">
+              <Link to="/signin">
                 <img src={user} alt="logo user" />
               </Link>
             </div>

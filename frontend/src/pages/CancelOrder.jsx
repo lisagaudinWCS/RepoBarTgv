@@ -1,6 +1,7 @@
 import { useEffect, useContext } from "react";
 
 import ShoplistContext from "../context/ShoplistContext";
+import ConfirmationPage from "../components/ConfirmationPage";
 
 export default function CancelOrder() {
   const { shoplist, setShoplist } = useContext(ShoplistContext);
@@ -12,13 +13,5 @@ export default function CancelOrder() {
     setShoplist([]);
   }, []);
 
-  return (
-    <div>
-      <div className="container-title-menu">
-        <h1 className="title-menu-blue">Ma commande</h1>
-      </div>
-      <h2 className="shoplist-title">Mon panier</h2>
-      <p className="empty-cart">Votre commande a été annulée.</p>
-    </div>
-  );
+  return <ConfirmationPage title="Commande" name="commande" action="annulée" />;
 }

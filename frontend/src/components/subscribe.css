@@ -6,6 +6,13 @@
   padding: 15px;
   color: white;
   text-align: center;
+  width: 100%;
+}
+.bothtitles-side-by-side {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
 }
 .required-field {
   color: red;

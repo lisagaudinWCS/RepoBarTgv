@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AuthAPI from "../services/AuthAPI";
 import AuthContext from "../contexts/AuthContext";
 import "./connexion.css";
+// import jwtDecode from "jwt-decode";
 
 // const jwt = require("jsonwebtoken");
 // // this is just for test, get a real verified token from your middleware
@@ -12,6 +13,7 @@ import "./connexion.css";
 
 export default function ConnexionForm() {
   const navigate = useNavigate();
+  // const token = jwtDecode(token.sub);
 
   const [users, setUsers] = useState({
     email: "",
