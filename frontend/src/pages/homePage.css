@@ -3,6 +3,7 @@ html {
 }
 
 body {
+  padding-top: 100px;
   min-height: 100%;
   position: relative;
   padding-bottom: 15em;
@@ -17,15 +18,12 @@ body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   width: 100%;
-}
-
-.container-header.fixed {
-  z-index: 100;
-  background-color: white;
   top: 0;
   position: fixed;
-  transition: 0.3s ease-in-out;
+  z-index: 100;
+  background-color: white;
 }
+
 .logo-inoui {
   grid-column: 6/8;
   justify-self: center;
@@ -46,7 +44,6 @@ body {
   justify-self: right;
 }
 
-
 .logo-disconnect input {
   padding-top: 5px;
 }
@@ -58,7 +55,7 @@ body {
 }
 .logo-panier img,
 .logo-user img,
-.disconnect-btn{
+.disconnect-btn {
   width: 60%;
 }
 .when-authenticated-container {
@@ -206,7 +203,7 @@ body {
   .category-product {
     text-align: center;
   }
-  .container-header{
+  .container-header {
     display: flex;
     justify-content: space-around;
   }
@@ -216,7 +213,7 @@ body {
   }
   .logo-inoui {
     width: 80%;
-  } 
+  }
 
   @media screen and (max-width: 600px) {
     .filter-nav {
@@ -228,7 +225,7 @@ body {
     }
     .filter-nav button {
       background-color: #0075a1;
-      margin: 10px;
+      margin: 15px;
       padding: 10px;
       width: 25vw;
       min-width: 130px;
@@ -241,7 +238,4 @@ body {
       display: none;
     }
   }
-  
-
-
 }

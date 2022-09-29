@@ -2,17 +2,18 @@ import { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import axios from "axios";
+import messageSend from "../assets/message.gif";
 
 import "./formCpmt.css";
+import { getDate } from "../services/DateManager";
 
 function Form() {
   // Générer un id de formulaire aléatoire et unique
   const idClient = Math.random().toString(16).slice(8);
-
   // préparer objet post DB
   const [userForm, setUserForm] = useState({
     form_number: idClient,
-    date: Date(),
+    date: getDate(),
     description: "",
     email: "",
     firstname: "",
@@ -28,31 +29,42 @@ function Form() {
     setUserForm({ ...userForm, rating_id: rate });
   };
 
-  // animation boutton envoyé
-  const [buttonText, setButtonText] = useState("Envoyer");
-  const changeText = (text) => {
-    setButtonText(text);
-  };
+  // animation envoyé
+
+  const [inputForm, setInputForm] = useState(false);
+  const [textReturnForm, setTextReturnForm] = useState(
+    "Votre avis nous intéresse :"
+  );
 
   // requête post DB
   const createItem = (event) => {
     event.preventDefault();
-    changeText("Message envoyé !");
     axios
-      .post("http://localhost:5000/forms", {
+      .post(`${import.meta.env.VITE_BACKEND_URL}/forms`, {
         ...userForm,
       })
       .then((response) => {
         console.error(response);
         console.error(response.data);
-      });
+      })
+      .then(() => setInputForm(true))
+      .then(() => setTextReturnForm("Votre avis compte !"));
+    // .then(() =>
+    //   setInterval(
+    //     () => setTextReturnForm("Merci ! Votre avis compte !"),
+    //     5000
+    //   )
+    // );
+    // .then(() => setInputForm(false));
   };
 
   return (
     // form_number, date, description, email, name, category_form_id
     <form className="container" onSubmit={createItem}>
-      <h1 className="comment-title">Votre avis nous intéresse :</h1>
-      <div className="input-form">
+      {/* <Loader inputForm={inputForm} /> */}
+      <h1 className="comment-title">{textReturnForm}</h1>
+
+      <div className={!inputForm ? "input-form" : "inputForm disable"}>
         <label htmlFor="name">Votre nom: </label>
         <input
           className="input-box"
@@ -109,9 +121,20 @@ function Form() {
         />
       </div>
       <div className="container-button">
-        <button className="input-box" type="submit" id="send-button">
-          {buttonText}
+        <button
+          className={!inputForm ? "input-box" : "input-box disable"}
+          type="submit"
+          id="send-button"
+        >
+          Envoyé
         </button>
+      </div>
+      <div className="container-send-animation">
+        <img
+          className={inputForm ? "send-animation" : "send-animation disable"}
+          src={messageSend}
+          alt="gif"
+        />
       </div>
     </form>
   );

@@ -6,7 +6,7 @@ export default function FilterNav({ setfilterNavigation }) {
   const [fix, setFix] = useState(false);
 
   function setFixed() {
-    if (window.scrollY >= 390) {
+    if (window.scrollY >= 310) {
       setFix(true);
     } else {
       setFix(false);

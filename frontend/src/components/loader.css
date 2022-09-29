@@ -1,11 +1,14 @@
 /*Element de transition à la soumission du formulaire - attente*/
 .pointDiv {
-  display: flex;
+  display: none;
   align-self: center;
   justify-self: center;
   position: absolute;
-  top: 40%;
-  left: 50%;
+  top: 50%;
+  left: 45%;
+}
+.pointDiv-activate {
+  display: flex;
 }
 .msgAfter,
 .msgAfter1,
