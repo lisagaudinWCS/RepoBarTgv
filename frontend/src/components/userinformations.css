@@ -31,9 +31,10 @@
 }
 .avatar {
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid lightgray;
   margin: auto;
-  width: 50%;
+  width: 250px;
+  height: 250px;
 }
 .avatar-btn {
   background-color: #0075a1;

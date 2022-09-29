@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "react-modal";
 
-function Cloudinary({ setUrl }) {
+function Cloudinary({ setUrl, url, setClientInfos, clientInfos }) {
   const [image, setImage] = useState("");
 
   const customStyles = {
@@ -14,6 +14,10 @@ function Cloudinary({ setUrl }) {
       transform: "translate(-50%, -50%)",
     },
   };
+
+  useEffect(() => {
+    setClientInfos({ ...clientInfos, avatar: url });
+  }, [url]);
 
   // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
   Modal.setAppElement("#root");

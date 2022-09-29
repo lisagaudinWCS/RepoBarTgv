@@ -40,13 +40,19 @@ export default function ChangeInfosCmpnt() {
       <h1 className="profile-title">Mon profil</h1>
       <div className="profile-container">
         <div className="avatar-container">
-          <img
+          <input
+            type="image"
             src={url || clientInfos.avatar}
             // alt="avatar"
             className="avatar"
             alt={`avatar of ${clientInfos.name}`}
           />
-          <Cloudinary url={url} setUrl={setUrl} />
+          <Cloudinary
+            url={url}
+            setUrl={setUrl}
+            setClientInfos={setClientInfos}
+            clientInfos={clientInfos}
+          />
         </div>
         {/* <div className="info-container" /> */}
         {/* <button type="button" className="change-info-btn">
