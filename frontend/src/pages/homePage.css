@@ -157,7 +157,9 @@ body {
 }
 
 .add-to-shoplist-from-home,
-.add-to-shoplist-from-home-hide {
+.add-to-shoplist-from-home-hide,
+.favorite-btn-on,
+.favorite-btn-off {
   cursor: pointer;
   width: 40px;
   height: 40px;
