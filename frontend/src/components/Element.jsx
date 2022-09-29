@@ -1,6 +1,5 @@
 import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import axios from "axios";
 
 import axios from "axios";
 import ShoplistContext from "../context/ShoplistContext";
@@ -14,13 +13,6 @@ export default function Element({ id, name, price, image, description }) {
   useEffect(() => {
     localStorage.setItem("shoplist", JSON.stringify(shoplist));
   }, [shoplist]);
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`${import.meta.env.VITE_BACKEND_URL}/products/${id}`)
-  //     .then((response) => response.data)
-  //     .then((data) => setProductDetails(data));
-  // }, []);
 
   function addToShoplist() {
     const currentProductAdded = shoplist.find((product) => product.id === id);
