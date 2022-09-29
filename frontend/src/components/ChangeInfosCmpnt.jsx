@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { transBirthDate } from "../services/DateManager";
 
 export default function ChangeInfosCmpnt() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [clientInfos, setClientInfos] = useState({
     client_number: "",
     lastname: "",
@@ -54,8 +55,8 @@ export default function ChangeInfosCmpnt() {
           className="user-input-box"
           onSubmit={(e) => {
             e.preventDefault();
-            clientInfos.birth_date = transBirthDate(clientInfos.birth_date);
             updateClient();
+            navigate(`/profil/${id}`);
           }}
         >
           <label className="user-label" htmlFor="lastname">
@@ -113,7 +114,7 @@ export default function ChangeInfosCmpnt() {
             value={clientInfos.email}
             required
           />
-          <br />
+          {/* <br />
           <label className="user-label" htmlFor="pass">
             Mot de passe :
           </label>
@@ -139,8 +140,9 @@ export default function ChangeInfosCmpnt() {
             value={clientInfos.password}
             required
           />
+          <br /> */}
           <button className="subscribe-btn" type="submit" id="submit-button">
-            S'inscrire
+            Je valide !
           </button>
         </form>
       </div>
