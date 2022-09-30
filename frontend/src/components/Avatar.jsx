@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Modal from "react-modal";
 
-function Cloudinary({ setUrl, url, setClientInfos, clientInfos }) {
+function Avatar({ setUrl, url, setClientInfos, clientInfos }) {
   const [image, setImage] = useState("");
 
   const customStyles = {
@@ -19,7 +19,6 @@ function Cloudinary({ setUrl, url, setClientInfos, clientInfos }) {
     setClientInfos({ ...clientInfos, avatar: url });
   }, [url]);
 
-  // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
   Modal.setAppElement("#root");
 
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -53,18 +52,17 @@ function Cloudinary({ setUrl, url, setClientInfos, clientInfos }) {
   return (
     <div>
       <div>
-        <button type="button" onClick={openModal} className="validate-button">
+        <button type="button" onClick={openModal} className="avatar-btn">
           Modifier Avatar
         </button>
         <Modal isOpen={modalIsOpen} style={customStyles} contentLabel="upload">
-          {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2> */}
           <div className="container-close-button">
             <button className="close-button" type="button" onClick={closeModal}>
               X
             </button>
           </div>
           <form>
-            <h4>
+            <h4 className="title-avatar">
               {!image
                 ? "Veuillez choisir un Avatar !"
                 : "Votre image à bien été importée"}
@@ -90,19 +88,8 @@ function Cloudinary({ setUrl, url, setClientInfos, clientInfos }) {
             </button>
           </form>
         </Modal>
-        {/* <label htmlFor="file" className="label-button-upload" id="upload">
-          Upload Fichier
-        </label> */}
-        {/* <input
-          className="upload-button"
-          type="file"
-          onChange={(e) => setImage(e.target.files[0])}
-        /> */}
-        {/* <button type="button" onClick={uploadImage} id="uploadModal">
-          Modifier votre photo
-        </button> */}
       </div>
     </div>
   );
 }
-export default Cloudinary;
+export default Avatar;

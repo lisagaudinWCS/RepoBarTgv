@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import Cloudinary from "./cloudinary";
+import Avatar from "./Avatar";
 import { transBirthDate } from "../services/DateManager";
 
 export default function ChangeInfosCmpnt() {
@@ -47,17 +47,13 @@ export default function ChangeInfosCmpnt() {
             className="avatar"
             alt={`avatar of ${clientInfos.name}`}
           />
-          <Cloudinary
+          <Avatar
             url={url}
             setUrl={setUrl}
             setClientInfos={setClientInfos}
             clientInfos={clientInfos}
           />
         </div>
-        {/* <div className="info-container" /> */}
-        {/* <button type="button" className="change-info-btn">
-            MODIFIER MES INFOS ✏️
-          </button> */}
         <form
           className="user-input-box"
           onSubmit={(e) => {
