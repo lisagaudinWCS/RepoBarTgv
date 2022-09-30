@@ -49,9 +49,16 @@ export default function UserInformations() {
             className="avatar"
             alt={`avatar of ${clientInfos.name}`}
           />
-          <button type="button" className="avatar-btn" id="avatar-btn">
-            Modifier image
-          </button>
+
+          {/* <label htmlFor="file" className="label-button-upload" id="upload">
+            Upload Fichier
+          </label>
+          <input
+            type="file"
+            name="upload"
+            className="upload-button"
+            id="file"
+          /> */}
         </div>
         {/* <div className="info-container" /> */}
         <div className="user-input-box">

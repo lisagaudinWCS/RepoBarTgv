@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import Avatar from "./Avatar";
 import { transBirthDate } from "../services/DateManager";
 
 export default function ChangeInfosCmpnt() {
   const { id } = useParams();
+  const [url, setUrl] = useState("");
+
   const navigate = useNavigate();
   const [clientInfos, setClientInfos] = useState({
     client_number: "",
@@ -37,20 +40,20 @@ export default function ChangeInfosCmpnt() {
       <h1 className="profile-title">Mon profil</h1>
       <div className="profile-container">
         <div className="avatar-container">
-          <img
-            src={clientInfos.avatar}
+          <input
+            type="image"
+            src={url || clientInfos.avatar}
             // alt="avatar"
             className="avatar"
             alt={`avatar of ${clientInfos.name}`}
           />
-          <button type="button" className="avatar-btn" id="avatar-btn">
-            Modifier image
-          </button>
+          <Avatar
+            url={url}
+            setUrl={setUrl}
+            setClientInfos={setClientInfos}
+            clientInfos={clientInfos}
+          />
         </div>
-        {/* <div className="info-container" /> */}
-        {/* <button type="button" className="change-info-btn">
-            MODIFIER MES INFOS ✏️
-          </button> */}
         <form
           className="user-input-box"
           onSubmit={(e) => {

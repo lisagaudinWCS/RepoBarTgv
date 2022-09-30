@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import AuthAPI from "../services/AuthAPI";
 import AuthContext from "../contexts/AuthContext";
 import logoInoui from "../assets/tgvInoui.png";
@@ -17,20 +17,6 @@ export default function HeaderHome() {
 
   const navigate = useNavigate();
 
-  const [fix, setFix] = useState(false);
-
-  function setFixed() {
-    if (window.scrollY >= 390) {
-      setFix(true);
-    } else {
-      setFix(false);
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener("scroll", setFixed);
-  }, []);
-
   function handleLogout() {
     AuthAPI.logout();
     setIsAuthenticated(false);
@@ -39,7 +25,7 @@ export default function HeaderHome() {
 
   return (
     <div>
-      <div className={fix ? "container-header fixed" : "container-header"}>
+      <div className="container-header">
         <div className="logo-inoui">
           <Link to="/">
             <img src={logoInoui} alt="logo-inoui" />

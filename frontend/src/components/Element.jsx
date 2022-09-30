@@ -9,6 +9,7 @@ import FavOn from "../assets/favorite-btn-on.png";
 export default function Element({ id, name, price, image, description }) {
   const { shoplist, setShoplist } = useContext(ShoplistContext);
   const [addProductToShoplist, setAddProductToShoplist] = useState(false);
+
   // const [productDetails, setProductDetails] = useState("");
   const [isFavorite, setIsFavorite] = useState(false);
 
