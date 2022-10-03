@@ -76,6 +76,12 @@
   opacity: 70%;
 }
 
+.need-connection {
+  margin-top: 50px;
+  text-align: center;
+  color: #0075a1;
+}
+
 @media screen and (max-width: 800px) {
   .total-container {
     display: flex;

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable react/jsx-no-constructed-context-values */
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
