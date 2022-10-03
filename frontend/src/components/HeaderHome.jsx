@@ -8,12 +8,14 @@ import user from "../assets/utilisateur.png";
 import deconnexion1 from "../assets/deconnexion1.png";
 
 import ShoplistContext from "../context/ShoplistContext";
+import UserContext from "../contexts/UserContext";
 
 export default function HeaderHome() {
   const { shoplist } = useContext(ShoplistContext);
   const amount = shoplist.reduce((acc, product) => acc + product.amount, 0);
 
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const { userLog } = useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -21,6 +23,7 @@ export default function HeaderHome() {
     AuthAPI.logout();
     setIsAuthenticated(false);
     navigate("/");
+    window.location.reload();
   }
 
   return (
@@ -45,7 +48,7 @@ export default function HeaderHome() {
               </div>
 
               <div className="logo-user">
-                <Link to="/profil/1">
+                <Link to={`/profil/${userLog.id}`}>
                   <img src={user} alt="logo user" />
                 </Link>
               </div>

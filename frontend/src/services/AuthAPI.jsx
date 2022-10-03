@@ -8,12 +8,13 @@ function setAxiosToken(token) {
 function authenticate(credentials) {
   return axios
     .post(`${import.meta.env.VITE_BACKEND_URL}/login`, credentials)
-    .then((response) => response.data.token)
-    .then((token) => {
+    .then((response) => response.data)
+    .then((data) => {
       // Stoker le token dans le local storage
-      window.localStorage.setItem("authToken", token);
+      window.localStorage.setItem("authToken", data.token);
+      window.localStorage.setItem("userLog", JSON.stringify(data.user));
       // Prevenir Axios du header par défaut pour les futures requetes http
-      setAxiosToken(token);
+      setAxiosToken(data.token);
       window.localStorage.getItem("authToken");
     });
 }
@@ -33,6 +34,7 @@ function isAuthenticated() {
 
 function logout() {
   window.localStorage.removeItem("authToken");
+  window.localStorage.removeItem("userLog");
   delete axios.defaults.headers.Authorization;
 }
 

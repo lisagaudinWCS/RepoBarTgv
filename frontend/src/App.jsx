@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable react/jsx-no-constructed-context-values */
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
@@ -22,6 +23,7 @@ import DeleteClientPage from "./pages/DeleteClientPage";
 import SubscribeConfirmPage from "./pages/SubscribeConfirmPage";
 
 import ShoplistContext from "./context/ShoplistContext";
+import UserContext from "./contexts/UserContext";
 
 import "./App.css";
 import "./pages/homePage.css";
@@ -38,42 +40,49 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
     AuthAPI.isAuthenticated
   );
+
+  const userLoger = localStorage.getItem("userLog");
+  const [userLog, setUserLog] = useState(
+    userLoger ? JSON.parse(userLoger) : []
+  );
   return (
     <ShoplistContext.Provider value={{ shoplist, setShoplist }}>
       <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
-        <Router>
-          <div>
-            <HeaderHome />
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/forms" element={<FormPage />} />
-              <Route path="/profil/:id" element={<UserProfile />} />
-              <Route path="/profil/:id/edit" element={<ChangeInfos />} />
-              <Route path="/subscribe" element={<Subscribe />} />
-              <Route path="/login" element={<Connexion />} />
-              <Route path="/signin" element={<BothIdentificationPage />} />
-              <Route path="/shoplists/" element={<ShoplistPage />} />
-              <Route path="/ticket/" element={<TicketPage />} />
+        <UserContext.Provider value={{ userLog, setUserLog }}>
+          <Router>
+            <div>
+              <HeaderHome />
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/forms" element={<FormPage />} />
+                <Route path="/profil/:id" element={<UserProfile />} />
+                <Route path="/profil/:id/edit" element={<ChangeInfos />} />
+                <Route path="/subscribe" element={<Subscribe />} />
+                <Route path="/login" element={<Connexion />} />
+                <Route path="/signin" element={<BothIdentificationPage />} />
+                <Route path="/shoplists/" element={<ShoplistPage />} />
+                <Route path="/ticket/" element={<TicketPage />} />
 
-              <Route
-                path="/productdetails/:id"
-                element={<ProductDetailsPage />}
-              />
-              <Route path="/sendorder" element={<SendOrder />} />
-              <Route path="/cancelorder" element={<CancelOrder />} />
-              <Route path="/orderfinito" element={<SendOrderFinito />} />
-              <Route
-                path="/profil/deleteclient"
-                element={<DeleteClientPage />}
-              />
-              <Route
-                path="/subscribe/createdprofile"
-                element={<SubscribeConfirmPage />}
-              />
-            </Routes>
-            <Footer />
-          </div>
-        </Router>
+                <Route
+                  path="/productdetails/:id"
+                  element={<ProductDetailsPage />}
+                />
+                <Route path="/sendorder" element={<SendOrder />} />
+                <Route path="/cancelorder" element={<CancelOrder />} />
+                <Route path="/orderfinito" element={<SendOrderFinito />} />
+                <Route
+                  path="/profil/deleteclient"
+                  element={<DeleteClientPage />}
+                />
+                <Route
+                  path="/subscribe/createdprofile"
+                  element={<SubscribeConfirmPage />}
+                />
+              </Routes>
+              <Footer />
+            </div>
+          </Router>
+        </UserContext.Provider>
       </AuthContext.Provider>
     </ShoplistContext.Provider>
   );
