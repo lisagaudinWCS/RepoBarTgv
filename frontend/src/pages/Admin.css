@@ -1,0 +1,19 @@
+.nav-bar-admin {
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  left: 0px;
+  top: 150px;
+  background: #0075a1;
+}
+
+.container-home-icon {
+  background-color: #0075a1;
+}
+
+.admin-btn {
+  display: flex;
+  flex-direction: column;
+}
+.home-icon {
+}

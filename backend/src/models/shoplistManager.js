@@ -5,6 +5,14 @@ class ShoplistManager extends AbstractManager {
     super({ table: "shoplist" });
   }
 
+  findAllShoplistsWithDetails() {
+    return this.connection
+      .query(`SELECT s.id, s.order_number, s.date, s.status, c.lastname, c.firstname
+    FROM ${this.table} as s
+    JOIN ticket as t ON t.id=s.ticket_id
+    JOIN client as c ON c.id=t.client_id;`);
+  }
+
   insert(item) {
     return this.connection.query(
       `insert into ${this.table} (order_number, total_price, status, date, ticket_id) values (?, ?, ?, ?, ?)`,

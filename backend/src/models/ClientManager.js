@@ -12,6 +12,16 @@ class ClientManager extends AbstractManager {
     );
   }
 
+  findAllClientListsWithDetails() {
+    return this.connection.query(
+      `SELECT client.id
+      client.lastname
+      client.firstname
+      client.birthdate
+    FROM ${this.table}`
+    );
+  }
+
   insert(item) {
     return this.connection.query(
       `insert into ${this.table} (client_number, lastname, firstname, email, password, avatar, birth_date, isAdmin) values (?, ?, ?, ?, ?, ?, ?, ?)`,

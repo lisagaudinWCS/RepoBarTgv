@@ -1,7 +1,7 @@
 const models = require("../models");
 
 const getAll = (req, res) => {
-  models.shoplist
+  models.product
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -12,9 +12,9 @@ const getAll = (req, res) => {
     });
 };
 
-const getAllShoplistWithDetails = (req, res) => {
-  models.shoplist
-    .findAllShoplistsWithDetails()
+const getAllProductlistWithDetails = (req, res) => {
+  models.product
+    .findAllProductlistsWithDetails()
     .then(([rows]) => {
       res.send(rows);
     })
@@ -25,7 +25,7 @@ const getAllShoplistWithDetails = (req, res) => {
 };
 
 const getById = (req, res) => {
-  models.shoplist
+  models.product
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -45,15 +45,15 @@ const add = (req, res) => {
 
   // TODO validations (length, format...)
 
-  models.shoplist
+  models.product
     .insert(item)
     .then(([result]) => {
-      res.location(`/shoplists/${result.insertId}`).sendStatus(201);
+      res.location(`/product/${result.insertId}`).sendStatus(201);
       res.send(result.insertId);
       // eslint-disable-next-line no-unused-expressions
-      item.shoplist &&
-        item.shoplist.map((product) =>
-          models.shoplist.insertProduct(result.insertId, product)
+      item.product &&
+        item.product.map((product) =>
+          models.product.insertProduct(result.insertId, product)
         );
     })
     .catch((err) => {
@@ -89,5 +89,5 @@ module.exports = {
   getById,
   update,
   add,
-  getAllShoplistWithDetails,
+  getAllProductlistWithDetails,
 };

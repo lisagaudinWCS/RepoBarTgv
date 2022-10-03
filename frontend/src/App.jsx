@@ -6,6 +6,9 @@ import HeaderHome from "@components/HeaderHome";
 import TicketPage from "@pages/TicketPage";
 import Footer from "@components/Footer";
 import BothIdentificationPage from "@pages/BothIdentificationPage";
+import AdminListCdes from "@pages/AdminListCdes";
+import AdminListProduits from "@pages/AdminListProducts";
+import AdminListClients from "@pages/AdminListClients";
 import AuthAPI from "./services/AuthAPI";
 import AuthContext from "./contexts/AuthContext";
 import FormPage from "./pages/FormPage";
@@ -21,7 +24,6 @@ import ChangeInfos from "./pages/ChangeInfos";
 import SendOrderFinito from "./pages/SendOrderFinito";
 import DeleteClientPage from "./pages/DeleteClientPage";
 import SubscribeConfirmPage from "./pages/SubscribeConfirmPage";
-
 import ShoplistContext from "./context/ShoplistContext";
 
 import "./App.css";
@@ -30,6 +32,7 @@ import "./pages/shoplistPage.css";
 import "./components/shoplistDetails.css";
 import "./components/connexion.css";
 import "./components/productDetails.css";
+import "./pages/Admin.css";
 
 function App() {
   const savedShoplist = localStorage.getItem("shoplist");
@@ -49,6 +52,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/forms" element={<FormPage />} />
               <Route path="/profil/:id" element={<UserProfile />} />
+              {/* <Route path="/admin/:id" element={<AdminUserProfil />} /> */}
               <Route path="/profil/:id/edit" element={<ChangeInfos />} />
               <Route path="/subscribe" element={<Subscribe />} />
               <Route path="/login" element={<Connexion />} />
@@ -72,6 +76,9 @@ function App() {
                 path="/subscribe/createdprofile"
                 element={<SubscribeConfirmPage />}
               />
+              <Route path="/admin/shoplists" element={<AdminListCdes />} />
+              <Route path="/admin/products" element={<AdminListProduits />} />
+              <Route path="/admin/clients" element={<AdminListClients />} />
             </Routes>
             <Footer />
           </div>

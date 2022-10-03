@@ -1,12 +1,31 @@
 import React from "react";
 
-export function NavBarTicket() {
+export function NavBarTicket({ setfilterNavigation }) {
   return (
     <div>
-      <div className="ticket-nav">
-        <div>Mes trajets</div>
-        <div>Mon profil</div>
-        <div>Mes commandes</div>
+      <div className="nav-bar-ticket">
+        <button
+          type="button"
+          value="
+          0"
+          onClick={(e) => setfilterNavigation(e.target.value)}
+        >
+          Mes trajets
+        </button>
+        <button
+          type="button"
+          value="1"
+          onClick={(e) => setfilterNavigation(e.target.value)}
+        >
+          Mon Profil
+        </button>
+        <button
+          type="button"
+          value="2"
+          onClick={(e) => setfilterNavigation(e.target.value)}
+        >
+          Mes Commandes
+        </button>
       </div>
     </div>
   );

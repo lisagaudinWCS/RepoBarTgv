@@ -5,7 +5,6 @@ const { hashPassword, verifyPassword } = require("./auth");
 
 const formControllers = require("./controllers/formcontrollers");
 const ticketControllers = require("./controllers/ticketControllers");
-const trainControllers = require("./controllers/trainControllers");
 const trainsTicketsClientsControllers = require("./controllers/trainTicketControllers");
 const categoryControllers = require("./controllers/categoryControllers");
 const productControllers = require("./controllers/productControllers");
@@ -19,6 +18,9 @@ router.get("/products", productControllers.browse);
 router.get("/products/:id", productControllers.read);
 router.get("/categories/:id", categoryControllers.read);
 router.get("/productsdetails", productControllers.readProductsDetails);
+router.get("/shoplistsDetails", shoplistControllers.getAllShoplistWithDetails);
+router.get("/productsdetails", productControllers.getAllProductlistWithDetails);
+router.get("/clientsdetails", clientControllers.getAllClientlistWithDetails);
 
 // get shoplist
 
@@ -36,8 +38,8 @@ router.post(
 router.get("/ticket", ticketControllers.browse);
 router.get("/ticket/:id", ticketControllers.read);
 
-router.get("/train", trainControllers.browse);
-router.get("/train/:id", trainControllers.read);
+// router.get("/train", trainControllers.browse);
+// router.get("/train/:id", trainControllers.read);
 
 router.get("/trainsTicketsClients", trainsTicketsClientsControllers.getAll);
 // *** CLIENTS ***

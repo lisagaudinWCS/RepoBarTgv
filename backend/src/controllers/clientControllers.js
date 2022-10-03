@@ -27,6 +27,17 @@ const read = (req, res) => {
       res.sendStatus(500);
     });
 };
+const getAllClientListWithDetails = (req, res) => {
+  models.client
+    .findAllClientListsWithDetails()
+    .then(([rows]) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
 
 const getClientByEmailWithPasswordAndPassToNext = (req, res, next) => {
   const { email } = req.body;
@@ -101,6 +112,7 @@ const destroy = (req, res) => {
 module.exports = {
   browse,
   read,
+  getAllClientListWithDetails,
   getClientByEmailWithPasswordAndPassToNext,
   edit,
   add,

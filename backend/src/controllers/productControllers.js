@@ -11,6 +11,17 @@ const browse = (req, res) => {
       res.sendStatus(500);
     });
 };
+const getAllProductlistWithDetails = (req, res) => {
+  models.product
+    .findAllProductlistsWithDetails()
+    .then(([rows]) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
 
 const read = (req, res) => {
   models.product
@@ -113,4 +124,5 @@ module.exports = {
   destroy,
   readProductsDetails,
   readProductsCategory,
+  getAllProductlistWithDetails,
 };

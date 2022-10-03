@@ -2,13 +2,13 @@ import NavBarAdmin from "@components/NavBarAdmin";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-function AdminListClients() {
-  const [clients, setClientslists] = useState("");
+function AdminListCdes() {
+  const [shoplists, setShoplists] = useState("");
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/shoplistsDetails`)
       .then((response) => response.data)
-      .then((data) => setClientslists(data))
+      .then((data) => setShoplists(data))
       .catch((error) => console.error(error));
   }, []);
 
@@ -18,7 +18,7 @@ function AdminListClients() {
         <NavBarAdmin />
       </div>
 
-      <h2>Recherche par ID de Client : </h2>
+      <h2>Recherche par numéro de commande : </h2>
       {/* <SearchBar searchValue={searchValue} handleSearchValue={setSearchValue} />
       {shoplists
         .filter((shoplist) => shoplist.includes(searchValue))
@@ -28,21 +28,22 @@ function AdminListClients() {
       <table>
         <thead>
           <tr>
-            <th>ID Client</th>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Date De Naissance</th>
+            <th>Numéro de commande</th>
+            <th>Date de commande</th>
+            <th>Client</th>
+            <th>Statut</th>
           </tr>
         </thead>
         <tbody>
-          {clients &&
-            clients.map((client) => (
-              <tr key={client.id}>
-                <td>{client.id}</td>
+          {shoplists &&
+            shoplists.map((shoplist) => (
+              <tr key={shoplist.id}>
+                <td>{shoplist.order_number}</td>
+                <td>{shoplist.date}</td>
                 <td>
-                  {client.lastname} {client.firstname}
+                  {shoplist.lastname} {shoplist.firstname}
                 </td>
-                <td>{client.birthdate}</td>
+                <td>{shoplist.status}</td>
               </tr>
             ))}
         </tbody>
@@ -51,4 +52,4 @@ function AdminListClients() {
   );
 }
 
-export default AdminListClients;
+export default AdminListCdes;
