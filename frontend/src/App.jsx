@@ -13,7 +13,6 @@ import Subscribe from "./pages/Subscribe";
 import ShoplistPage from "./pages/ShoplistPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import SendOrder from "./pages/SendOrder";
-import CategoryListDrinks from "./components/CategoryListDrinks";
 import CancelOrder from "./pages/CancelOrder";
 import UserProfile from "./pages/UserProfile";
 import Connexion from "./pages/Connexion";
@@ -61,7 +60,6 @@ function App() {
                 element={<ProductDetailsPage />}
               />
               <Route path="/sendorder" element={<SendOrder />} />
-              <Route path="/home/drinks" element={<CategoryListDrinks />} />
               <Route path="/cancelorder" element={<CancelOrder />} />
               <Route path="/orderfinito" element={<SendOrderFinito />} />
               <Route
