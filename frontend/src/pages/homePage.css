@@ -168,7 +168,8 @@ body {
   color: #0075a1;
 }
 
-.favorite-btn-off, .favorite-btn-on {
+.favorite-btn-off,
+.favorite-btn-on {
   border: none;
 }
 
