@@ -51,7 +51,7 @@ export default function SendOrder() {
     navigateTocancel("/cancelorder");
   };
 
-  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated } = useContext(AuthContext);
 
   return (
     <div>
